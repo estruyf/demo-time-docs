@@ -6,22 +6,57 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'My Docs',
+			title: 'Demo Time',
 			social: {
-				github: 'https://github.com/withastro/starlight',
+				github: 'https://github.com/estruyf/vscode-demo-time',
+				blueSky: 'https://bsky.app/profile/eliostruyf.com'
 			},
+			components: {
+        // Relative path to the custom component.
+        SocialIcons: './src/components/SocialIcons.astro',
+        Footer: './src/components/Footer.astro',
+      },
+			customCss: [
+        // Relative path to your custom CSS file
+        './src/styles/custom.css',
+      ],
 			sidebar: [
 				{
-					label: 'Guides',
+					label: 'Documentation',
 					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
+						{ label: 'Get started', slug: 'docs' },
+						{ label: 'Commands', slug: 'docs/commands' },
+						{ label: 'Settings', slug: 'docs/settings' },
 					],
 				},
 				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
+					label: 'Actions',
+					items: [
+						{ label: 'File actions', slug: 'docs/actions/file' },
+						{ label: 'Code actions', slug: 'docs/actions/code' },
+						{ label: 'Setting actions', slug: 'docs/actions/setting' },
+						{ label: 'Snippet actions', slug: 'docs/actions/snippet' },
+						{ label: 'Terminal actions', slug: 'docs/actions/terminal' },
+						{ label: 'Time actions', slug: 'docs/actions/time' },
+						{ label: 'VS Code actions', slug: 'docs/actions/vscode' },
+					],
 				},
+				{
+					label: 'Tips & Tricks',
+					items: [
+						{ label: 'Adding content', slug: 'tips/adding-content' },
+						{ label: 'Highlight code', slug: 'tips/highlighting' },
+						{ label: 'Working with variables', slug: 'tips/variables' },
+						{ label: 'Positioning', slug: 'tips/positioning' },
+						{ label: 'Presentation view', slug: 'tips/presentation-view' },
+					],
+				},
+				{
+					label: 'Examples',
+					items: [
+						{ label: 'Sample projects', slug: 'examples' },
+					],
+				}
 			],
 		}),
 	],
