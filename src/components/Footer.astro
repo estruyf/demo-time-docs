@@ -18,13 +18,19 @@ const isProd = import.meta.env.PROD;
 	</div>
 	<Pagination {...Astro.props} />
 
-  {
-		isProd && (
-			<a style="margin: 0 auto;" href="https://visitorbadge.io/status?path=https:%2f%2fgithub.com%2festruyf%2fvscode-demo-time">
-				<img src={`https://api.visitorbadge.io/api/visitors?path=https:%2f%2fgithub.com%2festruyf%2fvscode-demo-time&amp;labelColor=%23555555&amp;countColor=%23FFD23F&amp;slug=${currentUrl}`} height="25px" alt="Demo Time Visitors">
-			</a>
-		)
-	}
+  <div class="mx-auto gap-4 flex">
+		<img src="https://vscode-marketplace-badge.vercel.app/api/badge/version/eliostruyf.vscode-demo-time?style=flat-square&color=%23FFD23F&labelColor=%23202736" alt="Visual Studio Marketplace">
+
+		<img src="https://vscode-marketplace-badge.vercel.app/api/badge/installs/eliostruyf.vscode-demo-time?style=flat-square&color=%23FFD23F&labelColor=%23202736" alt="Number of installs">
+
+		{
+			isProd && (
+				<a style="margin: 0 auto;" href="https://visitorbadge.io/status?path=https:%2f%2fgithub.com%2festruyf%2fvscode-demo-time">
+					<img src={`https://api.visitorbadge.io/api/visitors?path=https:%2f%2fgithub.com%2festruyf%2fvscode-demo-time&amp;labelColor=%23202736&amp;countColor=%23FFD23F&amp;slug=${currentUrl}`} height="25px" alt="Demo Time Visitors">
+				</a>
+			)
+		}
+	</div>
 
 	{
 		config.credits && (
