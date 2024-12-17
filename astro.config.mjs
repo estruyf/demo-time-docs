@@ -4,6 +4,8 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://estruyf.github.io',
+  base: 'demo-time-astro',
 	integrations: [
 		starlight({
 			logo: {
