@@ -1,0 +1,29 @@
+{
+  "$schema": "https://beta.frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.content.pageFolders": [{
+      "title": "root",
+      "path": "[[workspace]]/src/content/docs",
+      "previewPath": ""
+    },
+    {
+      "title": "docs",
+      "path": "[[workspace]]/src/content/docs/docs",
+      "previewPath": "docs"
+    },
+    {
+      "title": "examples",
+      "path": "[[workspace]]/src/content/docs/examples",
+      "previewPath": "examples"
+    },
+    {
+      "title": "snippets",
+      "path": "[[workspace]]/src/content/docs/snippets",
+      "previewPath": "snippets"
+    },
+    {
+      "title": "tips",
+      "path": "[[workspace]]/src/content/docs/tips",
+      "previewPath": "tips"
+    }
+  ]
+}

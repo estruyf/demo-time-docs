@@ -28,3 +28,7 @@
 	--sl-color-gray-7: #f4f6fa;
 	--sl-color-black: #ffffff;
 }
+
+.site-title {
+	color: var(--sl-color-white);
+}

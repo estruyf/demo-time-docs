@@ -6,6 +6,9 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
+			logo: {
+				src: '/src/assets/demotime.svg',
+			},
 			title: 'Demo Time',
 			social: {
 				github: 'https://github.com/estruyf/vscode-demo-time',
@@ -49,6 +52,12 @@ export default defineConfig({
 						{ label: 'Working with variables', slug: 'tips/variables' },
 						{ label: 'Positioning', slug: 'tips/positioning' },
 						{ label: 'Presentation view', slug: 'tips/presentation-view' },
+					],
+				},
+				{
+					label: 'Snippets',
+					items: [
+						{ label: 'Snippets', slug: 'snippets' },
 					],
 				},
 				{
