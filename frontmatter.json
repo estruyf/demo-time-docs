@@ -6,10 +6,12 @@
     "path": "src/assets",
     "relative": true
   },
+  "frontMatter.content.defaultFileType": "mdx",
   "frontMatter.extends": [
     ".frontmatter/starlight/contenttypes.json",
     ".frontmatter/starlight/pagefolders.json",
     ".frontmatter/starlight/aside.json",
+    ".frontmatter/starlight/image.json",
     ".frontmatter/config/scripts.json"
   ]
 }

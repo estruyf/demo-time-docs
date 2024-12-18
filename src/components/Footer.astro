@@ -4,6 +4,7 @@ import type { Props } from '@astrojs/starlight/props'
 import EditLink from 'virtual:starlight/components/EditLink';
 import LastUpdated from 'virtual:starlight/components/LastUpdated';
 import Pagination from 'virtual:starlight/components/Pagination';
+import SocialIcons from 'virtual:starlight/components/SocialIcons';
 import config from 'virtual:starlight/user-config';
 import { Icon } from '@astrojs/starlight/components';
 
@@ -16,6 +17,7 @@ const isProd = import.meta.env.PROD;
 		<EditLink {...Astro.props} />
 		<LastUpdated {...Astro.props} />
 	</div>
+	
 	<Pagination {...Astro.props} />
 
   <div class="mx-auto gap-4 flex">
@@ -30,6 +32,10 @@ const isProd = import.meta.env.PROD;
 				</a>
 			)
 		}
+	</div>
+
+	<div class="social-icons flex gap-2 justify-center">
+		<SocialIcons />
 	</div>
 
 	{

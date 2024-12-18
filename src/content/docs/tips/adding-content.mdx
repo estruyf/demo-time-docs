@@ -1,0 +1,25 @@
+---
+title: Adding Content
+description: Learn how to add content to a file in Demo Time.
+tableOfContents: false
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+
+When you want to insert content to a file, you can use the `content` or `contentPath` properties in the demo step.
+
+| Property | Description |
+| --- | --- |
+| `content` | This property allows you to add the content directly in the JSON file, but this can make your JSON file quite big and it can be hard to read. |
+| `contentPath` | This property allows you to reference a file in the `.demo` folder. This way you can keep your JSON file clean and add the content in separate files. **Important**: the path is relative to the `.demo` folder. |
+
+## Using the `contentPath` property
+
+When you use the `contentPath` property, you can reference a file in the `.demo` folder. This way you can keep your JSON file clean and add the content in separate files.
+
+<Aside type="caution">
+The indentation of the file will be preserved when you insert the content. This means that you have to be careful with the indentation of the content you add.
+
+You can add an `executeVSCodeCommand` action with the `editor.action.reindentlines` command to reindent the content. 
+</Aside>

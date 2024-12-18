@@ -4,15 +4,18 @@ description: Get started with Demo Time
 ---
 
 import { Aside } from '@astrojs/starlight/components';
+import { LinkButton } from '@astrojs/starlight/components';
 import { Image } from 'astro:assets';
 
 import initializeImage from "../../../assets/docs/initialize.webp";
-import openImage from "../../../assets/docs/open-first-demo.webp";
-import implementationImage from "../../../assets/docs/first-demo-implementation.webp";
 
 To get started with Demo Time, you need to install the extension in Visual Studio Code. You can find the extension in the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=eliostruyf.vscode-demo-time).
 
-You can install the extension via the following link: [install the extension](vscode:extension/eliostruyf.vscode-front-matter).
+You can install the extension via the following link: 
+
+<LinkButton href="vscode:extension/eliostruyf.vscode-front-matter">Install the extension</LinkButton>
+
+Or you can search for "Demo Time" in the extensions panel in Visual Studio Code.
 
 ## Initialize the extension
 
@@ -25,92 +28,3 @@ Once you clicked on the **Initialize** button, the extension will create a `.dem
 <Aside type="tip">
 You can change the `demo.json` filename to any other name you prefer. The extension will still recognize it. You can also create multiple files if you want to split your demos.
 </Aside>
-
-## Adding your first demo
-
-Now that you have initialized the extension, you can start adding your first demo steps.
-
-You can open the newly created `demo.json` file in the `.demo` folder manually, or you can click on the "eye" icon in the **Demo Time** view to open the demo steps editor.
-
-<Image class="mx-auto" src={openImage} alt="Open the first demo file" width="400" />
-
-The default content of the `demo.json` file looks like this:
-
-```json
-{
-  "$schema": "https://elio.dev/demo-time.schema.json",
-  "title": "Demo",
-  "description": "Demo description",
-  "demos": []
-}
-```
-
-You can start adding your demos in the `demos` array. Each demo should have the following structure:
-
-```json
-{
-  "title": "<title>",
-  "description": "<description>",
-  "steps": []
-}
-```
-
-You can also add icons to the demo to make them more recognizable.
-
-```json
-{
-  "title": "<title>",
-  "description": "<description>",
-  "icons": {
-    "start": "<name of the icon (optional)>",
-    "end": "<name of the icon (optional)>"
-  },
-  "steps": []
-}
-```
-
-<Aside type="note">
-Use the icon names you can find in the [icon listing](https://code.visualstudio.com/api/references/icons-in-labels#icon-listing) from the Visual Studio Code documentation.
-</Aside>
-
-Here is an example of a demo where you create a file and open it:
-
-```json
-{
-  "$schema": "https://elio.dev/demo-time.schema.json",
-  "title": "Demo",
-  "description": "Demo description",
-  "demos": [
-    {
-      "title": "Create and open sample.json",
-      "description": "Create a sample.json file with some content.",
-      "icons": {
-        "start": "file-code",
-        "end": "pass-filled"
-      },
-      "steps": [
-        {
-          "action": "create",
-          "path": "sample.json",
-          "content": "{\n  \"firstName\": \"Elio\",\n  \"lastName\": \"Struyf\"\n}"
-        },
-        {
-          "action": "open",
-          "path": "sample.json"
-        }
-      ]
-    }
-  ]
-}
-```
-
-## Executing the demo
-
-Each demo you add will be available in the **Demo Time** view. You can execute each step by clicking on the demo title or starting the presentation mode.
-
-<Image class="mx-auto" src={implementationImage} alt="First demo implementation" width="400" />
-
-## Implementing other demos and steps
-
-You can add more demos and steps to the `demos` array. In the [actions section](docs/actions) of the documenation, you can find all the available actions you can use to create your demos.
-

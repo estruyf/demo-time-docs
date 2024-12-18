@@ -1,0 +1,120 @@
+---
+title: Adding demos
+description: Add your demos to your demo time configuration.
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import { Image } from 'astro:assets';
+
+import openImage from "../../../assets/docs/open-first-demo.webp";
+import implementationImage from "../../../assets/docs/first-demo-implementation.webp";
+import demoStepImage from "../../../assets/docs/adding-demo-step.webp";
+
+In the [getting started](./) guide, you learned how to initialize the extension with a sample demo. In this guide, you will learn how to add your demos to the demo time configuration.
+
+## Adding your first demo
+
+Now that you have initialized the extension, you can start adding your first demo steps.
+
+You can open the newly created `demo.json` file in the `.demo` folder manually, or you can click on the "eye" icon in the **Demo Time** view to open the demo steps editor.
+
+<Image class="mx-auto" src={openImage} alt="Open the first demo file" width="400" />
+
+<Aside type="tip">
+It is a good practice to split your demos into multiple files. This way, you can keep your demos organized and easier to maintain.
+</Aside>
+
+The default content of the `demo.json` file looks like this:
+
+```json
+{
+  "$schema": "https://elio.dev/demo-time.schema.json",
+  "title": "Demo",
+  "description": "Demo description",
+  "demos": []
+}
+```
+
+You can start adding your demos in the `demos` array. Each demo should have the following structure:
+
+```json
+{
+  "title": "<title>",
+  "description": "<description>",
+  "steps": []
+}
+```
+
+You can also add icons to the demo to make them more recognizable.
+
+```json
+{
+  "title": "<title>",
+  "description": "<description>",
+  "icons": {
+    "start": "<name of the icon (optional)>",
+    "end": "<name of the icon (optional)>"
+  },
+  "steps": []
+}
+```
+
+<Aside type="note">
+Use the icon names you can find in the [icon listing](https://code.visualstudio.com/api/references/icons-in-labels#icon-listing) from the Visual Studio Code documentation.
+</Aside>
+
+Here is an example of a demo where you create a file and open it:
+
+```json
+{
+  "$schema": "https://elio.dev/demo-time.schema.json",
+  "title": "Demo",
+  "description": "Demo description",
+  "demos": [
+    {
+      "title": "Create and open sample.json",
+      "description": "Create a sample.json file with some content.",
+      "icons": {
+        "start": "file-code",
+        "end": "pass-filled"
+      },
+      "steps": [
+        {
+          "action": "create",
+          "path": "sample.json",
+          "content": "{\n  \"firstName\": \"Elio\",\n  \"lastName\": \"Struyf\"\n}"
+        },
+        {
+          "action": "open",
+          "path": "sample.json"
+        }
+      ]
+    }
+  ]
+}
+```
+
+## Using the add demo step command
+
+You can use the **Demo Time: Add as Demo Step** command to quickly add the current text selection as a demo step to insert, highlight, unselect, or delete the text.
+
+To use this command, you can follow these steps:
+
+1. Select the text you want to add as a demo step.
+2. Open the command palette by pressing <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> or <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>.
+3. Search for the **Demo Time: Add as Demo Step** command.
+4. Click on the command to add the selected text as a demo step.
+5. Select the demo file in which you want to add the step.
+6. Select the type of action you want to add (insert, highlight, unselect, or delete).
+  <Image class="mx-auto" src={demoStepImage} alt="Add a demo step from the &quot;Demo Time: Add as demo step&quot; command" />
+7. Select if you want to add it to an existing demo or create a new one.
+
+## Executing the demo
+
+Each demo you add will be available in the **Demo Time** view. You can execute each step by clicking on the demo title or starting the presentation mode.
+
+<Image class="mx-auto" src={implementationImage} alt="First demo implementation" width="400" />
+
+## Implementing other demos and steps
+
+You can add more demos and steps to the `demos` array. In the [actions section](./actions) of the documenation, you can find all the available actions you can use to create your demos.

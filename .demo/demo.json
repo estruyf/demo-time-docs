@@ -1,0 +1,26 @@
+{
+  "$schema": "https://elio.dev/demo-time.schema.json",
+  "title": "Demo",
+  "description": "Demo description",
+  "demos": [
+    {
+      "title": "Create and open sample.json",
+      "description": "Create a sample.json file with some content.",
+      "icons": {
+        "start": "file-code",
+        "end": "pass-filled"
+      },
+      "steps": [
+        {
+          "action": "create",
+          "path": "sample.json",
+          "content": "{\n  \"firstName\": \"Elio\",\n  \"lastName\": \"Struyf\"\n}"
+        },
+        {
+          "action": "open",
+          "path": "sample.json"
+        }
+      ]
+    }
+  ]
+}

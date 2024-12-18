@@ -1,3 +1,45 @@
 ---
 title: Visual Studio Code actions
+description: Perform Visual Studio Code actions in your demos like executing commands or showing an information message.
 ---
+
+import { Image } from 'astro:assets';
+
+import gearImage from "../../../../assets/docs/gear-icon-on-command.webp";
+import copyImage from "../../../../assets/docs/copy-command-id.webp";
+
+Visual Studio Code actions are used to perform actions related to Visual Studio Code in the editor. You can use these actions to execute commands, show information messages, and more.
+
+## Execute a Visual Studio Code command
+
+Execute a Visual Studio Code command using the `executeVSCodeCommand` action.
+
+```json
+{
+  "action": "executeVSCodeCommand",
+  "command": "<command to execute>",
+  "args": "<arguments to pass to the command (optional)>",
+  "path": "<relative path to the file (optional, when defined, the args property is ignored.)>"
+}
+```
+
+### How to find the command to execute
+
+You can find the command to execute by opening the command palette in Visual Studio Code (<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> or <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>) and typing the command you want to execute. The command palette will show you the available commands that match your search query.
+
+<Image class="mx-auto" src={gearImage} alt="Gear icon on the command in the command palette" />
+
+Next to the command, you can see the "gear" icon. When you click on this icon, you get redirected to the keyboard shortcuts page where you can right-click on the command and select "Copy Command ID" to copy the command ID.
+
+<Image class="mx-auto" src={copyImage} alt="Copy the command ID" />
+
+## Show an information message
+
+Show an information message in Visual Studio Code using the `showInfoMessage` action.
+
+```json
+{
+  "action": "showInfoMessage",
+  "message": "<message>"
+}
+```

@@ -1,3 +1,27 @@
 ---
 title: Time actions
+description: Perform time actions in your demos like waiting for a specific time, waiting for user input, and more.
 ---
+
+Time actions are used to perform actions related to time in the editor. You can use these actions to wait for a specific time, wait for user input, and more.
+
+## Wait for a specific time
+
+Wait for a specific time before executing the next action.
+
+```json
+{
+  "action": "waitForTimeout",
+  "timeout": "<timeout in milliseconds>"
+}
+```
+
+## Wait for user input
+
+Wait until the user presses a key.
+
+```json
+{
+  "action": "waitForInput"
+}
+```

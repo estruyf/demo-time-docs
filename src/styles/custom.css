@@ -32,3 +32,11 @@
 .site-title {
 	color: var(--sl-color-white);
 }
+
+.social-icons {
+	svg {
+		@apply h-5 w-5;
+
+		color: var(--sl-color-white);
+	}
+}

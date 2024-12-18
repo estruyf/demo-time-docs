@@ -3,27 +3,32 @@
   "frontMatter.content.pageFolders": [{
       "title": "root",
       "path": "[[workspace]]/src/content/docs",
-      "previewPath": ""
+      "previewPath": "",
+      "filePrefix": null
     },
     {
       "title": "docs",
       "path": "[[workspace]]/src/content/docs/docs",
-      "previewPath": "docs"
+      "previewPath": "docs",
+      "filePrefix": null
     },
     {
       "title": "examples",
       "path": "[[workspace]]/src/content/docs/examples",
-      "previewPath": "examples"
+      "previewPath": "examples",
+      "filePrefix": null
     },
     {
       "title": "snippets",
       "path": "[[workspace]]/src/content/docs/snippets",
-      "previewPath": "snippets"
+      "previewPath": "snippets",
+      "filePrefix": null
     },
     {
       "title": "tips",
       "path": "[[workspace]]/src/content/docs/tips",
-      "previewPath": "tips"
+      "previewPath": "tips",
+      "filePrefix": null
     }
   ]
 }

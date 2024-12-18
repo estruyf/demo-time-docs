@@ -1,0 +1,25 @@
+---
+title: Working with Variables
+description: Learn how to work with variables in Demo Time to reuse them across your demos.
+tableOfContents: false
+---
+
+You can define variables in a `variables.json` file in the `.demo` folder. Once you created the `variables.json` file and added variables/constants to it, you can use these variables in your demo steps by using curly braces `{variable_name}`.
+
+## Example variables file
+
+```json
+{
+  "SLIDES_URL": "http://localhost:3030"
+}
+```
+
+## Example usage in demo steps
+
+```json
+{
+  "action": "executeVSCodeCommand",
+  "command": "simpleBrowser.show",
+  "args": "{SLIDES_URL}"
+}
+```

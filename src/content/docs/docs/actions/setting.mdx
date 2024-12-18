@@ -1,3 +1,60 @@
 ---
 title: Setting actions
+description: Perform setting actions in your demos like update settings, change themes, and more.
 ---
+
+Setting actions are used to perform actions related to settings in the editor. You can use these actions to update settings, change themes, and more.
+
+## Update a setting
+
+Update a setting in Visual Studio Code using the `setSetting` action.
+
+```json
+{
+  "action": "setSetting",
+  "setting": {
+    "key": "<setting key>",
+    "value": "<value>"
+  }
+}
+```
+
+### Example of updating a setting
+
+Here is an example of how you can hide the activity and status bar in Visual Studio Code.
+
+```json
+{
+  "action": "setSetting",
+  "args": {
+    "setting": "workbench.statusBar.visible",
+    "value": false
+  }
+}, 
+{
+  "action": "setSetting",
+  "args": {
+    "setting": "workbench.activityBar.location",
+    "value": "hidden"
+  }
+}
+```
+
+To reset the settings, you can use the following steps:
+
+```json
+{
+  "action": "setSetting",
+  "setting": {
+    "key": "workbench.statusBar.visible",
+    "value": null
+  }
+}, 
+{
+  "action": "setSetting",
+  "setting": {
+    "key": "workbench.activityBar.location",
+    "value": null
+  }
+}
+```

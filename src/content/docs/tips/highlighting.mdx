@@ -1,0 +1,29 @@
+---
+title: Highlighting code
+description: Learn how to highlight code in Demo Time to make it stand out in your demos.
+tableOfContents: false
+---
+
+import { Image } from 'astro:assets';
+
+import defaultImage from "../../../assets/docs/default-highlight.webp";
+import customImage from "../../../assets/docs/custom-highlight.webp";
+
+By default, the extension highlights the code in a box with a red border. You can customize how you want to highlight the code with the highlight settings.
+
+<Image class="mx-auto" src={defaultImage} alt="Default code highlighting" />
+
+## Customizing the highlight
+
+Here is an example where the highlight border and background color are customized. Besides these color changes, the text which is not highlighted is blurred and its opacity is reduced to have a better focus on the highlighted code.
+
+```json
+{
+  "demoTime.highlightBorderColor": "transparent",
+  "demoTime.highlightBackground": "rgba(19, 142, 151, 0.2)",
+  "demoTime.highlightOpacity": 0.5,
+  "demoTime.highlightBlur": 2,
+}
+```
+
+<Image class="mx-auto" src={customImage} alt="Custom code highlighting colors" width="618" />

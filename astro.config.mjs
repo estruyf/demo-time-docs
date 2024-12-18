@@ -27,26 +27,36 @@ export default defineConfig({
       './src/styles/tailwind.css',
       './src/styles/custom.css',
     ],
+    lastUpdated: true,
+    editLink: {
+      baseUrl: 'https://github.com/estruyf/demo-time-astro/edit/main/',
+    },
     sidebar: [
       {
         label: 'Documentation',
         items: [
-          { label: 'Get started', slug: 'docs' },
-          { label: 'Commands', slug: 'docs/commands' },
-          { label: 'Settings', slug: 'docs/settings' },
+          { label: 'Getting started', slug: 'docs' },
+          { label: 'Adding demos', slug: 'docs/adding-demos' },
         ],
       },
       {
         label: 'Actions',
         items: [
           { label: 'File actions', slug: 'docs/actions/file' },
-          { label: 'Code actions', slug: 'docs/actions/code' },
+          { label: 'Text actions', slug: 'docs/actions/text' },
           { label: 'Setting actions', slug: 'docs/actions/setting' },
-          { label: 'Snippet actions', slug: 'docs/actions/snippet' },
           { label: 'Terminal actions', slug: 'docs/actions/terminal' },
           { label: 'Time actions', slug: 'docs/actions/time' },
           { label: 'VS Code actions', slug: 'docs/actions/vscode' },
+          { label: 'Snippet actions', slug: 'docs/actions/snippet' },
         ],
+      },
+      {
+        label: 'References',
+        items: [
+          { label: 'Commands', slug: 'references/commands' },
+          { label: 'Settings', slug: 'references/settings' },
+        ]
       },
       {
         label: 'Tips & Tricks',
@@ -54,8 +64,7 @@ export default defineConfig({
           { label: 'Adding content', slug: 'tips/adding-content' },
           { label: 'Highlight code', slug: 'tips/highlighting' },
           { label: 'Working with variables', slug: 'tips/variables' },
-          { label: 'Positioning', slug: 'tips/positioning' },
-          { label: 'Presentation view', slug: 'tips/presentation-view' },
+          { label: 'Presenter View', slug: 'tips/presenter-view' },
         ],
       },
       {
@@ -67,8 +76,12 @@ export default defineConfig({
       {
         label: 'Examples',
         items: [
-          { label: 'Sample projects', slug: 'examples' },
+          { label: 'Projects', slug: 'examples' },
         ],
+      },
+      {
+        label: 'Support the project ❤️',
+        link: 'docs/support'
       }
     ],
   }),

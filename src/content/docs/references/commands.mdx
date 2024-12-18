@@ -1,0 +1,26 @@
+---
+title: Commands
+description: Overview of all the Demo Time commands available in the editor.
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+Here is a list of all the commands available in Demo Time.
+
+| Command | Description |
+| --- | --- |
+| `Demo Time: Start` | Starts the demo or runs the next demo step. |
+| `Demo Time: Previous` | Go back to the previous demo step (only in presentation mode and when the `demoTime.previousEnabled` setting is enabled). |
+| `Demo Time: Add as demo step` | Add the current selection as a demo step to the demo file. |
+| `Demo Time: Reset` | Reset all the demos. |
+| `Demo Time: Start countdown` | Start the countdown clock (you need to define the time in the `demoTime.timer` setting). |
+| `Demo Time: Reset countdown` | Reset the countdown clock. |
+| `Demo Time: Toggle presentation mode` | Toggle the presentation mode. In this mode you'll be able to use your clicker or arrow keys for the `Demo Time: Start` and `Demo Time: Previous` commands. |
+| `Demo Time: Show presenter view` | Open the presenter view which you can detach and move to another screen while presenting. |
+
+<Aside>
+The `Demo Time: Start` and `Demo Time: Previous` commands have a keybinding assigned to them.
+
+You can override these keybindings in your Visual Studio Code settings.
+</Aside>
+
