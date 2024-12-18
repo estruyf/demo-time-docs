@@ -8,6 +8,7 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   site: 'https://estruyf.github.io',
   base: 'demo-time-astro',
+	trailingSlash: 'always',
   integrations: [starlight({
     logo: {
       src: '/src/assets/demotime.svg',
