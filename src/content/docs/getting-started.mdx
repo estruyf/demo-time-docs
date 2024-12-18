@@ -3,8 +3,7 @@ title: Getting started
 description: Get started with Demo Time
 ---
 
-import { Aside } from '@astrojs/starlight/components';
-import { LinkButton } from '@astrojs/starlight/components';
+import { Card, CardGrid, LinkButton, Aside } from '@astrojs/starlight/components';
 import { Image } from 'astro:assets';
 
 import initializeImage from "../../assets/docs/initialize.webp";
@@ -16,6 +15,12 @@ You can install the extension via the following link:
 <LinkButton href="vscode:extension/eliostruyf.vscode-front-matter">Install the extension</LinkButton>
 
 Or you can search for "Demo Time" in the extensions panel in Visual Studio Code.
+
+<Aside title='Watch the video'>
+Watch the video to learn more about why Demo Time was created and how it can help you.
+
+<iframe width="720" class="!h-[400px]" src="https://www.youtube.com/embed/l2dTaHsvJ14?si=h92yoNiiHllwj_c8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</Aside>
 
 ## Initialize the extension
 
