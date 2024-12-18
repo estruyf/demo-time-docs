@@ -67,6 +67,7 @@ export default defineConfig({
           { label: 'Working with variables', slug: 'tips/variables' },
           { label: 'Presenter view', slug: 'tips/presenter-view' },
           { label: 'Activity bar action', slug: 'tips/move-to-activity-bar' },
+          { label: 'Using clock and timer', slug: 'tips/time-your-presentation' },
         ],
       },
       {
