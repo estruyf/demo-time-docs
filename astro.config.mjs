@@ -6,8 +6,8 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://estruyf.github.io/demo-time-astro',
-  base: 'demo-time-astro',
+  site: 'https://estruyf.github.io/demo-time-docs',
+  base: 'demo-time-docs',
 	trailingSlash: 'always',
   integrations: [starlight({
     logo: {
@@ -30,7 +30,7 @@ export default defineConfig({
     ],
     lastUpdated: true,
     editLink: {
-      baseUrl: 'https://github.com/estruyf/demo-time-astro/edit/main/',
+      baseUrl: 'https://github.com/estruyf/demo-time-docs/edit/main/',
     },
     sidebar: [
       {
