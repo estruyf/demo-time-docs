@@ -6,7 +6,7 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://estruyf.github.io',
+  site: 'https://estruyf.github.io/demo-time-astro',
   base: 'demo-time-astro',
 	trailingSlash: 'always',
   integrations: [starlight({
