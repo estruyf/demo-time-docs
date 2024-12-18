@@ -36,20 +36,20 @@ export default defineConfig({
       {
         label: 'Documentation',
         items: [
-          { label: 'Getting started', slug: 'docs' },
-          { label: 'Adding demos', slug: 'docs/adding-demos' },
+          { label: 'Getting started', slug: 'getting-started' },
+          { label: 'Adding demos', slug: 'adding-demos' },
         ],
       },
       {
         label: 'Actions',
         items: [
-          { label: 'File actions', slug: 'docs/actions/file' },
-          { label: 'Text actions', slug: 'docs/actions/text' },
-          { label: 'Setting actions', slug: 'docs/actions/setting' },
-          { label: 'Terminal actions', slug: 'docs/actions/terminal' },
-          { label: 'Time actions', slug: 'docs/actions/time' },
-          { label: 'VS Code actions', slug: 'docs/actions/vscode' },
-          { label: 'Snippet actions', slug: 'docs/actions/snippet' },
+          { label: 'File actions', slug: 'actions/file' },
+          { label: 'Text actions', slug: 'actions/text' },
+          { label: 'Setting actions', slug: 'actions/setting' },
+          { label: 'Terminal actions', slug: 'actions/terminal' },
+          { label: 'Time actions', slug: 'actions/time' },
+          { label: 'VS Code actions', slug: 'actions/vscode' },
+          { label: 'Snippet actions', slug: 'actions/snippet' },
         ],
       },
       {
@@ -82,7 +82,7 @@ export default defineConfig({
       },
       {
         label: 'Support the project ❤️',
-        link: 'docs/support'
+        link: 'support'
       }
     ],
   }),

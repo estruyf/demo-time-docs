@@ -38,6 +38,19 @@ const isProd = import.meta.env.PROD;
 		<SocialIcons />
 	</div>
 
+	<div class="flex justify-center">
+		<p class="flex items-baseline gap-x-2 text-sm text-[var(--sl-color-gray-2)]">
+			Brought to you by 
+			<a 
+				class="group relative isolate flex items-center rounded-lg px-2 py-0.5 font-medium text-[var(--sl-color-white)] transition-colors hover:text-[#FFD23F] gap-x-2"
+				href="https://www.eliostruyf.com"
+				title="Elio Struyf">
+				<span class="absolute inset-0 -z-10 scale-75 rounded-lg bg-[var(--sl-color-white)]/5 opacity-0 transition group-hover:scale-100 group-hover:opacity-100"></span>
+				<span class="self-baseline text-[var(--sl-color-white)]">Elio Struyf</span>
+			</a>
+		</p>
+	</div>
+
 	{
 		config.credits && (
 			<a class="kudos sl-flex" href="https://starlight.astro.build">
