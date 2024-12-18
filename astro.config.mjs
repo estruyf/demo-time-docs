@@ -37,6 +37,7 @@ export default defineConfig({
         items: [
           { label: 'Getting started', slug: 'getting-started' },
           { label: 'Adding demos', slug: 'adding-demos' },
+          { label: 'Presentation mode', slug: 'presentation-mode' },
         ],
       },
       {
@@ -64,7 +65,8 @@ export default defineConfig({
           { label: 'Adding content', slug: 'tips/adding-content' },
           { label: 'Highlight code', slug: 'tips/highlighting' },
           { label: 'Working with variables', slug: 'tips/variables' },
-          { label: 'Presenter View', slug: 'tips/presenter-view' },
+          { label: 'Presenter view', slug: 'tips/presenter-view' },
+          { label: 'Activity bar action', slug: 'tips/move-to-activity-bar' },
         ],
       },
       {
