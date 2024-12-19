@@ -80,6 +80,7 @@ export default defineConfig({
         label: 'Examples',
         items: [
           { label: 'Projects', slug: 'examples' },
+          { label: 'Showcases', slug: 'examples/showcases' },
         ],
       },
       {

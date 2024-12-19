@@ -1,0 +1,32 @@
+---
+title: Showcases
+description: Showcases of where Demo Time is used.
+tableOfContents: false
+---
+
+import { LinkCard, CardGrid } from '@astrojs/starlight/components';
+import LinkCardIcon from "../../../components/LinkCardIcon.astro";
+
+
+Here you can find a list of showcases where Demo Time is used.
+
+<CardGrid>
+  <LinkCardIcon 
+    title="Developer's guide to building your own agents | BRK 167"
+    description='A session by Sebastien Levert at Ignite 2024 in which Demo Time is used to highlight the code during his session.'
+    icon="youtube"
+    iconSize='24px'
+    href="https://www.youtube.com/watch?v=yb72XC3ujdI" />
+  <LinkCardIcon 
+    title="It is Demo Time; how to make your live code demos smoother"
+    description='Blog post by Elio Struyf about why Demo Time was created.'
+    icon="open-book"
+    iconSize='24px'
+    href="https://www.eliostruyf.com/demo-time-live-code-demos-smoother/" />
+  <LinkCardIcon 
+    title="Level Up Your Presentations: Slidev & Demo Time in VS Code"
+    description='Blog post by Elio Struyf about how he uses Slidev and Demo Time together.'
+    icon="open-book"
+    iconSize='24px'
+    href="https://www.eliostruyf.com/level-presentations-slidev-demo-time-code/" />
+</CardGrid>
