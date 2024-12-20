@@ -84,6 +84,10 @@ export default defineConfig({
         ],
       },
       {
+        label: 'Contributing',
+        link: 'contribute'
+      },
+      {
         label: 'Support the project ❤️',
         link: 'support'
       }
