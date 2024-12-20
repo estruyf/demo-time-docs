@@ -11,11 +11,50 @@ Most of these actions make use of the `path` property to specify the location of
 
 For the `position` property, you can use the following values:
 
-- `number`: The line number where the action should be performed.
-- `number:number`: The start and end line numbers where the action should be performed.
+- `number`: The line number
+- `number:number`: The start and end line number
+- `number,number`: The start line and character
+- `number,number:number,number`: The start line and character and the end line and character
 - The `start` and `end` keywords can also be used instead of the line numbers
   - `start` will be replaced by the first line number
   - `end` will be replaced by the last line number
+
+Examples:
+
+```jsonc
+"position": "10" // Line 10
+"position": "10:20" // Lines 10 to 20
+"position": "10,5" // Start line 10, character 5
+"position": "10,5:20,10" // Start line 10, character 5 to end line 20, character 10
+```
+
+## Highlight text
+
+Highlight text in the editor at a specific location.
+
+```json
+{
+  "action": "highlight",
+  "path": "<relative path to the file>",
+  "position": "<position>"
+}
+```
+
+<Aside>
+Check out the <a href="../../references/settings" title="settings">settings</a> section to customize the highlight colors.
+</Aside>
+
+## Position cursor
+
+Position your cursor in the editor at a specific location.
+
+```json
+{
+  "action": "positionCursor",
+  "path": "<relative path to the file>",
+  "position": "<position>"
+}
+```
 
 ## Insert text
 
@@ -25,7 +64,7 @@ Insert text in the editor at a specific location.
 {
   "action": "insert",
   "path": "<relative path to the file>",
-  "position": "<line number> or <start line number>:<end line number>",
+  "position": "<position>",
   "content": "<content of the file> (optional)",
   "contentPath": "<relative path to the file in the .demo folder> (optional)",
   "lineInsertionDelay": "<delay in milliseconds to insert each line> (optional)"
@@ -40,28 +79,32 @@ Replace text in the editor at a specific location.
 {
   "action": "replace",
   "path": "<relative path to the file>",
-  "position": "<line number> or <start line number>:<end line number>",
+  "position": "<position>",
   "content": "<content of the file> (optional)",
   "contentPath": "<relative path to the file in the .demo folder> (optional)",
   "lineInsertionDelay": "<delay in milliseconds to insert each line> (optional)"
 }
 ```
 
-## Highlight text
+## Write single line
 
-Highlight text in the editor at a specific location.
+Write a single line of text in the editor at the current location or specific location.
 
-```json
+```jsonc
+// Write to current active position
 {
-  "action": "highlight",
+  "action": "write",
+  "content": "Hello World"
+}
+
+// Write to a specific position in a file
+{
+  "action": "write",
+  "content": "Hello World",
   "path": "<relative path to the file>",
-  "position": "<line number> or <start line number>:<end line number>"
+  "position": "<position>"
 }
 ```
-
-<Aside>
-Check out the <a href="../../references/settings" title="settings">settings</a> section to customize the highlight colors.
-</Aside>
 
 ## Unselect text
 
@@ -82,6 +125,6 @@ Delete text in the editor at a specific location.
 {
   "action": "delete",
   "path": "<relative path to the file>",
-  "position": "<line number> or <start line number>:<end line number>"
+  "position": "<position>"
 }
 ```
