@@ -53,3 +53,26 @@ To save the current file in the editor, use the `save` action.
   "action": "save"
 }
 ```
+
+## Rename file
+
+To rename a file in the editor, use the `rename` action. The `rename` action takes a file `path` and a `dest` argument.
+
+```json
+{
+  "action": "rename",
+  "path": "<relative path to the file>",
+  "dest": "<new name/path of the file>"
+}
+```
+
+## Delete file
+
+To delete a file in the editor, use the `deleteFile` action. The `deleteFile` action takes a file `path` as an argument.
+
+```json
+{
+  "action": "delete",
+  "path": "<relative path to the file>"
+}
+```
