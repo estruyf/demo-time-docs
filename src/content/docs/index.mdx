@@ -17,8 +17,9 @@ hero:
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
+import Reviewers from '../../components/Reviewers.astro';
 
-## Features
+<h2 class="mb-8">Features</h2>
 
 <CardGrid stagger>
 	<Card title="Script your demos to avoid misstep" icon="rocket">
@@ -37,3 +38,5 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 		Customize the extension to fit your needs, including the ability to change the keybindings.
 	</Card>
 </CardGrid>
+
+<Reviewers />
