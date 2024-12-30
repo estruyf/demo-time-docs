@@ -6,6 +6,7 @@
     "path": "src/assets",
     "relative": true
   },
+  "frontMatter.content.autoUpdateDate": true,
   "frontMatter.content.defaultFileType": "mdx",
   "frontMatter.extends": [
     ".frontmatter/starlight/contenttypes.json",
