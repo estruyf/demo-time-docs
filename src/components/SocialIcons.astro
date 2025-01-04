@@ -1,7 +1,7 @@
 ---
 import type { Props } from '@astrojs/starlight/props'
 import Default from '@astrojs/starlight/components/SocialIcons.astro'
-import Stargazers from './Stargazers.astro'
+import Stargazers from './Stargazers.tsx'
 ---
 
 <!-- Add custom social link with its SVG icon and a label. -->
@@ -16,7 +16,7 @@ import Stargazers from './Stargazers.astro'
 <!-- Render the default social links. -->
 <Default {...Astro.props}><slot /></Default>
 
-<Stargazers />
+<Stargazers client:only />
 
 <!-- Add styles to mimic the default links appearance. -->
 <style>
