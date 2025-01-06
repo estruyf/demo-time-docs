@@ -3,7 +3,7 @@
   "$id": "https://demotime.elio.dev/demo-time.schema.json",
   "title": "Demo Time - Schema",
   "description": "The schema for the Demo Time - VSCode extension",
-  "lastModified": "2024-12-27",
+  "lastModified": "2025-01-06",
   "type": "object",
   "properties": {
     "title": {
@@ -50,11 +50,13 @@
                 "action": {
                   "type": "string",
                   "enum": [
-                    "create", 
-                    "open", 
-                    "rename", 
-                    "deleteFile", 
-                    "markdownPreview", 
+                    "create",
+                    "open",
+                    "rename",
+                    "deleteFile",
+                    "close",
+                    "closeAll",
+                    "markdownPreview",
                     "insert",
                     "highlight", 
                     "replace",
@@ -121,15 +123,33 @@
                   "type": "object",
                   "properties": {
                     "key": {
-                      "type": "string"
+                      "type": "string",
+                      "description": "The setting key"
                     },
                     "value": {
-                      "type": ["string", "number", "boolean", "object", "array", "null"]
+                      "type": ["string", "number", "boolean", "object", "array", "null"],
+                      "description": "The setting value"
                     }
                   },
                   "required": [
                     "key",
                     "value"
+                  ]
+                },
+                "notes": {
+                  "type": "object",
+                  "properties": {
+                    "path": {
+                      "type": "string",
+                      "description": "Path to the file to open"
+                    },
+                    "showOnTrigger": {
+                      "type": "boolean",
+                      "description": "Show the notes when the trigger is activated. Default is false."
+                    }
+                  },
+                  "required": [
+                    "path"
                   ]
                 }
               },

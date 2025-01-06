@@ -116,6 +116,24 @@ Each demo you add will be available in the **Demo Time** view. You can execute e
 
 <Image class="mx-auto" src={implementationImage} alt="First demo implementation" width="400" />
 
+## Adding notes to your demos
+
+You are also able to add notes to your demos. These notes can be used to provide additional information for yourself or others who will be executing the demo.
+
+The notes should be created as a markdown file in the `.demo` folder. Here is an example of how you can add notes to your demo:
+
+```json
+{
+  "title": "<title>",
+  "description": "<description>",
+  "steps": [...],
+  "notes": {
+    "path": "<relative path in the .demo folder>",
+    "showOnTrigger": "<show notes on trigger (optional) - default is false>"
+  }
+}
+```
+
 ## Implementing other demos and steps
 
 You can add more demos and steps to the `demos` array. In the [actions section](/actions/) of the documenation, you can find all the available actions you can use to create your demos.

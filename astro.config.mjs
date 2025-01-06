@@ -70,6 +70,7 @@ export default defineConfig({
           { label: 'Presenter view', slug: 'tips/presenter-view' },
           { label: 'Activity bar action', slug: 'tips/move-to-activity-bar' },
           { label: 'Using clock and timer', slug: 'tips/time-your-presentation' },
+          { label: 'Providing demo notes', slug: 'tips/providing-demo-notes' },
         ],
       },
       {
