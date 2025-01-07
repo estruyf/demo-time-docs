@@ -135,22 +135,6 @@
                     "key",
                     "value"
                   ]
-                },
-                "notes": {
-                  "type": "object",
-                  "properties": {
-                    "path": {
-                      "type": "string",
-                      "description": "Path to the file to open"
-                    },
-                    "showOnTrigger": {
-                      "type": "boolean",
-                      "description": "Show the notes when the trigger is activated. Default is false."
-                    }
-                  },
-                  "required": [
-                    "path"
-                  ]
                 }
               },
               "required": [
@@ -302,6 +286,22 @@
               }],
               "additionalProperties": false
             }
+          },
+          "notes": {
+            "type": "object",
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "Path to the file to open"
+              },
+              "showOnTrigger": {
+                "type": "boolean",
+                "description": "Show the notes when the trigger is activated. Default is false."
+              }
+            },
+            "required": [
+              "path"
+            ]
           }
         },
         "required": [
