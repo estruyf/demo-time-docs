@@ -3,7 +3,7 @@
   "$id": "https://demotime.elio.dev/demo-time.schema.json",
   "title": "Demo Time - Schema",
   "description": "The schema for the Demo Time - VSCode extension",
-  "lastModified": "2025-01-06",
+  "lastModified": "2025-01-07",
   "type": "object",
   "properties": {
     "title": {
