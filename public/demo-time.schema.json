@@ -3,7 +3,7 @@
   "$id": "https://demotime.elio.dev/demo-time.schema.json",
   "title": "Demo Time - Schema",
   "description": "The schema for the Demo Time - VSCode extension",
-  "lastModified": "2025-01-07",
+  "lastModified": "2025-01-08",
   "type": "object",
   "properties": {
     "title": {
@@ -56,6 +56,8 @@
                     "deleteFile",
                     "close",
                     "closeAll",
+                    "copy",
+                    "move",
                     "markdownPreview",
                     "insert",
                     "highlight", 
@@ -114,6 +116,10 @@
                 "lineInsertionDelay": {
                   "type": "number",
                   "title": "Speed in milliseconds to insert each line. If not defined, the \"demoTime.lineInsertionDelay\" setting will be used. To turn off the line insertion effect, set it to 0."
+                },
+                "overwrite": {
+                  "type": "boolean",
+                  "title": "Overwrite the destination file if it exists. Default is false."
                 },
                 "args": {
                   "type": ["object", "array", "string", "number", "boolean"],
@@ -206,7 +212,7 @@
                 "if": {
                   "properties": {
                     "action": {
-                      "const": "rename"
+                      "enum": ["rename", "copy", "move"]
                     }
                   }
                 },

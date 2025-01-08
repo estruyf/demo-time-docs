@@ -1,6 +1,7 @@
 ---
 title: File actions
 description: File actions are used to open, create, or preview files in the editor.
+lastmod: 2025-01-08T11:21:30.730Z
 ---
 
 File actions are used to open, create, or preview files in the editor.
@@ -62,7 +63,34 @@ To rename a file in the editor, use the `rename` action. The `rename` action tak
 {
   "action": "rename",
   "path": "<relative path to the file>",
-  "dest": "<new name/path of the file>"
+  "dest": "<new name/path of the file>",
+  "overwrite": "<true/false> (optional - default is false)"
+}
+```
+
+## Move file
+
+To move a file in the editor, use the `move` action. The `move` action takes a file `path` and a `dest` argument.
+
+```json
+{
+  "action": "move",
+  "path": "<relative path to the file>",
+  "dest": "<new name/path of the file>",
+  "overwrite": "<true/false> (optional - default is false)"
+}
+```
+
+## Copy file
+
+To copy a file in the editor, use the `copy` action. The `copy` action takes a file `path` and a `dest` argument.
+
+```json
+{
+  "action": "copy",
+  "path": "<relative path to the file>",
+  "dest": "<new name/path of the file>",
+  "overwrite": "<true/false> (optional - default is false)"
 }
 ```
 
