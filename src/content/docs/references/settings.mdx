@@ -1,7 +1,7 @@
 ---
 title: Settings
 description: Customize the settings of Demo Time to fit your needs.
-lastmod: 2024-12-30T21:46:29.937Z
+lastmod: 2025-01-08T12:13:23.820Z
 ---
 
 import { Aside } from '@astrojs/starlight/components';
@@ -18,7 +18,7 @@ Here is a list of all the settings available in Demo Time.
 | `demoTime.previousEnabled` | Enable the previous command when in presentation mode. | `false` |
 | `demoTime.showClock` | Show a clock in the status bar. | `true` |
 | `demoTime.timer` | Count down timer for how long the session should last. If not set, it will not count down. The value is the number of minutes. | `null` |
-| `demoTime.insertLineSpeed` | The speed in milliseconds for inserting lines. If you set it to `0`, it will insert its content immediately. | `25` |
+| `demoTime.lineInsertionDelay` | The speed in milliseconds for inserting lines. If you set it to `0`, it will insert its content immediately. | `25` |
 
 <Aside>
 The `demoTime.previousEnabled` is by default disabled to avoid conflicts when the previous action inserted content into a file.
