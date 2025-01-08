@@ -2,8 +2,10 @@
 title: Highlighting code
 description: Learn how to highlight code in Demo Time to make it stand out in your demos.
 tableOfContents: false
+lastmod: 2025-01-08T15:52:14.252Z
 ---
 
+import { Code } from '@astrojs/starlight/components';
 import { Image } from 'astro:assets';
 
 import defaultImage from "../../../assets/docs/default-highlight.webp";
@@ -17,13 +19,13 @@ By default, the extension highlights the code in a box with a red border. You ca
 
 Here is an example where the highlight border and background color are customized. Besides these color changes, the text which is not highlighted is blurred and its opacity is reduced to have a better focus on the highlighted code.
 
-```json
-{
-  "demoTime.highlightBorderColor": "transparent",
-  "demoTime.highlightBackground": "rgba(19, 142, 151, 0.2)",
-  "demoTime.highlightOpacity": 0.5,
-  "demoTime.highlightBlur": 2,
-}
-```
+<Code code={`{
+    "demoTime.highlightBorderColor": "transparent",
+    "demoTime.highlightBackground": "rgba(19, 142, 151, 0.2)",
+    "demoTime.highlightOpacity": 0.5,
+    "demoTime.highlightBlur": 2,
+}`} 
+  lang="json" 
+  title={`.vscode/settings.json`} />
 
 <Image class="mx-auto" src={customImage} alt="Custom code highlighting colors" width="618" />
