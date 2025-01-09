@@ -1,6 +1,7 @@
 ---
 title: Terminal actions
 description: Perform terminal actions in your demos like running commands, clearing the terminal, and more.
+lastmod: 2025-01-09T15:20:22.231Z
 ---
 
 Terminal actions are used to perform actions related to the terminal in the editor. You can use these actions to run commands, clear the terminal, and more.
@@ -12,6 +13,18 @@ Execute a terminal command in the terminal.
 ```json
 {
   "action": "executeTerminalCommand",
-  "command": "<command to execute>"
+  "command": "<command to execute>",
+  "terminalId": "<terminal id (optional)>"
+}
+```
+
+## Close a terminal
+
+Close the terminal.
+
+```json
+{
+  "action": "closeTerminal",
+  "terminalId": "<terminal id (optional)>"
 }
 ```

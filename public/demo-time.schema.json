@@ -73,6 +73,7 @@
                     "executeVSCodeCommand",
                     "showInfoMessage",
                     "executeTerminalCommand",
+                    "closeTerminal",
                     "snippet"
                   ],
                   "title": "Action to perform"
@@ -120,6 +121,10 @@
                 "overwrite": {
                   "type": "boolean",
                   "title": "Overwrite the destination file if it exists. Default is false."
+                },
+                "terminalId": {
+                  "type": "string",
+                  "title": "Define the name for the terminal. Default is \"DemoTime\"."
                 },
                 "args": {
                   "type": ["object", "array", "string", "number", "boolean"],
