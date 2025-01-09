@@ -22,7 +22,7 @@ export default function Stargazers() {
         href={`https://github.com/estruyf/vscode-demo-time`}
         className={`h-full flex items-center bg-[var(--sl-color-white)] text-[var(--sl-color-black)] p-2 text-xs font-bold group-hover:bg-whisper-700 rounded no-underline`}
         title={`Give the project a star on GitHub`}>
-        <GitHub className={`h-4 w-4 mr-1 !text-[var(--sl-color-black)]`} />
+        <GitHub className={`h-[20px] w-[20px] mr-1 !text-[var(--sl-color-black)]`} />
         <span>Star</span>
       </a>
     
