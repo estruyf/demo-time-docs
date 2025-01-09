@@ -4,6 +4,7 @@
   "description": "Demo description",
   "demos": [
     {
+      "id": "demo1",
       "title": "Create and open sample.json",
       "description": "Create a sample.json file with some content.",
       "icons": {
@@ -19,6 +20,22 @@
         {
           "action": "open",
           "path": "sample.json"
+        }
+      ]
+    },
+    {
+      "title": "Copy sample.json",
+      "description": "",
+      "icons": {
+        "start": "file-code",
+        "end": "pass-filled"
+      },
+      "steps": [
+        {
+          "action": "copy",
+          "path": "sample.json",
+          "dest": "sample1.json",
+          "overwrite": true
         }
       ]
     }

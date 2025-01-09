@@ -1,9 +1,12 @@
 ---
 title: API
 description: Demo Time provides an API to control the extension programmatically.
-lastmod: 2025-01-09T08:27:02.673Z
+lastmod: 2025-01-09T10:44:30.678Z
 tableOfContents: false
 ---
+
+import { Image } from 'astro:assets';
+import apiPortImg from "../../../assets/docs/api-port.webp";
 
 The extension provides an API which you can use to control the extension. 
 
@@ -12,6 +15,10 @@ You can enable the API by setting the `demoTime.api.enabled` setting to `true`.
 Once the API is enabled, it will run on the port defined in the `demoTime.api.port` setting.
 
 API URL: `http://localhost:3710/api/next`
+
+Once enabled, it shows the API and its port number in the status bar of Visual Studio Code.
+
+<Image class="mx-auto" src={apiPortImg} alt="API enabled with port 3710" width="400" />
 
 ## API endpoints
 

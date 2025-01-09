@@ -85,6 +85,12 @@ export default defineConfig({
           ],
         },
         {
+          label: 'Integrations',
+          items: [
+            { label: 'Slidev', slug: 'integrations/slidev' },
+          ]
+        },
+        {
           label: 'Snippets',
           items: [
             { label: 'Snippets', slug: 'snippets' },
