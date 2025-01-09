@@ -1,0 +1,52 @@
+---
+title: API
+description: Demo Time provides an API to control the extension programmatically.
+lastmod: 2025-01-09T08:27:02.673Z
+tableOfContents: false
+---
+
+The extension provides an API which you can use to control the extension. 
+
+You can enable the API by setting the `demoTime.api.enabled` setting to `true`. 
+
+Once the API is enabled, it will run on the port defined in the `demoTime.api.port` setting.
+
+API URL: `http://localhost:3710/api/next`
+
+## API endpoints
+
+### `/api/next`
+
+This endpoint will execute the next step in the demo.
+
+- Method: `GET`
+- Query parameters:
+  - `bringToFront`: Bring the Visual Studio Code window to the front. Default is `false`.
+
+### `/api/runById`
+
+This endpoint will execute a specific step by its ID in your demo.
+
+You can call this endpoint via a `GET` or `POST` request.
+
+#### GET request
+
+- Method: `GET`
+- Query parameters:
+  - `id`: The ID of the step you want to
+  - `bringToFront`: Bring the Visual Studio Code window to the front. Default is `false`.
+
+#### POST request
+
+- Method: `POST`
+- Body:
+
+  ```json
+  {
+    "id": "<step id>",
+    "bringToFront": "<bring the Visual Studio Code window to the front (optional) - default is false>"
+  }
+  ```
+
+- Headers:
+  - `Content-Type: application/json`

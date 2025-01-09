@@ -69,6 +69,7 @@ export default defineConfig({
           items: [
             { label: 'Commands', slug: 'references/commands' },
             { label: 'Settings', slug: 'references/settings' },
+            { label: 'API', slug: 'references/api' },
           ]
         },
         {
