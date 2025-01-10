@@ -3,7 +3,7 @@
   "$id": "https://demotime.elio.dev/demo-time.schema.json",
   "title": "Demo Time - Schema",
   "description": "The schema for the Demo Time - VSCode extension",
-  "lastModified": "2025-01-08",
+  "lastModified": "2025-01-10",
   "type": "object",
   "properties": {
     "title": {
@@ -93,6 +93,14 @@
                 "position": {
                   "type": ["string", "number"],
                   "title": "Position in the file. Can be line number or \"<start line>,<start character>\" or \"<start line>:<end line>\" or \"<start line>,<start character>:<end line>,<end character>\"."
+                },
+                "startPlaceholder": {
+                  "type": "string",
+                  "title": "Start placeholder value for the start position"
+                },
+                "endPlaceholder": {
+                  "type": "string",
+                  "title": "End placeholder value for the end position"
                 },
                 "timeout": {
                   "type": "number",
@@ -187,8 +195,7 @@
                 },
                 "then": {
                   "required": [
-                    "path",
-                    "position"
+                    "path"
                   ],
                   "oneOf": [{
                     "required": [
@@ -250,8 +257,7 @@
                 },
                 "then": {
                   "required": [
-                    "path",
-                    "position"
+                    "path"
                   ]
                 }
               }, {
@@ -277,8 +283,7 @@
                 },
                 "then": {
                   "required": [
-                    "path",
-                    "position"
+                    "path"
                   ]
                 }
               }, {
