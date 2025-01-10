@@ -76,6 +76,7 @@ export default defineConfig({
           label: 'Tips & Tricks',
           items: [
             { label: 'Adding content', slug: 'tips/adding-content' },
+            { label: 'Adding steps to your demo', slug: 'tips/adding-steps' },
             { label: 'Highlight code', slug: 'tips/highlighting' },
             { label: 'Working with variables', slug: 'tips/variables' },
             { label: 'Presenter view', slug: 'tips/presenter-view' },

@@ -1,14 +1,23 @@
 ---
 title: Text actions
 description: Text actions are used to insert, replace, highlight, delete or unselect text in the editor.
-lastmod: 2024-12-30T21:46:35.099Z
+lastmod: 2025-01-10T18:00:22.027Z
 ---
 
 import { Aside } from '@astrojs/starlight/components';
 
 Text actions are used to insert, replace, highlight, delete or unselect text in the editor.
 
-Most of these actions make use of the `path` property to specify the location of the file, and the `position` property to specify the location where the action should be performed.
+Most of these actions make use of the `path` property to specify the location of the file. 
+
+## Positioning text/code
+
+For the positioning of the text to insert, there are two options:
+
+- Use the `position` property to specify the location where the action should be performed. With this property, you can specify the line number, character position, or a range of lines and characters.
+- Use the `startPlaceholder` and `endPlaceholder` properties to specify the text to search for in the file to determine the location where the action should be performed.
+
+### Line position or range
 
 For the `position` property, you can use the following values:
 
@@ -29,15 +38,48 @@ Examples:
 "position": "10,5:20,10" // Start line 10, character 5 to end line 20, character 10
 ```
 
+### Placeholder position
+
+For the `startPlaceholder` and `endPlaceholder` properties, you specify the text to search for in the file.
+
+Examples:
+
+```jsonc
+"startPlaceholder": "// Start of demo1"
+"endPlaceholder": "// End of demo1"
+```
+
+<Aside>
+The text will be replaced from the start of the `startPlaceholder` to the end of the `endPlaceholder`.
+</Aside>
+
+In the file, the placeholders should be defined like this:
+
+```javascript
+// Start of demo1
+const ext = 'Demo Time';
+// End of demo1
+```
+
 ## Highlight text
 
 Highlight text in the editor at a specific location.
 
 ```json
+// Via position
 {
   "action": "highlight",
   "path": "<relative path to the file>",
   "position": "<position>",
+  "zoom": "<zoom level> (optional)"
+}
+
+// Via placeholders
+{
+  "action": "highlight",
+  "path": "<relative path to the file>",
+  "startPlaceholder": "<start placeholder>",
+  "endPlaceholder": "<end placeholder>",
   "zoom": "<zoom level> (optional)"
 }
 ```
@@ -51,10 +93,18 @@ Check out the <a href="../../references/settings" title="settings">settings</a> 
 Position your cursor in the editor at a specific location.
 
 ```json
+// Via position
 {
   "action": "positionCursor",
   "path": "<relative path to the file>",
   "position": "<position>"
+}
+
+// Via start placeholder
+{
+  "action": "positionCursor",
+  "path": "<relative path to the file>",
+  "startPlaceholder": "<start placeholder>",
 }
 ```
 
@@ -63,10 +113,22 @@ Position your cursor in the editor at a specific location.
 Insert text in the editor at a specific location.
 
 ```json
+// Via position
 {
   "action": "insert",
   "path": "<relative path to the file>",
   "position": "<position>",
+  "content": "<content of the file> (optional)",
+  "contentPath": "<relative path to the file in the .demo folder> (optional)",
+  "lineInsertionDelay": "<delay in milliseconds to insert each line> (optional)"
+}
+
+// Via placeholders
+{
+  "action": "insert",
+  "path": "<relative path to the file>",
+  "startPlaceholder": "<start placeholder>",
+  "endPlaceholder": "<end placeholder>",
   "content": "<content of the file> (optional)",
   "contentPath": "<relative path to the file in the .demo folder> (optional)",
   "lineInsertionDelay": "<delay in milliseconds to insert each line> (optional)"
@@ -78,10 +140,22 @@ Insert text in the editor at a specific location.
 Replace text in the editor at a specific location.
 
 ```json
+// Via position
 {
   "action": "replace",
   "path": "<relative path to the file>",
   "position": "<position>",
+  "content": "<content of the file> (optional)",
+  "contentPath": "<relative path to the file in the .demo folder> (optional)",
+  "lineInsertionDelay": "<delay in milliseconds to insert each line> (optional)"
+}
+
+// Via placeholders
+{
+  "action": "replace",
+  "path": "<relative path to the file>",
+  "startPlaceholder": "<start placeholder>",
+  "endPlaceholder": "<end placeholder>",
   "content": "<content of the file> (optional)",
   "contentPath": "<relative path to the file in the .demo folder> (optional)",
   "lineInsertionDelay": "<delay in milliseconds to insert each line> (optional)"
@@ -100,11 +174,20 @@ Write a single line of text in the editor at the current location or specific lo
 }
 
 // Write to a specific position in a file
+// Via position
 {
   "action": "write",
   "content": "Hello World",
   "path": "<relative path to the file>",
   "position": "<position>"
+}
+
+// Via start placeholder
+{
+  "action": "write",
+  "content": "Hello World",
+  "path": "<relative path to the file>",
+  "startPlaceholder": "<start placeholder>",
 }
 ```
 
@@ -124,9 +207,18 @@ Unselect text in the editor at a specific location.
 Delete text in the editor at a specific location.
 
 ```json
+// Via position
 {
   "action": "delete",
   "path": "<relative path to the file>",
   "position": "<position>"
+}
+
+// Via placeholders
+{
+  "action": "delete",
+  "path": "<relative path to the file>",
+  "startPlaceholder": "<start placeholder>",
+  "endPlaceholder": "<end placeholder>"
 }
 ```
