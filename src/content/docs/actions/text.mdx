@@ -1,7 +1,7 @@
 ---
 title: Text actions
 description: Text actions are used to insert, replace, highlight, delete or unselect text in the editor.
-lastmod: 2025-01-10T18:00:22.027Z
+lastmod: 2025-01-11T13:36:44.414Z
 ---
 
 import { Aside } from '@astrojs/starlight/components';
@@ -188,6 +188,16 @@ Write a single line of text in the editor at the current location or specific lo
   "content": "Hello World",
   "path": "<relative path to the file>",
   "startPlaceholder": "<start placeholder>",
+}
+```
+
+## Format text
+
+Format the content of the active file.
+
+```json
+{
+  "action": "format"
 }
 ```
 
