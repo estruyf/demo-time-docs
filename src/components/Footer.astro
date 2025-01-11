@@ -21,14 +21,18 @@ const isProd = import.meta.env.PROD;
 	<Pagination {...Astro.props} />
 
   <div class="mx-auto gap-4 flex flex-col sm:flex-row justify-center items-center">
-		<img src="https://vscode-marketplace-badge.vercel.app/api/badge/version/eliostruyf.vscode-demo-time?style=flat-square&color=%23FFD23F&labelColor=%23202736" alt="Visual Studio Marketplace" height="25px">
+		<a class="inline-flex" href="https://marketplace.visualstudio.com/items?itemName=eliostruyf.vscode-demo-time" title="View on Visual Studio Code Marketplace">
+			<img src="https://vscode-marketplace-badge.vercel.app/api/badge/version/eliostruyf.vscode-demo-time?style=flat-square&color=%23FFD23F&labelColor=%23202736" alt="Visual Studio Marketplace" height="25px" />
+		</a>
 
-		<img src="https://vscode-marketplace-badge.vercel.app/api/badge/installs/eliostruyf.vscode-demo-time?style=flat-square&color=%23FFD23F&labelColor=%23202736" alt="Number of installs" height="25px">
+		<a class="inline-flex" href="https://marketplace.visualstudio.com/items?itemName=eliostruyf.vscode-demo-time" title="View on Visual Studio Code Marketplace">
+			<img src="https://vscode-marketplace-badge.vercel.app/api/badge/installs/eliostruyf.vscode-demo-time?style=flat-square&color=%23FFD23F&labelColor=%23202736" alt="Number of installs" height="25px" />
+		</a>
 
 		{
 			isProd && (
-				<a style="margin: 0 auto;" href="https://visitorbadge.io/status?path=https:%2f%2fgithub.com%2festruyf%2fvscode-demo-time">
-					<img src={`https://api.visitorbadge.io/api/combined?path=https:%2f%2fgithub.com%2festruyf%2fvscode-demo-time&amp;labelColor=%23202736&amp;countColor=%23FFD23F&amp;slug=${currentUrl}`} height="25px" alt="Demo Time Visitors">
+				<a class="inline-flex" href="https://visitorbadge.io/status?path=https:%2f%2fgithub.com%2festruyf%2fvscode-demo-time">
+					<img src={`https://api.visitorbadge.io/api/combined?path=https:%2f%2fgithub.com%2festruyf%2fvscode-demo-time&amp;labelColor=%23202736&amp;countColor=%23FFD23F&amp;slug=${currentUrl}`} height="25px" alt="Demo Time Visitors" />
 				</a>
 			)
 		}
