@@ -70,6 +70,7 @@ export default defineConfig({
             { label: 'Commands', slug: 'references/commands' },
             { label: 'Settings', slug: 'references/settings' },
             { label: 'API', slug: 'references/api' },
+            { label: 'JSON schema', slug: 'references/json-schema' },
           ]
         },
         {
