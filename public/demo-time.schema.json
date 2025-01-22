@@ -36,10 +36,7 @@
                 "type": "string"
               }
             },
-            "required": [
-              "start",
-              "end"
-            ],
+            "required": ["start", "end"],
             "description": "Provide the icon name of the VS Code codicon for the start and end of the demo"
           },
           "steps": {
@@ -60,9 +57,9 @@
                     "move",
                     "markdownPreview",
                     "insert",
-                    "highlight", 
+                    "highlight",
                     "replace",
-                    "unselect", 
+                    "unselect",
                     "delete",
                     "positionCursor",
                     "write",
@@ -72,6 +69,7 @@
                     "waitForInput",
                     "executeVSCodeCommand",
                     "showInfoMessage",
+                    "setState",
                     "executeTerminalCommand",
                     "closeTerminal",
                     "snippet"
@@ -146,160 +144,185 @@
                       "description": "The setting key"
                     },
                     "value": {
-                      "type": ["string", "number", "boolean", "object", "array", "null"],
+                      "type": [
+                        "string",
+                        "number",
+                        "boolean",
+                        "object",
+                        "array",
+                        "null"
+                      ],
                       "description": "The setting value"
                     }
                   },
-                  "required": [
-                    "key",
-                    "value"
-                  ]
+                  "required": ["key", "value"]
+                },
+                "state": {
+                  "type": "object",
+                  "properties": {
+                    "key": {
+                      "type": "string",
+                      "description": "The state key"
+                    },
+                    "value": {
+                      "type": ["string"],
+                      "description": "The state value"
+                    }
+                  },
+                  "required": ["key", "value"]
                 }
               },
-              "required": [
-                "action"
+              "required": ["action"],
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "enum": [
+                          "create",
+                          "open",
+                          "deleteFile",
+                          "markdownPreview"
+                        ]
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": ["path"]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "enum": [
+                          "executeVSCodeCommand",
+                          "executeTerminalCommand"
+                        ]
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": ["command"]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "enum": ["insert", "replace"]
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": ["path"],
+                    "oneOf": [
+                      {
+                        "required": ["content"]
+                      },
+                      {
+                        "required": ["contentPath"]
+                      }
+                    ]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "const": "snippet"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": ["contentPath"]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "enum": ["rename", "copy", "move"]
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": ["path", "dest"]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "const": "setSetting"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": ["setting"]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "const": "setState"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": ["state"]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "enum": ["highlight", "positionCursor"]
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": ["path"]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "const": "unselect"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": ["path"]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "const": "delete"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": ["path"]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "const": "showInfoMessage"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": ["message"]
+                  }
+                }
               ],
-              "allOf": [{
-                "if": {
-                  "properties": {
-                    "action": {
-                      "enum": ["create", "open", "deleteFile", "markdownPreview"]
-                    }
-                  }
-                },
-                "then": {
-                  "required": [
-                    "path"
-                  ]
-                }
-              }, {
-                "if": {
-                  "properties": {
-                    "action": {
-                      "enum": ["executeVSCodeCommand", "executeTerminalCommand"]
-                    }
-                  }
-                },
-                "then": {
-                  "required": [
-                    "command"
-                  ]
-                }
-              }, {
-                "if": {
-                  "properties": {
-                    "action": {
-                      "enum": ["insert", "replace"]
-                    }
-                  }
-                },
-                "then": {
-                  "required": [
-                    "path"
-                  ],
-                  "oneOf": [{
-                    "required": [
-                      "content"
-                    ]
-                  }, {
-                    "required": [
-                      "contentPath"
-                    ]
-                  }]
-                }
-              }, {
-                "if": {
-                  "properties": {
-                    "action": {
-                      "const": "snippet"
-                    }
-                  }
-                },
-                "then": {
-                  "required": [
-                    "contentPath"
-                  ]
-                }
-              }, {
-                "if": {
-                  "properties": {
-                    "action": {
-                      "enum": ["rename", "copy", "move"]
-                    }
-                  }
-                },
-                "then": {
-                  "required": [
-                    "path",
-                    "dest"
-                  ]
-                }
-              }, {
-                "if": {
-                  "properties": {
-                    "action": {
-                      "const": "setSetting"
-                    }
-                  }
-                },
-                "then": {
-                  "required": [
-                    "setting"
-                  ]
-                }
-              }, {
-                "if": {
-                  "properties": {
-                    "action": {
-                      "enum": ["highlight", "positionCursor"]
-                    }
-                  }
-                },
-                "then": {
-                  "required": [
-                    "path"
-                  ]
-                }
-              }, {
-                "if": {
-                  "properties": {
-                    "action": {
-                      "const": "unselect"
-                    }
-                  }
-                },
-                "then": {
-                  "required": [
-                    "path"
-                  ]
-                }
-              }, {
-                "if": {
-                  "properties": {
-                    "action": {
-                      "const": "delete"
-                    }
-                  }
-                },
-                "then": {
-                  "required": [
-                    "path"
-                  ]
-                }
-              }, {
-                "if": {
-                  "properties": {
-                    "action": {
-                      "const": "showInfoMessage"
-                    }
-                  }
-                },
-                "then": {
-                  "required": [
-                    "message"
-                  ]
-                }
-              }],
               "additionalProperties": false
             }
           },
@@ -315,22 +338,13 @@
                 "description": "Show the notes when the trigger is activated. Default is false."
               }
             },
-            "required": [
-              "path"
-            ]
+            "required": ["path"]
           }
         },
-        "required": [
-          "title",
-          "steps"
-        ],
+        "required": ["title", "steps"],
         "additionalProperties": false
       }
     }
   },
-  "required": [
-    "title",
-    "description",
-    "demos"
-  ]
+  "required": ["title", "description", "demos"]
 }
