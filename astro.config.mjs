@@ -70,6 +70,7 @@ export default defineConfig({
             { label: 'Commands', slug: 'references/commands' },
             { label: 'Settings', slug: 'references/settings' },
             { label: 'API', slug: 'references/api' },
+            { label: 'JSON schema', slug: 'references/json-schema' },
           ]
         },
         {
@@ -83,6 +84,7 @@ export default defineConfig({
             { label: 'Activity bar action', slug: 'tips/move-to-activity-bar' },
             { label: 'Using clock and timer', slug: 'tips/time-your-presentation' },
             { label: 'Providing demo notes', slug: 'tips/providing-demo-notes' },
+            { label: 'Trigger from a link', slug: 'tips/uri-handler' },
           ],
         },
         {

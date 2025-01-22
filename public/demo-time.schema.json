@@ -3,7 +3,7 @@
   "$id": "https://demotime.elio.dev/demo-time.schema.json",
   "title": "Demo Time - Schema",
   "description": "The schema for the Demo Time - VSCode extension",
-  "lastModified": "2025-01-10",
+  "lastModified": "2025-01-11",
   "type": "object",
   "properties": {
     "title": {
@@ -64,6 +64,7 @@
                     "positionCursor",
                     "write",
                     "save",
+                    "format",
                     "setSetting",
                     "waitForTimeout",
                     "waitForInput",
