@@ -70,6 +70,7 @@
                     "waitForInput",
                     "executeVSCodeCommand",
                     "showInfoMessage",
+                    "setState",
                     "executeTerminalCommand",
                     "executeScript",
                     "closeTerminal",
@@ -158,6 +159,20 @@
                         "null"
                       ],
                       "description": "The setting value"
+                    }
+                  },
+                  "required": ["key", "value"]
+                },
+                "state": {
+                  "type": "object",
+                  "properties": {
+                    "key": {
+                      "type": "string",
+                      "description": "The state key"
+                    },
+                    "value": {
+                      "type": ["string"],
+                      "description": "The state value"
                     }
                   },
                   "required": ["key", "value"]

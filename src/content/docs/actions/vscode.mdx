@@ -1,9 +1,11 @@
 ---
 title: Visual Studio Code actions
 description: Perform Visual Studio Code actions in your demos like executing commands or showing an information message.
+lastmod: 2025-01-22T11:24:32.735Z
 ---
 
 import { Image } from 'astro:assets';
+import { Aside } from '@astrojs/starlight/components';
 
 import gearImage from "../../../assets/docs/gear-icon-on-command.webp";
 import copyImage from "../../../assets/docs/copy-command-id.webp";
@@ -43,3 +45,46 @@ Show an information message in Visual Studio Code using the `showInfoMessage` ac
   "message": "<message>"
 }
 ```
+
+## Set state
+
+The `setState` action allows you to set a key/value pair in the extension state which can be accessed by other actions. You can use the state value in your demo steps by using the following `{STATE_<key>}` syntax.
+
+```json
+{
+  "action": "setState",
+  "state": {
+    "key": "<key>",
+    "value": "<value>"
+  }
+}
+```
+
+### Store the clipboard content in the extension state
+
+For example, you could use this action in combination with the `{DT_CLIPBOARD}` variable to store the clipboard content in the extension state and then use it in another action.
+
+<Aside type="danger" title="Important">
+The variables extension state gets reset when the extension starts up, or when you reset all the demos.
+</Aside>
+
+```json
+{
+  "action": "setState",
+  "state": {
+    "key": "resourceID",
+    "value": "{DT_CLIPBOARD}"
+  }
+}
+```
+
+To use the stored value in another action, you can reference it using the `{STATE_<key>}` syntax.
+
+```json
+{
+  "action": "create",
+  "path": "sample.json",
+  "content": "{\n  \"firstName\": \"{STATE_resourceID}\"\n}"
+}
+```
+
