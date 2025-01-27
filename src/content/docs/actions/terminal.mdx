@@ -1,8 +1,10 @@
 ---
 title: Terminal actions
 description: Perform terminal actions in your demos like running commands, clearing the terminal, and more.
-lastmod: 2025-01-09T15:20:22.231Z
+lastmod: 2025-01-25T17:52:31.251Z
 ---
+
+import { Aside, Code } from '@astrojs/starlight/components';
 
 Terminal actions are used to perform actions related to the terminal in the editor. You can use these actions to run commands, clear the terminal, and more.
 
@@ -17,6 +19,56 @@ Execute a terminal command in the terminal.
   "terminalId": "<terminal id (optional)>"
 }
 ```
+
+## Execute a script in the background
+
+Execute a script in the background of which you can use the output in the next steps.
+
+```json
+{
+  "action": "executeScript",
+  "id": "<script id>",
+  "path": "<script to execute>",
+  "command": "node" // Can be powershell, bash, shell, python, etc.
+}
+```
+
+<Aside>
+If you want, you can use the output of the script in the next steps with `STATE_<script id>` syntax.
+
+Make sure you defined the `id` property and that your script only writes a single line of output.
+</Aside>
+
+### Example of using the output of a script
+
+<Code code={`{
+    "title": "Script example",
+    "description": "",
+    "steps": [
+        {
+            "action": "executeScript",
+            "id": "firstName",
+            "path": "writeFirstName.mjs",
+            "command": "node"
+        },
+        {
+            "action": "create",
+            "path": "sample.json",
+            "content": "{\\n  \\"firstName\\": \\"{SCRIPT_firstName}\\"\\n}"
+        },
+        {
+            "action": "open",
+            "path": "sample.json"
+        }
+    ]
+}`} 
+  lang="js" 
+  title={`demo.json`}
+  desciption={`test`} />
+
+<Code code={`console.log('Elio');`} 
+  lang="js" 
+  title={`writeFirstName.mjs`} />
 
 ## Close a terminal
 

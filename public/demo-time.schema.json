@@ -72,6 +72,7 @@
                     "showInfoMessage",
                     "setState",
                     "executeTerminalCommand",
+                    "executeScript",
                     "closeTerminal",
                     "snippet"
                   ],
@@ -107,7 +108,7 @@
                 },
                 "command": {
                   "type": "string",
-                  "title": "VSCode or Terminal command to execute"
+                  "title": "VSCode or Terminal command to execute, or the name of the script type to execute. Example: node, powershell, bash, python, etc."
                 },
                 "message": {
                   "type": "string",
@@ -132,6 +133,10 @@
                 "terminalId": {
                   "type": "string",
                   "title": "Define the name for the terminal. Default is \"DemoTime\"."
+                },
+                "id": {
+                  "type": "string",
+                  "title": "The ID of the step"
                 },
                 "args": {
                   "type": ["object", "array", "string", "number", "boolean"],
@@ -243,6 +248,18 @@
                   "if": {
                     "properties": {
                       "action": {
+                        "const": "executeScript"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": ["id", "command", "path"]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
                         "enum": ["rename", "copy", "move"]
                       }
                     }
@@ -261,18 +278,6 @@
                   },
                   "then": {
                     "required": ["setting"]
-                  }
-                },
-                {
-                  "if": {
-                    "properties": {
-                      "action": {
-                        "const": "setState"
-                      }
-                    }
-                  },
-                  "then": {
-                    "required": ["state"]
                   }
                 },
                 {
