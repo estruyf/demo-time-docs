@@ -2,7 +2,7 @@
 :root {
   --sl-color-accent-low: #2d2200;
   --sl-color-accent: #816600;
-  --sl-color-accent-high: #d6c8a1;
+  --sl-color-accent-high: #ffd43b;
   --sl-color-white: #ffffff;
   --sl-color-gray-1: #eaeef6;
   --sl-color-gray-2: #c4c8d3;
@@ -46,5 +46,15 @@
 
   &:hover {
     @apply bg-[#FFD43B]/90 !important;
+  }
+}
+
+.content-panel {
+  a {
+    @apply underline-offset-4 decoration-dotted;
+
+    &:hover {
+      @apply decoration-solid;
+    }
   }
 }
