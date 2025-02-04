@@ -1,0 +1,25 @@
+---
+import HeartIcon from "./HeartIcon.astro";
+import SponsorButton from "./SponsorButton.astro";
+---
+
+<div class="container px-4 mx-auto">
+  <div class="flex flex-col items-center gap-8 py-16 border-t border-gray-800">
+    <div class="flex flex-col items-center max-w-2xl gap-4 text-center">
+      <div
+        class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-[#FFD43B]/10"
+      >
+        <HeartIcon class="w-6 h-6 text-[#FFD43B]" />
+      </div>
+      <h2 class="text-2xl font-bold text-white">Support Demo Time</h2>
+      <p class="text-gray-400">
+        Love using Demo Time? Consider becoming a sponsor to help us continue
+        building the best demo experience for developers. Every contribution
+        helps us add new features, fix bugs, and improve the extension.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
+        <SponsorButton />
+      </div>
+    </div>
+  </div>
+</div>
