@@ -42,9 +42,9 @@
 }
 
 .sl-link-button.primary {
-  @apply bg-[#FFD43B];
+  @apply bg-[#FFD43B] !important;
 
   &:hover {
-    @apply bg-[#FFD43B]/90;
+    @apply bg-[#FFD43B]/90 !important;
   }
 }
