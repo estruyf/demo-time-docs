@@ -2,20 +2,30 @@
 title: Highlighting code
 description: Learn how to highlight code in Demo Time to make it stand out in your demos.
 tableOfContents: false
-lastmod: 2025-02-05T18:46:29.459Z
+lastmod: 2025-02-05T18:54:33.951Z
 ---
 
 import { Code } from '@astrojs/starlight/components';
 import { Image } from 'astro:assets';
+import { Aside } from '@astrojs/starlight/components';
 
 import defaultImage from "../../../assets/docs/default-highlight.webp";
 import customImage from "../../../assets/docs/custom-highlight.webp";
 import wholeLineImg from "../../../assets/docs/whole-line-highlight.webp";
 import areaHighlightImg from "../../../assets/docs/area-highlighting.webp";
+import highlightActionImg from "../../../assets/docs/toggle-highlight-action.webp";
 
 By default, the extension highlights the code in a box with a red border. You can customize how you want to highlight the code with the highlight settings.
 
 <Image class="mx-auto" src={defaultImage} alt="Default code highlighting" />
+
+When the current demo included a highlight action, there will be a highlight button available in the editor title bar on the right. You can use this to toggle the highlight on and off.
+
+<Image class="mx-auto" src={highlightActionImg} alt="Toggle highlight action" />
+
+<Aside type="tip">
+You can also make use of the `Demo Time: Toggle highlight` command to toggle the highlight on and off.
+</Aside>
 
 ## Customizing the highlight
 
