@@ -1,7 +1,7 @@
 ---
 title: Text actions
 description: Text actions are used to insert, replace, highlight, delete or unselect text in the editor.
-lastmod: 2025-02-04T19:41:42.657Z
+lastmod: 2025-02-05T18:44:58.049Z
 ---
 
 import { Aside } from '@astrojs/starlight/components';
@@ -37,10 +37,6 @@ Examples:
 "position": "10,5" // Start line 10, character 5
 "position": "10,5:20,10" // Start line 10, character 5 to end line 20, character 10
 ```
-
-<Aside type="danger" title="Important">
-You cannot highlight text in a range of lines and characters. It will only work from a start line to an end line. The character position will be ignored.
-</Aside>
 
 ### Placeholder position
 
@@ -84,6 +80,7 @@ Highlight text in the editor at a specific location.
   "path": "<relative path to the file>",
   "startPlaceholder": "<start placeholder>",
   "endPlaceholder": "<end placeholder>",
+  "highlightWholeLine": "<highlight whole line (optional, default is true)>",
   "zoom": "<zoom level> (optional)"
 }
 ```
@@ -92,8 +89,10 @@ Highlight text in the editor at a specific location.
 Check out the <a href="../../references/settings" title="settings">settings</a> section to customize the highlight colors.
 </Aside>
 
-<Aside type="danger" title="Important">
-You cannot highlight text in a range of lines and characters. It will only work from a start line to an end line. The character position will be ignored.
+<Aside type="caution" title="Important">
+When you use code area highlighting, which is when you use "line + character" position or setting `highlightWholeLine` property to `false` when using placeholder positioning, the highlighted code will not include a border.
+
+You can read more about it on the [highlighting](/tips/highlighting/) section.
 </Aside>
 
 ## Position cursor

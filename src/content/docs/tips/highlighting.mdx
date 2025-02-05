@@ -2,7 +2,7 @@
 title: Highlighting code
 description: Learn how to highlight code in Demo Time to make it stand out in your demos.
 tableOfContents: false
-lastmod: 2025-01-08T15:52:14.252Z
+lastmod: 2025-02-05T18:46:29.459Z
 ---
 
 import { Code } from '@astrojs/starlight/components';
@@ -10,6 +10,8 @@ import { Image } from 'astro:assets';
 
 import defaultImage from "../../../assets/docs/default-highlight.webp";
 import customImage from "../../../assets/docs/custom-highlight.webp";
+import wholeLineImg from "../../../assets/docs/whole-line-highlight.webp";
+import areaHighlightImg from "../../../assets/docs/area-highlighting.webp";
 
 By default, the extension highlights the code in a box with a red border. You can customize how you want to highlight the code with the highlight settings.
 
@@ -29,3 +31,19 @@ Here is an example where the highlight border and background color are customize
   title={`.vscode/settings.json`} />
 
 <Image class="mx-auto" src={customImage} alt="Custom code highlighting colors" width="618" />
+
+## Whole line highlighting
+
+When you use the line only positioning or placeholder positioning, the whole lines will be highlighted.
+
+<Image class="mx-auto" src={wholeLineImg} alt="Whole line highlight" />
+
+When using this type of highlighting, you are able to use a border to highlight the code.
+
+## Code area highlighting
+
+When you use the "line + character" position or setting `highlightWholeLine` property to `false` when using placeholder positioning, the highlighted code will not include a border.
+
+<Image class="mx-auto" src={areaHighlightImg} alt="Whole line highlight" />
+
+This kind of highlighting can be used when you only want to highlight a specific part of the code.

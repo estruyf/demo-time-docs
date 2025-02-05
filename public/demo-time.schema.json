@@ -102,6 +102,11 @@
                   "type": "string",
                   "title": "End placeholder value for the end position"
                 },
+                "highlightWholeLine": {
+                  "type": "boolean",
+                  "default": true,
+                  "title": "Highlight the whole line"
+                },
                 "timeout": {
                   "type": "number",
                   "title": "Timeout in milliseconds"
