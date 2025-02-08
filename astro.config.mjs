@@ -41,6 +41,28 @@ export default defineConfig({
             property: 'og:image',
             content: 'https://demotime.elio.dev/demo-time-og.png',
           }
+        },
+        {
+          tag: "link",
+          attrs: {
+            href: "https://fonts.googleapis.com",
+            rel: "preconnect"
+          }
+        },
+        {
+          tag: "link",
+          attrs: {
+            href: "https://fonts.gstatic.com",
+            crossorigin: true,
+            rel: "preconnect"
+          }
+        },
+        {
+          tag: "link",
+          attrs: {
+            href: "https://fonts.googleapis.com/css2?family=Hubot+Sans:ital,wght@0,600;1,900&family=Mona+Sans:ital,wght@0,400..900;1,400..900&display=swap",
+            rel: "stylesheet"
+          }
         }
       ],
       sidebar: [
