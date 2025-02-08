@@ -13,7 +13,7 @@ export default defineConfig({
   integrations: [
     starlight({
       logo: {
-        src: '/src/assets/demotime.svg',
+        src: '/src/assets/demotime-bg.svg',
       },
       title: 'Demo Time',
       social: {
