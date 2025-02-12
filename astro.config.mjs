@@ -79,6 +79,7 @@ export default defineConfig({
           items: [
             { label: 'File actions', slug: 'actions/file' },
             { label: 'Text actions', slug: 'actions/text' },
+            { label: 'Patch actions', slug: 'actions/patch' },
             { label: 'Setting actions', slug: 'actions/setting' },
             { label: 'Terminal actions', slug: 'actions/terminal' },
             { label: 'Time actions', slug: 'actions/time' },
