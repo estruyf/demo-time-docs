@@ -47,6 +47,7 @@
                 "action": {
                   "type": "string",
                   "enum": [
+                    "applyPatch",
                     "create",
                     "open",
                     "rename",
@@ -88,7 +89,11 @@
                 },
                 "contentPath": {
                   "type": "string",
-                  "title": "Path to content to insert"
+                  "title": "Path to the content to use"
+                },
+                "patch": {
+                  "type": "string",
+                  "title": "Path to the patch file to use for the snapshot provided in the contentPath"
                 },
                 "position": {
                   "type": ["string", "number"],
@@ -215,6 +220,18 @@
                   },
                   "then": {
                     "required": ["command"]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "const": "applyPatch"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": ["path", "contentPath", "patch"]
                   }
                 },
                 {
