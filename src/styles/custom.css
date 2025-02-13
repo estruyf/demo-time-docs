@@ -68,10 +68,10 @@ h1 {
 }
 
 .sl-link-button.primary {
-  @apply bg-[#FFD43B] !important;
+  @apply bg-[#FFD43B] text-black !important;
 
   &:hover {
-    @apply bg-[#FFD43B]/90 !important;
+    @apply bg-[#FFD43B]/90 text-black !important;
   }
 }
 
