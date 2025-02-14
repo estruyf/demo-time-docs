@@ -1,6 +1,7 @@
 ---
 title: Setting actions
 description: Perform setting actions in your demos like update settings, change themes, and more.
+lastmod: 2025-02-14T13:50:42.169Z
 ---
 
 Setting actions are used to perform actions related to settings in the editor. You can use these actions to update settings, change themes, and more.
@@ -56,5 +57,26 @@ To reset the settings, you can use the following steps:
     "key": "workbench.activityBar.location",
     "value": null
   }
+}
+```
+
+## Set a themes
+
+Set a theme in Visual Studio Code using the `setTheme` action.
+
+```json
+{
+  "action": "setTheme",
+  "theme": "<theme name>"
+}
+```
+
+## Unset a theme
+
+Unset a theme in Visual Studio Code using the `unsetTheme` action.
+
+```json
+{
+  "action": "unsetTheme"
 }
 ```

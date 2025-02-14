@@ -67,6 +67,8 @@
                     "save",
                     "format",
                     "setSetting",
+                    "setTheme",
+                    "unsetTheme",
                     "waitForTimeout",
                     "waitForInput",
                     "executeVSCodeCommand",
@@ -150,6 +152,25 @@
                 },
                 "args": {
                   "type": ["object", "array", "string", "number", "boolean"],
+                  "title": "Arguments to pass to the command for VSCode or placeholder names for your snippet"
+                },
+                "theme": {
+                  "type": "string",
+                  "oneOf": [
+                    {
+                      "enum": [
+                        "Default Dark Modern",
+                        "Default Dark+",
+                        "Default High Contrast Light",
+                        "Default High Contrast",
+                        "Default Light Modern",
+                        "Default Light+"
+                      ]
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ],
                   "title": "Arguments to pass to the command for VSCode or placeholder names for your snippet"
                 },
                 "setting": {
