@@ -1,0 +1,28 @@
+{
+  "$schema": "https://demotime.elio.dev/demo-time.schema.json",
+  "title": "Patch actions",
+  "description": "",
+  "demos": [
+    {
+      "title": "Apply patch",
+      "description": "",
+      "steps": [
+        {
+          "action": "create",
+          "path": "/temp/author.json",
+          "contentPath": "/snapshots/author.snapshot.json"
+        },
+        {
+          "action": "open",
+          "path": "/temp/author.json"
+        },
+        {
+          "action": "applyPatch",
+          "path": "/temp/author.json",
+          "contentPath": "/snapshots/author.snapshot.json",
+          "patch": "/patches/author.socials.patch"
+        }
+      ]
+    }
+  ]
+}

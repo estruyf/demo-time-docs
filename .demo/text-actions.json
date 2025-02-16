@@ -1,0 +1,272 @@
+{
+  "$schema": "https://demotime.elio.dev/demo-time.schema.json",
+  "title": "Text actions",
+  "description": "",
+  "demos": [
+    {
+      "title": "Highlight text (via placeholders)",
+      "description": "",
+      "steps": [
+        {
+          "action": "highlight",
+          "path": "src/content/docs/actions/text.mdx",
+          "startPlaceholder": "## Highlight text",
+          "endPlaceholder": "specific location."
+        }
+      ]
+    },
+    {
+      "title": "Highlight text (via position)",
+      "description": "",
+      "steps": [
+        {
+          "action": "highlight",
+          "path": "src/content/docs/actions/text.mdx",
+          "position": "64:66"
+        }
+      ]
+    },
+    {
+      "title": "Highlight text (via position with character)",
+      "description": "",
+      "steps": [
+        {
+          "action": "highlight",
+          "path": "src/content/docs/actions/text.mdx",
+          "position": "64,4:66"
+        }
+      ]
+    },
+    {
+      "title": "Highlight text (zoom)",
+      "description": "",
+      "steps": [
+        {
+          "action": "highlight",
+          "path": "src/content/docs/actions/text.mdx",
+          "startPlaceholder": "## Highlight text",
+          "endPlaceholder": "specific location.",
+          "zoom": 2
+        }
+      ]
+    },
+    {
+      "title": "Highlight text (highlight settings)",
+      "description": "",
+      "steps": [
+        {
+          "action": "setSetting",
+          "setting": {
+            "key": "demoTime.highlightBorderColor",
+            "value": "#ffd43b"
+          }
+        },
+        {
+          "action": "setSetting",
+          "setting": {
+            "key": "demoTime.highlightBackground",
+            "value": "#ffd43b4d"
+          }
+        },
+        {
+          "action": "setSetting",
+          "setting": {
+            "key": "demoTime.highlightOpacity",
+            "value": 0.5
+          }
+        },
+        {
+          "action": "setSetting",
+          "setting": {
+            "key": "demoTime.highlightBlur",
+            "value": 2
+          }
+        },
+        {
+          "action": "highlight",
+          "path": "src/content/docs/actions/text.mdx",
+          "startPlaceholder": "## Highlight text",
+          "endPlaceholder": "specific location."
+        },
+        {
+          "action": "waitForTimeout",
+          "timeout": 2000
+        },
+        {
+          "action": "setSetting",
+          "setting": {
+            "key": "demoTime.highlightBorderColor",
+            "value": null
+          }
+        },
+        {
+          "action": "setSetting",
+          "setting": {
+            "key": "demoTime.highlightBackground",
+            "value": null
+          }
+        },
+        {
+          "action": "setSetting",
+          "setting": {
+            "key": "demoTime.highlightOpacity",
+            "value": null
+          }
+        },
+        {
+          "action": "setSetting",
+          "setting": {
+            "key": "demoTime.highlightBlur",
+            "value": null
+          }
+        }
+      ]
+    },
+    {
+      "title": "Position cursor (via position)",
+      "description": "",
+      "steps": [
+        {
+          "action": "positionCursor",
+          "path": "src/content/docs/actions/text.mdx",
+          "position": "98,19"
+        }
+      ]
+    },
+    {
+      "title": "Position cursor (via startPlaceholder)",
+      "description": "",
+      "steps": [
+        {
+          "action": "positionCursor",
+          "path": "src/content/docs/actions/text.mdx",
+          "startPlaceholder": "## Position cursor"
+        }
+      ]
+    },
+    {
+      "title": "Insert text",
+      "description": "",
+      "steps": [
+        {
+          "action": "create",
+          "path": "temp/file-action.md",
+          "contentPath": "content/file-action.md"
+        },
+        {
+          "action": "open",
+          "path": "temp/file-action.md"
+        },
+        {
+          "action": "insert",
+          "path": "temp/file-action.md",
+          "position": "4",
+          "contentPath": "content/file-insert.md"
+        }
+      ]
+    },
+    {
+      "title": "Replace text",
+      "description": "",
+      "steps": [
+        {
+          "action": "create",
+          "path": "temp/file-action.md",
+          "contentPath": "content/file-action.md"
+        },
+        {
+          "action": "open",
+          "path": "temp/file-action.md"
+        },
+        {
+          "action": "replace",
+          "path": "temp/file-action.md",
+          "position": "3:3",
+          "content": "THIS IS A DEMO"
+        }
+      ]
+    },
+    {
+      "title": "Write single line",
+      "description": "",
+      "steps": [
+        {
+          "action": "create",
+          "path": "temp/file-action.md",
+          "contentPath": "content/file-action.md"
+        },
+        {
+          "action": "open",
+          "path": "temp/file-action.md"
+        },
+        {
+          "action": "positionCursor",
+          "path": "temp/file-action.md",
+          "position": "4"
+        },
+        {
+          "action": "write",
+          "content": "Hello World!"
+        }
+      ]
+    },
+    {
+      "title": "Format text",
+      "description": "",
+      "steps": [
+        {
+          "action": "create",
+          "path": "temp/unformatted.json",
+          "contentPath": "content/unformatted.json"
+        },
+        {
+          "action": "open",
+          "path": "temp/unformatted.json"
+        },
+        {
+          "action": "format"
+        }
+      ]
+    },
+    {
+      "title": "Unselect text",
+      "description": "",
+      "steps": [
+        {
+          "action": "highlight",
+          "path": "src/content/docs/actions/text.mdx",
+          "startPlaceholder": "## Highlight text",
+          "endPlaceholder": "specific location."
+        },
+        {
+          "action": "waitForTimeout",
+          "timeout": 1000
+        },
+        {
+          "action": "unselect",
+          "path": "src/content/docs/actions/text.mdx"
+        }
+      ]
+    },
+    {
+      "title": "Delete text",
+      "description": "",
+      "steps": [
+        {
+          "action": "create",
+          "path": "temp/file-action.md",
+          "contentPath": "content/file-action.md"
+        },
+        {
+          "action": "open",
+          "path": "temp/file-action.md"
+        },
+        {
+          "action": "delete",
+          "path": "temp/file-action.md",
+          "position": "3:3"
+        }
+      ]
+    }
+  ]
+}
