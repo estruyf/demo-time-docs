@@ -1,10 +1,11 @@
 ---
 title: Patch actions
 description: File patch actions can be used to insert code based on a snapshot of the file and a patch file.
-lastmod: 2025-02-12T15:23:18.218Z
+lastmod: 2025-02-16T16:17:18.887Z
 ---
 
 import { Aside } from '@astrojs/starlight/components';
+import GitHubFileOpener from '../../../components/GitHubFileOpener.astro';
 
 Similar to the [Text actions](/actions/text/), the patch actions can be used to update the contents of a file, but you do not need to specify the position of the text to insert. Instead, you need to create a snapshot of the file and a patch file. 
 
@@ -14,6 +15,11 @@ A patch works like a git's diff functionality, but instead of requiring a git br
   <source src="/videos/file-patching.mp4" type="video/mp4" />
   Your browser does not support the video tag.
 </video>
+
+<Aside type="note" title='Samples'>
+  You can find patch actions samples on GitHub: 
+  <GitHubFileOpener filePath=".demo/patch-actions.json" />
+</Aside>
 
 ## Prerequisites of using patch actions
 

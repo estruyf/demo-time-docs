@@ -1,16 +1,22 @@
 ---
 title: Visual Studio Code actions
 description: Perform Visual Studio Code actions in your demos like executing commands or showing an information message.
-lastmod: 2025-01-22T11:24:32.735Z
+lastmod: 2025-02-16T16:19:36.451Z
 ---
 
 import { Image } from 'astro:assets';
 import { Aside } from '@astrojs/starlight/components';
+import GitHubFileOpener from '../../../components/GitHubFileOpener.astro';
 
 import gearImage from "../../../assets/docs/gear-icon-on-command.webp";
 import copyImage from "../../../assets/docs/copy-command-id.webp";
 
 Visual Studio Code actions are used to perform actions related to Visual Studio Code in the editor. You can use these actions to execute commands, show information messages, and more.
+
+<Aside type="note" title='Samples'>
+  You can find VSCode actions samples on GitHub: 
+  <GitHubFileOpener filePath=".demo/vscode-actions.json" />
+</Aside>
 
 ## Execute a Visual Studio Code command
 
