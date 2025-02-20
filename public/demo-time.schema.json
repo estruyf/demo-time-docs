@@ -74,6 +74,7 @@
                     "executeVSCodeCommand",
                     "showInfoMessage",
                     "setState",
+                    "openWebsite",
                     "executeTerminalCommand",
                     "executeScript",
                     "closeTerminal",
@@ -149,6 +150,15 @@
                 "id": {
                   "type": "string",
                   "title": "The ID of the step"
+                },
+                "url": {
+                  "type": "string",
+                  "title": "The URL to open"
+                },
+                "openInVSCode": {
+                  "type": "boolean",
+                  "title": "Open the URL in VSCode. Default is false.",
+                  "default": false
                 },
                 "args": {
                   "type": ["object", "array", "string", "number", "boolean"],
@@ -253,6 +263,18 @@
                   },
                   "then": {
                     "required": ["path", "contentPath", "patch"]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "const": "openWebsite"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": ["url"]
                   }
                 },
                 {

@@ -65,6 +65,27 @@
             "path": "temp/output.log"
         }
       ]
+    },
+    {
+      "title": "Open website",
+      "description": "",
+      "steps": [
+        {
+          "action": "openWebsite",
+          "url": "https://demotime.elio.dev"
+        }
+      ]
+    },
+    {
+      "title": "Open website (in VSCode)",
+      "description": "",
+      "steps": [
+        {
+          "action": "openWebsite",
+          "url": "https://demotime.elio.dev",
+          "openInVSCode": true
+        }
+      ]
     }
   ]
 }

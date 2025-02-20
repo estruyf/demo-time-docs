@@ -1,13 +1,13 @@
 ---
 title: Visual Studio Code actions
 description: Perform Visual Studio Code actions in your demos like executing commands or showing an information message.
-lastmod: 2025-02-16T16:19:36.451Z
+lastmod: 2025-02-20T12:45:08.249Z
 ---
 
 import { Image } from 'astro:assets';
 import { Aside } from '@astrojs/starlight/components';
-import GitHubFileOpener from '../../../components/GitHubFileOpener.astro';
 
+import GitHubFileOpener from '../../../components/GitHubFileOpener.astro';
 import gearImage from "../../../assets/docs/gear-icon-on-command.webp";
 import copyImage from "../../../assets/docs/copy-command-id.webp";
 
@@ -94,3 +94,14 @@ To use the stored value in another action, you can reference it using the `{STAT
 }
 ```
 
+## Open a website
+
+Open a website in your browser or in the editor using the `openWebsite` action.
+
+```json
+{
+  "action": "openWebsite",
+  "url": "<URL>",
+  "openInVSCode": "<true/false>"
+}
+```
