@@ -1,0 +1,142 @@
+{
+  "$schema": "https://demotime.elio.dev/demo-time.schema.json",
+  "title": "Work in progress",
+  "description": "",
+  "demos": [
+    {
+      "title": "Show preview",
+      "description": "",
+      "steps": [
+        {
+          "action": "imagePreview",
+          "path": "/.demo/slides/0.png",
+          "theme": ".demo/slides/theme.css"
+        }
+      ]
+    },
+    {
+      "title": "Show preview",
+      "description": "",
+      "steps": [
+        {
+          "action": "imagePreview",
+          "path": "/.demo/slides/1.png",
+          "theme": ".demo/slides/theme.css"
+        }
+      ]
+    },
+    {
+      "title": "Show markdown preview",
+      "description": "",
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": ".demo/slides/intro.md",
+          "theme": ".demo/slides/theme.css"
+        }
+      ]
+    },
+    {
+      "title": "Show markdown preview",
+      "description": "",
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": ".demo/slides/benefits.md",
+          "theme": ".demo/slides/theme.css"
+        }
+      ]
+    },
+    {
+      "title": "Show markdown preview",
+      "description": "",
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": ".demo/slides/site.md",
+          "theme": ".demo/slides/theme.css"
+        }
+      ]
+    },
+    {
+      "title": "Default slide",
+      "description": "",
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/default-slide.md"
+        }
+      ]
+    },
+    {
+      "title": "Intro slide",
+      "description": "",
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/intro-slide.md"
+        }
+      ]
+    },
+    {
+      "title": "Quote slide",
+      "description": "",
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/quote-slide.md"
+        }
+      ]
+    },
+    {
+      "title": "Section slide",
+      "description": "",
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/section-slide.md"
+        }
+      ]
+    },
+    {
+      "title": "Image slide",
+      "description": "",
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/image-slide.md"
+        }
+      ]
+    },
+    {
+      "title": "Image left slide",
+      "description": "",
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/image-left-slide.md"
+        }
+      ]
+    },
+    {
+      "title": "Image right slide",
+      "description": "",
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/image-right-slide.md"
+        }
+      ]
+    },
+    {
+      "title": "Two Column Slide",
+      "description": "",
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/two-column-slide.md"
+        }
+      ]
+    }
+  ]
+}
