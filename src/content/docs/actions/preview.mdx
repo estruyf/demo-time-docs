@@ -1,0 +1,54 @@
+---
+title: Preview actions
+description: Preview actions are used to preview files like Markdown and images in the editor.
+lastmod: 2025-02-24T13:44:43.011Z
+---
+
+import { Code, Aside } from '@astrojs/starlight/components';
+
+Preview actions are used to preview files like Markdown and images in the editor.
+
+## Show slides
+
+To show slides with Demo Time, you can make use of the `openSlide` action.
+
+```json
+{
+  "action": "openSlide",
+  "path": "<relative path to the file>",
+  "theme": "<relative path to CSS file>"
+}
+```
+
+## Preview Markdown file
+
+To preview a markdown file in the editor, use the `markdownPreview` action. The `markdownPreview` action takes a file `path` as an argument.
+
+```json
+{
+  "action": "markdownPreview",
+  "path": "<relative path to the file>"
+}
+```
+
+## Preview image
+
+To preview an image in the editor, use the `imagePreview` action. The `imagePreview` action takes a file `path` as an argument.
+
+```json
+{
+  "action": "imagePreview",
+  "path": "<relative path to the file>",
+  "theme": "<relative path to CSS file>"
+}
+```
+
+### Custom theming
+
+Create a CSS file, and adapt the styling with the `.preview_view` class.
+
+<Code code={`.preview_view {
+     background-color: #000;
+}`} 
+  lang="css" 
+  title={`.demo/themes/image.css`} />

@@ -44,16 +44,6 @@
       ]
     },
     {
-      "title": "Preview markdown file",
-      "description": "",
-      "steps": [
-        {
-          "action": "markdownPreview",
-          "path": ".demo/content/file-action.md"
-        }
-      ]
-    },
-    {
       "title": "Save current file",
       "description": "",
       "steps": [

@@ -79,6 +79,7 @@ export default defineConfig({
           items: [
             { label: 'File actions', slug: 'actions/file' },
             { label: 'Text actions', slug: 'actions/text' },
+            { label: 'Preview actions', slug: 'actions/preview' },
             { label: 'Patch actions', slug: 'actions/patch' },
             { label: 'Setting actions', slug: 'actions/setting' },
             { label: 'Terminal actions', slug: 'actions/terminal' },
@@ -86,6 +87,14 @@ export default defineConfig({
             { label: 'VS Code actions', slug: 'actions/vscode' },
             { label: 'Snippet actions', slug: 'actions/snippet' },
           ],
+        },
+        {
+          label: 'Slides',
+          items: [
+            { label: 'Present your slides', slug: 'slides' },
+            { label: 'Layouts', slug: 'slides/layouts' },
+            { label: 'Themes', slug: 'slides/themes' },
+          ]
         },
         {
           label: 'References',

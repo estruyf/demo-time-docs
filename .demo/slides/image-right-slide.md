@@ -6,6 +6,4 @@ image: https://images.unsplash.com/photo-1739382120576-b1434e8bc4d3?q=80&w=3775&
 
 # Image right slide
 
-## Subtitle
-
 This is an image right slide.

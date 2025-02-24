@@ -1,32 +1,10 @@
 {
   "$schema": "https://demotime.elio.dev/demo-time.schema.json",
-  "title": "Work in progress",
+  "title": "Slides",
   "description": "",
   "demos": [
     {
-      "title": "Show preview",
-      "description": "",
-      "steps": [
-        {
-          "action": "imagePreview",
-          "path": "/.demo/slides/0.png",
-          "theme": ".demo/slides/theme.css"
-        }
-      ]
-    },
-    {
-      "title": "Show preview",
-      "description": "",
-      "steps": [
-        {
-          "action": "imagePreview",
-          "path": "/.demo/slides/1.png",
-          "theme": ".demo/slides/theme.css"
-        }
-      ]
-    },
-    {
-      "title": "Show markdown preview",
+      "title": "Open slide (custom theme)",
       "description": "",
       "steps": [
         {
@@ -37,7 +15,7 @@
       ]
     },
     {
-      "title": "Show markdown preview",
+      "title": "Open slide (custom theme)",
       "description": "",
       "steps": [
         {
@@ -48,7 +26,7 @@
       ]
     },
     {
-      "title": "Show markdown preview",
+      "title": "Open slide (custom theme)",
       "description": "",
       "steps": [
         {
@@ -74,7 +52,8 @@
       "steps": [
         {
           "action": "openSlide",
-          "path": "/.demo/slides/intro-slide.md"
+          "path": "/.demo/slides/intro-slide.md",
+          "theme": ".demo/slides/theme.css"
         }
       ]
     },

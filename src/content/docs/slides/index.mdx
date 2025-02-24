@@ -1,0 +1,66 @@
+---
+title: Present your slides
+description: From Markdown to slides - present your slides with Demo Time
+lastmod: 2025-02-24T14:29:57.039Z
+---
+
+import { Code, Aside } from '@astrojs/starlight/components';
+import { Image } from 'astro:assets';
+
+import slidesImg from "../../../assets/docs/slides.webp";
+
+Demo Time is more than just a tool for live demos—it also lets you present slides seamlessly within your editor. With Markdown-based slides, you can deliver presentations without switching between different applications, ensuring a smooth transition between your slides and demos.
+
+<Image class="mx-auto" src={slidesImg} alt="Slides in Demo Time" />
+
+## Creating slides
+
+To create slides, start by creating a new Markdown file and adding your content:
+
+```md
+---
+---
+
+# Title
+
+Hello, **Demo Time**!
+```
+
+<Aside type="tip">
+To make the process easier, you can use the `Demo Time: Create a slide` command. This command will start the slide creation process where you will be asked for a title and if you want to add it to any of your demos.
+</Aside>
+
+## Layouts
+
+Demo Time supports various slide layouts to help structure your presentation effectively:
+
+- `default` - A standard slide layout
+- `intro` - Ideal for opening slides
+- `quote` - Perfect for displaying key takeaways or citations
+- ... (more layouts available)
+
+More information on using layouts can be found in the [layouts section](/slides/layouts/) of the documentation.
+
+## Customizing Slides with Themes
+
+Personalization matters! Demo Time allows you to customize the look and feel of your slides by selecting a built-in theme or creating your own.
+
+To change your slide theme, you can specify a different theme in the slide configuration or provide a custom CSS file.
+
+More information on theming can be found in the [themes section](/slides/themes/) of the documentation.
+
+## Presenting slides
+
+To incorporate slides into your demo workflow, add them as demo steps in your demo script or configuration files. This ensures you can control when and where your slides appear during the presentation.
+
+Use the `openSlide` action to open a slide in the slide view.
+
+```json
+{
+  "action": "openSlide",
+  "path": "<relative path to the file>",
+  "theme": "<relative path to CSS file>"
+}
+```
+
+With this approach, you can seamlessly integrate slides into your demos, making your presentations more engaging and dynamic.
