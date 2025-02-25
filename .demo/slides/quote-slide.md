@@ -1,5 +1,5 @@
 ---
-template: default
+theme: default
 layout: quote
 ---
 
