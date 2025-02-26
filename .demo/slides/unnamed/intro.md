@@ -1,8 +1,8 @@
 ---
-theme: monomi
+theme: unnamed
 layout: intro
 ---
 
-# Intro slide with Monomi theme
+# Intro slide
 
 &mdash; by Elio Struyf

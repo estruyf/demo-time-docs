@@ -1,5 +1,5 @@
 ---
-theme: monomi
+theme: unnamed
 layout: default
 ---
 

@@ -1,5 +1,5 @@
 ---
-theme: monomi
+theme: default
 layout: section
 ---
 

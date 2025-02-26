@@ -3,4 +3,6 @@ theme: default
 layout: intro
 ---
 
-# Welcome to Demo Time!
+# Intro slide
+
+&mdash; by Elio Struyf
