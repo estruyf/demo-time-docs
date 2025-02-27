@@ -1,7 +1,7 @@
 ---
 title: Setting actions
 description: Perform setting actions in your demos like update settings, change themes, and more.
-lastmod: 2025-02-16T16:17:32.701Z
+lastmod: 2025-02-27T09:52:22.243Z
 ---
 
 import { Aside } from '@astrojs/starlight/components';
@@ -88,3 +88,31 @@ Unset a theme in Visual Studio Code using the `unsetTheme` action.
   "action": "unsetTheme"
 }
 ```
+
+## Set the presentation mode
+
+Set the presentation mode in Visual Studio Code using the `setPresentationMode` action. This action turns on settings to hide the status bar, tabs, and activity bar.
+
+```json
+{
+  "action": "setPresentationMode"
+}
+```
+
+<Aside type="tip">
+  You can use the `setPresentationMode` action when you are starting a presentation to hide the UI elements. You can also trigger this from the slide controls.
+</Aside>
+
+## Unset the presentation mode
+
+Unset the presentation mode in Visual Studio Code using the `unsetPresentationMode` action. This action turns off settings to show the status bar, tabs, and activity bar.
+
+```json
+{
+  "action": "unsetPresentationMode"
+}
+```
+
+<Aside type="tip">
+  You can use the `unsetPresentationMode` action in the demo right after a slide to make sure all UI elements are visible again. You can also trigger this from the slide controls.
+</Aside>

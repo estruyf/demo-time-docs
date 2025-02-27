@@ -5,10 +5,10 @@
   "demoTime.highlightBackground": "rgba(19, 142, 151, 0.2)",
   "demoTime.highlightOpacity": 0.5,
   "demoTime.highlightBlur": 2,
-  "editor.cursorStyle": "block",
-  "editor.cursorBlinking": "expand",
-  "editor.hover.enabled": false,
-  "workbench.colorCustomizations": {
-    "editorCursor.foreground": "#ff0000"
-  }
+  // "editor.cursorStyle": "block",
+  // "editor.cursorBlinking": "expand",
+  // "editor.hover.enabled": false,
+  // "workbench.colorCustomizations": {
+  //   "editorCursor.foreground": "#ff0000"
+  // }
 }

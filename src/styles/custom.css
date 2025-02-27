@@ -102,3 +102,51 @@ h1 {
     opacity: 0;
   }
 }
+
+.slideshow {
+  display: flex;
+  animation: slide 16s infinite;
+
+  img {
+    margin-top: 0 !important;
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  12.5% {
+    transform: translateX(-100%);
+  }
+  25% {
+    transform: translateX(-200%);
+  }
+  37.5% {
+    transform: translateX(-300%);
+  }
+  50% {
+    transform: translateX(-400%);
+  }
+  62.5% {
+    transform: translateX(-500%);
+  }
+  75% {
+    transform: translateX(-600%);
+  }
+  87.5% {
+    transform: translateX(-700%);
+  }
+  100% {
+    transform: translateX(-800%);
+  }
+}
+
+.images {
+  overflow: hidden;
+}
+
+.images img {
+  min-width: 100%;
+  transition: transform 1s ease;
+}

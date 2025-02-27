@@ -94,6 +94,10 @@ export default defineConfig({
             { label: 'Present your slides', slug: 'slides' },
             { label: 'Layouts', slug: 'slides/layouts' },
             { label: 'Themes', slug: 'slides/themes' },
+            { label: '- Default theme', slug: 'slides/themes/default' },
+            { label: '- Minimal theme', slug: 'slides/themes/minimal' },
+            { label: '- Monomi theme', slug: 'slides/themes/monomi' },
+            { label: '- Unnamed theme', slug: 'slides/themes/unnamed' },
           ]
         },
         {

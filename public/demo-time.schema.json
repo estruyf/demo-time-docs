@@ -71,6 +71,8 @@
                     "setSetting",
                     "setTheme",
                     "unsetTheme",
+                    "setPresentationView",
+                    "unsetPresentationView",
                     "waitForTimeout",
                     "waitForInput",
                     "executeVSCodeCommand",

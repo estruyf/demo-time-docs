@@ -1,13 +1,14 @@
 ---
 title: Present your slides
 description: From Markdown to slides - present your slides with Demo Time
-lastmod: 2025-02-24T14:29:57.039Z
+lastmod: 2025-02-27T10:44:25.523Z
 ---
 
 import { Code, Aside } from '@astrojs/starlight/components';
 import { Image } from 'astro:assets';
 
 import slidesImg from "../../../assets/docs/slides.webp";
+import slideControlsImg from "../../../assets/docs/slide-controls.webp";
 
 Demo Time is more than just a tool for live demos—it also lets you present slides seamlessly within your editor. With Markdown-based slides, you can deliver presentations without switching between different applications, ensuring a smooth transition between your slides and demos.
 
@@ -32,22 +33,33 @@ To make the process easier, you can use the `Demo Time: Create a slide` command.
 
 ## Layouts
 
-Demo Time supports various slide layouts to help structure your presentation effectively:
+Demo Time supports various slide layouts, with the `layout` property, to help structure your presentation effectively:
 
 - `default` - A standard slide layout
 - `intro` - Ideal for opening slides
 - `quote` - Perfect for displaying key takeaways or citations
 - ... (more layouts available)
 
+<Aside>
 More information on using layouts can be found in the [layouts section](/slides/layouts/) of the documentation.
+</Aside>
 
 ## Customizing Slides with Themes
 
 Personalization matters! Demo Time allows you to customize the look and feel of your slides by selecting a built-in theme or creating your own.
 
-To change your slide theme, you can specify a different theme in the slide configuration or provide a custom CSS file.
+To change your slide theme, you can specify a different theme in the slide configuration with the `theme` property or provide a custom CSS file in the demo JSON file.
 
+Demo Time has the following built-in themes:
+
+- `default`
+- `minimal`
+- `monomi`
+- `unnamed`
+
+<Aside>
 More information on theming can be found in the [themes section](/slides/themes/) of the documentation.
+</Aside>
 
 ## Presenting slides
 
@@ -64,3 +76,16 @@ Use the `openSlide` action to open a slide in the slide view.
 ```
 
 With this approach, you can seamlessly integrate slides into your demos, making your presentations more engaging and dynamic.
+
+## Slide controls
+
+When presenting slides, you have the following control available:
+
+<Image class="mx-auto" src={slideControlsImg} alt="Slide controls" />
+
+- **Fullscreen mode**: Toggles the fullscreen mode from Visual Studio Code.
+- **Presentation view**: This toggles the presentation view, which hides the status bar, tabs, and activity bar to provide a distraction-free experience. You can also use the `setPresentationView` and `unsetPresentationView` actions to control the presentation view programmatically, or from the `Demo Time: Toggle presentation view (hides status bar, tabs, and activity bar)` command.
+- **Close side panel**: Closes the side panel to provide more space for your slides.
+- **Open the Demo Time panel**: Opens the Demo Time panel to access your demos and slides.
+- **Previous step**: Triggers the previous demo step (only if the `demo-time.previousEnabled` setting is enabled).
+- **Next step**: Triggers the next demo step.
