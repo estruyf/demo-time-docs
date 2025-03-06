@@ -1,6 +1,10 @@
 ---
 import HeartIcon from "./HeartIcon.astro";
 import SponsorButton from "./SponsorButton.astro";
+
+// Fetch sponsors data from the API
+const response = await fetch("https://api.frontmatter.codes/sponsors");
+const sponsors = await response.json();
 ---
 
 <div class="container px-4 mx-auto">
@@ -26,6 +30,39 @@ import SponsorButton from "./SponsorButton.astro";
       <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
         <SponsorButton />
       </div>
+
+      {
+        sponsors.length > 0 && (
+          <div class="mt-8">
+            <h3 class="text-xl font-semibold text-[var(--sl-color-white)] mb-4">
+              Current Sponsors
+            </h3>
+            <div class="flex flex-wrap justify-center gap-4">
+              {sponsors.map((sponsor) => (
+                <a
+                  href={sponsor.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="group flex flex-col items-center transition-transform hover:scale-105"
+                  title={`${sponsor.name} (${sponsor.login})`}
+                >
+                  <img
+                    src={sponsor.avatarUrl}
+                    alt={sponsor.name}
+                    class="w-16 h-16 rounded-full border-2 border-[#FFD43B]/50 group-hover:border-[#FFD43B]"
+                    width="64"
+                    height="64"
+                    loading="lazy"
+                  />
+                  <span class="mt-2 text-xs text-[var(--sl-color-gray-3)] group-hover:text-[var(--sl-color-white)]">
+                    {sponsor.name || sponsor.login}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+        )
+      }
     </div>
   </div>
 </div>
