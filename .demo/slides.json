@@ -9,7 +9,7 @@
       "steps": [
         {
           "action": "openSlide",
-          "path": ".demo/slides/intro.md",
+          "path": ".demo/slides/intro-slide.md",
           "theme": ".demo/slides/theme.css"
         }
       ]
