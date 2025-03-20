@@ -1,7 +1,7 @@
 ---
 title: Slide themes
 description: Learn about the different slide themes available in Demo Time
-lastmod: 2025-02-27T10:30:12.060Z
+lastmod: 2025-03-19T17:29:47.588Z
 ---
 
 import { Aside, Code } from '@astrojs/starlight/components';
@@ -42,8 +42,6 @@ import imageunnamedImg from "../../../../assets/docs/slide-themes/unnamed/image.
 import imageLeftunnamedImg from "../../../../assets/docs/slide-themes/unnamed/image-left.webp";
 import imageRightunnamedImg from "../../../../assets/docs/slide-themes/unnamed/image-right.webp";
 import twoColumnsunnamedImg from "../../../../assets/docs/slide-themes/unnamed/two-columns.webp";
-
-import customThemeImg from "../../../../assets/docs/custom-theme.webp";
 
 Personalization matters! Demo Time allows you to customize the look and feel of your slides by selecting a built-in theme or creating your own.
 
@@ -166,43 +164,6 @@ You can also use a custom theme by providing a CSS file in the slide action conf
   </div>
 </div>
 
-## Custom themes
-
-You can also create your own custom themes by providing a CSS file in the slide action configuration. This allows you to customize the look and feel of your slides to match your brand or style.
-
-### Create a custom theme
-
-Start from one of the built-in themes, and customize the CSS to match your style.
-
-```css
-body {
-  background: black;
-  color: white;
-}
-
-.intro {
-  h1 {
-    font-size: 2em;
-    font-style: italic;
-  }
-}
-```
-
 <Aside type="tip">
-Each theme also has a predefined set of CSS variables that you can use to customize the theme. The list of CSS variables can be found in the specific theme documentation page.
+If you want to create your own theme, you can start from one of the built-in themes and customize the CSS to match your style. You can find more information on how to create a custom theme in the [custom theming section](/slides/themes/custom/).
 </Aside>
-
-### Apply the custom theme
-
-To apply the custom theme, you can provide the CSS file in the slide action configuration:
-
-
-```json
-{
-  "action": "openSlide",
-  "path": "<relative path to the file>",
-  "theme": "<relative path to CSS file>"
-}
-```
-
-<Image class="mx-auto" src={customThemeImg} alt="Custom theming" />

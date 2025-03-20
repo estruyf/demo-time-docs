@@ -1,7 +1,7 @@
 ---
 title: Preview actions
 description: Preview actions are used to preview files like Markdown and images in the editor.
-lastmod: 2025-02-25T11:54:19.931Z
+lastmod: 2025-03-19T17:28:28.964Z
 ---
 
 import { Code, Aside } from '@astrojs/starlight/components';
@@ -15,10 +15,13 @@ To show slides with Demo Time, you can make use of the `openSlide` action.
 ```json
 {
   "action": "openSlide",
-  "path": "<relative path to the file>",
-  "theme": "<relative path to CSS file>"
+  "path": "<relative path to the file>"
 }
 ```
+
+<Aside type="tip">
+  You can use a custom theme for your slides by providing a relative path or URL to a CSS file to the `customTheme` property in the frontmatter section of your Markdown file.
+</Aside>
 
 Read more about it in the [slides](/slides/) section of the documentation.
 

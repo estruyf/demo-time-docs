@@ -185,7 +185,7 @@
                       "type": "string"
                     }
                   ],
-                  "title": "When used with the `openSlide` or `imagePreview` action, provide the relative path to the CSS file. When used with the `setTheme` action, provide the theme name."
+                  "title": "Provide the Visual Studio Code theme name, or for the `imagePreview` action, you could provide the relative path to the CSS file to use for your custom theme."
                 },
                 "setting": {
                   "type": "object",

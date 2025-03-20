@@ -1,0 +1,54 @@
+---
+title: Custom theme
+description: Create your own custom theme for your slides
+lastmod: 2025-02-27T10:27:42.553Z
+---
+
+import { Aside, Code } from '@astrojs/starlight/components';
+import { Image } from 'astro:assets';
+
+import customThemeImg from "../../../../assets/docs/custom-theme.webp";
+
+## Custom themes
+
+You can also create your own custom themes by providing a CSS file to the `customTheme` property in the front matter section of your slide. This allows you to customize the look and feel of your slides to match your brand or style.
+
+### Create a custom theme
+
+Start from one of the built-in themes, and customize the CSS to match your style.
+
+```css
+body {
+  background: black;
+  color: white;
+}
+
+.intro {
+  h1 {
+    font-size: 2em;
+    font-style: italic;
+  }
+}
+```
+
+<Aside type="tip">
+Each theme also has a predefined set of CSS variables that you can use to customize the theme. The list of CSS variables can be found in the specific theme documentation page.
+</Aside>
+
+### Apply the custom theme
+
+To apply the custom theme, you can provide the CSS file in the slide's frontmatter section with the `customTheme` property:
+
+```md
+---
+customTheme: .demo/slides/theme.css
+---
+
+# Welcome to Demo Time!
+```
+
+<Image class="mx-auto" src={customThemeImg} alt="Custom theming" />
+
+<Aside type="note">
+If you do not specify a `theme` in the front matter, the `default` theme will be used.
+</Aside>

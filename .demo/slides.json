@@ -9,8 +9,7 @@
       "steps": [
         {
           "action": "openSlide",
-          "path": ".demo/slides/intro-slide.md",
-          "theme": ".demo/slides/theme.css"
+          "path": ".demo/slides/custom/intro.md"
         }
       ]
     },
@@ -20,19 +19,17 @@
       "steps": [
         {
           "action": "openSlide",
-          "path": ".demo/slides/benefits.md",
-          "theme": ".demo/slides/theme.css"
+          "path": ".demo/slides/custom/benefits.md"
         }
       ]
     },
     {
-      "title": "Open slide (custom theme)",
+      "title": "Open slide (custom theme external)",
       "description": "",
       "steps": [
         {
           "action": "openSlide",
-          "path": ".demo/slides/site.md",
-          "theme": ".demo/slides/theme.css"
+          "path": ".demo/slides/custom/site.md"
         }
       ]
     }

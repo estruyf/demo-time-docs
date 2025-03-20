@@ -1,7 +1,7 @@
 ---
 title: Present your slides
 description: From Markdown to slides - present your slides with Demo Time
-lastmod: 2025-02-27T10:44:25.523Z
+lastmod: 2025-03-20T14:10:40.572Z
 ---
 
 import { Code, Aside } from '@astrojs/starlight/components';
@@ -9,6 +9,7 @@ import { Image } from 'astro:assets';
 
 import slidesImg from "../../../assets/docs/slides.webp";
 import slideControlsImg from "../../../assets/docs/slide-controls.webp";
+import slidePreviewImg from "../../../assets/docs/slide-preview.webp";
 
 Demo Time is more than just a tool for live demos—it also lets you present slides seamlessly within your editor. With Markdown-based slides, you can deliver presentations without switching between different applications, ensuring a smooth transition between your slides and demos.
 
@@ -31,20 +32,16 @@ Hello, **Demo Time**!
 To make the process easier, you can use the `Demo Time: Create a slide` command. This command will start the slide creation process where you will be asked for a title and if you want to add it to any of your demos.
 </Aside>
 
-## Layouts
+## Slide settings
 
-Demo Time supports various slide layouts, with the `layout` property, to help structure your presentation effectively:
+You can customize your slides using the following properties in the front matter:
 
-- `default` - A standard slide layout
-- `intro` - Ideal for opening slides
-- `quote` - Perfect for displaying key takeaways or citations
-- ... (more layouts available)
+- `theme` - Specify the theme for the slide.
+- `layout` - Choose a layout for the slide.
+- `image` - Set a background image for the slide.
+- `customTheme` - Provide a custom CSS file for the slide.
 
-<Aside>
-More information on using layouts can be found in the [layouts section](/slides/layouts/) of the documentation.
-</Aside>
-
-## Customizing Slides with Themes
+### Themes
 
 Personalization matters! Demo Time allows you to customize the look and feel of your slides by selecting a built-in theme or creating your own.
 
@@ -61,6 +58,25 @@ Demo Time has the following built-in themes:
 More information on theming can be found in the [themes section](/slides/themes/) of the documentation.
 </Aside>
 
+### Layouts
+
+Demo Time supports various slide layouts, with the `layout` property, to help structure your presentation effectively:
+
+- `default` - A standard slide layout
+- `intro` - Ideal for opening slides
+- `quote` - Perfect for displaying key takeaways or citations
+- ... (more layouts available)
+
+<Aside>
+More information on using layouts can be found in the [layouts section](/slides/layouts/) of the documentation.
+</Aside>
+
+## Slide preview
+
+When you create a slide, you can preview it by running the `Demo Time: Open slide preview` command or by clicking on the open preview (eye) action from the editor title bar.
+
+<Image class="mx-auto" src={slidePreviewImg} alt="Slide preview action" width="400" />
+
 ## Presenting slides
 
 To incorporate slides into your demo workflow, add them as demo steps in your demo script or configuration files. This ensures you can control when and where your slides appear during the presentation.
@@ -70,8 +86,7 @@ Use the `openSlide` action to open a slide in the slide view.
 ```json
 {
   "action": "openSlide",
-  "path": "<relative path to the file>",
-  "theme": "<relative path to CSS file>"
+  "path": "<relative path to the file>"
 }
 ```
 

@@ -98,6 +98,8 @@ export default defineConfig({
             { label: '- Minimal theme', slug: 'slides/themes/minimal' },
             { label: '- Monomi theme', slug: 'slides/themes/monomi' },
             { label: '- Unnamed theme', slug: 'slides/themes/unnamed' },
+            { label: '- Custom theme', slug: 'slides/themes/custom' },
+            { label: 'Exporting slides', slug: 'slides/export' },
           ]
         },
         {

@@ -3,8 +3,8 @@ layout: intro
 theme: default
 ---
 
-# 🚀 Demo Time v0.0.76 🚀
+# 🚀 Demo Time 🚀
 
-## Now with SLIDES support!
+## Now with **PDF Export**
 
 A new way to present and run through your demos—all inside **VS Code**. 🎤💻

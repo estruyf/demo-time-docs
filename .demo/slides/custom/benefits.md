@@ -1,4 +1,5 @@
 ---
+customTheme: .demo/slides/theme.css
 ---
 
 # Benefits
