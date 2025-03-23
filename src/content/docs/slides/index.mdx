@@ -1,7 +1,7 @@
 ---
 title: Present your slides
 description: From Markdown to slides - present your slides with Demo Time
-lastmod: 2025-03-20T14:10:40.572Z
+lastmod: 2025-03-23T16:14:05.146Z
 ---
 
 import { Code, Aside } from '@astrojs/starlight/components';
@@ -38,8 +38,10 @@ You can customize your slides using the following properties in the front matter
 
 - `theme` - Specify the theme for the slide.
 - `layout` - Choose a layout for the slide.
+- `transition` - Set the transition effect for the slide.
 - `image` - Set a background image for the slide.
 - `customTheme` - Provide a custom CSS file for the slide.
+- `customLayout` - Specify a custom layout for the slide.
 
 ### Themes
 
@@ -69,6 +71,24 @@ Demo Time supports various slide layouts, with the `layout` property, to help st
 
 <Aside>
 More information on using layouts can be found in the [layouts section](/slides/layouts/) of the documentation.
+</Aside>
+
+### Transitions
+
+Transitions add a dynamic touch to your slides. You can specify the transition effect for your slides using the `transition` property. Demo Time supports various transitions, including:
+
+- `fadeIn`
+- `slideRight`
+- `slideLeft`
+- `slideUp`
+- `slideDown`
+- `zoomIn`
+- `zoomOut`
+- `rotateIn`
+- `rotateOut`
+
+<Aside type="tip">
+You can change the transition effect duration by setting the `--demotime-transition-duration` CSS variable in your custom CSS file.
 </Aside>
 
 ## Slide preview
