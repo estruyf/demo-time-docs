@@ -39,6 +39,20 @@
       "steps": [
         {
           "action": "setTheme",
+          "theme": "GitHub Light"
+        },
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/custom-layout.md"
+        }
+      ]
+    },
+    {
+      "title": "Custom layout",
+      "description": "",
+      "steps": [
+        {
+          "action": "setTheme",
           "theme": "GitHub Dark"
         },
         {
@@ -54,20 +68,6 @@
         {
           "action": "setTheme",
           "theme": "The unnamed"
-        },
-        {
-          "action": "openSlide",
-          "path": "/.demo/slides/custom-layout.md"
-        }
-      ]
-    },
-    {
-      "title": "Custom layout",
-      "description": "",
-      "steps": [
-        {
-          "action": "setTheme",
-          "theme": "GitHub Light"
         },
         {
           "action": "openSlide",
