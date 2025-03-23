@@ -32,6 +32,62 @@
           "path": ".demo/slides/custom/site.md"
         }
       ]
+    },
+    {
+      "title": "Custom layout",
+      "description": "",
+      "steps": [
+        {
+          "action": "setTheme",
+          "theme": "GitHub Dark"
+        },
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/custom-layout.md"
+        }
+      ]
+    },
+    {
+      "title": "Custom layout",
+      "description": "",
+      "steps": [
+        {
+          "action": "setTheme",
+          "theme": "The unnamed"
+        },
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/custom-layout.md"
+        }
+      ]
+    },
+    {
+      "title": "Custom layout",
+      "description": "",
+      "steps": [
+        {
+          "action": "setTheme",
+          "theme": "GitHub Light"
+        },
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/custom-layout.md"
+        }
+      ]
+    },
+    {
+      "title": "Custom layout",
+      "description": "",
+      "steps": [
+        {
+          "action": "setTheme",
+          "theme": "Shades of Purple"
+        },
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/custom-layout.md"
+        }
+      ]
     }
   ]
 }
