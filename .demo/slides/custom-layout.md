@@ -11,6 +11,7 @@ line2: "Demo Time / Front Matter CMS"
 social1: "🦋 eliostruyf.com"
 social2: eliostruyf.com
 social3: elio@struyfconsulting.be
+transition: slide-up
 ---
 
 <div class="recognitions">

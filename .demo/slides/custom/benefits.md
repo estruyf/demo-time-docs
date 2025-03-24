@@ -1,5 +1,6 @@
 ---
 customTheme: .demo/slides/theme.css
+transition: slide-left
 ---
 
 # Benefits
