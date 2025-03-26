@@ -9,7 +9,7 @@
       "steps": [
         {
           "action": "openSlide",
-          "path": "/.demo/slides/click-component.md"
+          "path": "/.demo/slides/components/click-component.md"
         }
       ]
     },
@@ -19,7 +19,7 @@
       "steps": [
         {
           "action": "openSlide",
-          "path": "/.demo/slides/click-component-2.md"
+          "path": "/.demo/slides/components/click-component-2.md"
         }
       ]
     },
@@ -29,7 +29,7 @@
       "steps": [
         {
           "action": "openSlide",
-          "path": "/.demo/slides/click-component-3.md"
+          "path": "/.demo/slides/components/click-component-3.md"
         }
       ]
     },
@@ -39,7 +39,37 @@
       "steps": [
         {
           "action": "openSlide",
-          "path": "/.demo/slides/click-component-4.md"
+          "path": "/.demo/slides/components/click-component-4.md"
+        }
+      ]
+    },
+    {
+      "title": "Arrow component",
+      "description": "",
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/components/arrow-component.md"
+        }
+      ]
+    },
+    {
+      "title": "Square component",
+      "description": "",
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/components/square-component.md"
+        }
+      ]
+    },
+    {
+      "title": "Circle component",
+      "description": "",
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/components/circle-component.md"
         }
       ]
     }
