@@ -1,0 +1,47 @@
+{
+  "$schema": "https://demotime.elio.dev/demo-time.schema.json",
+  "title": "Slides - Web Components",
+  "description": "",
+  "demos": [
+    {
+      "title": "Click component",
+      "description": "",
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/click-component.md"
+        }
+      ]
+    },
+    {
+      "title": "Click component 2",
+      "description": "",
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/click-component-2.md"
+        }
+      ]
+    },
+    {
+      "title": "Click component 3",
+      "description": "",
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/click-component-3.md"
+        }
+      ]
+    },
+    {
+      "title": "Click component 4",
+      "description": "",
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/click-component-4.md"
+        }
+      ]
+    }
+  ]
+}
