@@ -6,7 +6,7 @@ layout: default
 # Click component 4
 
 <dt-show clicks="1">
-This shows after 4 clicks
+This shows after 1 clicks
 </dt-show>
 
 <dt-hide clicks="2">
