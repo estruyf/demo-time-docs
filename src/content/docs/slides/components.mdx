@@ -1,0 +1,98 @@
+---
+title: Components & animations
+description: Overview of the components and animations in Demo Time.
+lastmod: 2025-03-27T17:19:34.411Z
+---
+
+import { Code, Aside } from '@astrojs/starlight/components';
+import { Image } from 'astro:assets';
+
+## Animations
+
+Demo Time provides click-based animations to show or hide content during your presentations.
+
+### Show Content
+
+The `dt-show` component allows you to reveal content after a specific number of clicks:
+
+```markdown title="Click twice to show content"
+<dt-show clicks="2">
+  This content appears after 2 clicks
+</dt-show>
+```
+
+If no clicks attribute is specified, the content will show after 1 click:
+
+```markdown title="Click to show content"
+<dt-show>
+  This content appears after 1 click
+</dt-show>
+```
+
+### Hide Content
+
+The `dt-hide` component allows you to hide content after a specific number of clicks:
+
+```markdown title="Click twice to hide content"
+<dt-hide clicks="2">
+  This content disappears after 2 clicks
+</dt-hide>
+```
+
+## Components
+
+Demo Time includes several visual components to enhance your presentations.
+
+### Arrow
+
+The `dt-arrow` component draws an arrow with customizable properties:
+
+```html title="Show an arrow"
+<dt-arrow 
+  x1="0" 
+  y1="100" 
+  x2="480" 
+  y2="100" 
+  line-color="#15181f" 
+  line-width="2" 
+  arrow-head="both">
+</dt-arrow>
+```
+
+The `arrow-head` property can be set to:
+- `end`: Arrow head at the end (default)
+- `start`: Arrow head at the start
+- `both`: Arrow heads at both ends
+
+### Rectangle
+
+The `dt-rectangle` component draws a rectangle with customizable properties:
+
+```html title="Show a rectangle"
+<dt-rectangle 
+  x1="25" 
+  y1="30" 
+  x2="375" 
+  y2="75" 
+  line-color="var(--vscode-editorError-foreground)" 
+  line-width="2" 
+  fill-color="transparent">
+</dt-rectangle>
+```
+
+### Circle
+
+The `dt-circle` component draws a circle with customizable properties:
+
+```html title="Show a circle"
+<dt-circle 
+  x1="25" 
+  y1="25" 
+  x2="125" 
+  y2="85" 
+  line-color="#ffd43b" 
+  line-width="4" 
+  fill-color="transparent">
+</dt-circle>
+```
+

@@ -98,7 +98,10 @@ export default defineConfig({
             { label: '- Minimal theme', slug: 'slides/themes/minimal' },
             { label: '- Monomi theme', slug: 'slides/themes/monomi' },
             { label: '- Unnamed theme', slug: 'slides/themes/unnamed' },
+            { label: '- Quantum theme', slug: 'slides/themes/quantum' },
+            { label: '- Frost theme', slug: 'slides/themes/frost' },
             { label: '- Custom theme', slug: 'slides/themes/custom' },
+            { label: 'Components & Animations', slug: 'slides/components' },
             { label: 'Transitions', slug: 'slides/transitions' },
             { label: 'Exporting slides', slug: 'slides/export' },
           ]
