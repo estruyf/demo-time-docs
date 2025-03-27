@@ -50,6 +50,15 @@ h6,
   font-variation-settings: "wdth" 100;
 }
 
+.site-title {
+  font-family: "Hubot Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-variation-settings: "wdth" 100;
+  font-style: italic;
+  text-transform: uppercase;
+}
+
 h1 {
   font-style: italic;
   font-weight: 900;
