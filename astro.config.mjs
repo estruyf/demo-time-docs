@@ -101,7 +101,7 @@ export default defineConfig({
             { label: '- Quantum theme', slug: 'slides/themes/quantum' },
             { label: '- Frost theme', slug: 'slides/themes/frost' },
             { label: '- Custom theme', slug: 'slides/themes/custom' },
-            { label: 'Components & Animations', slug: 'slides/components' },
+            { label: 'Animations & Components', slug: 'slides/components' },
             { label: 'Transitions', slug: 'slides/transitions' },
             { label: 'Exporting slides', slug: 'slides/export' },
           ]

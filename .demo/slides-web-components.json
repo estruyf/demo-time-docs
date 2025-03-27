@@ -54,12 +54,12 @@
       ]
     },
     {
-      "title": "Square component",
+      "title": "Rectangle component",
       "description": "",
       "steps": [
         {
           "action": "openSlide",
-          "path": "/.demo/slides/components/square-component.md"
+          "path": "/.demo/slides/components/rectangle-component.md"
         }
       ]
     },
