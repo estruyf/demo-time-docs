@@ -1,7 +1,7 @@
 ---
 title: Slide themes
 description: Learn about the different slide themes available in Demo Time
-lastmod: 2025-03-19T17:29:47.588Z
+lastmod: 2025-03-27T16:56:17.876Z
 ---
 
 import { Aside, Code } from '@astrojs/starlight/components';
@@ -43,6 +43,24 @@ import imageLeftunnamedImg from "../../../../assets/docs/slide-themes/unnamed/im
 import imageRightunnamedImg from "../../../../assets/docs/slide-themes/unnamed/image-right.webp";
 import twoColumnsunnamedImg from "../../../../assets/docs/slide-themes/unnamed/two-columns.webp";
 
+import defaultquantumImg from "../../../../assets/docs/slide-themes/quantum/default.webp";
+import introquantumImg from "../../../../assets/docs/slide-themes/quantum/intro.webp";
+import sectionquantumImg from "../../../../assets/docs/slide-themes/quantum/section.webp";
+import quotequantumImg from "../../../../assets/docs/slide-themes/quantum/quote.webp";
+import imagequantumImg from "../../../../assets/docs/slide-themes/quantum/image.webp";
+import imageLeftquantumImg from "../../../../assets/docs/slide-themes/quantum/image-left.webp";
+import imageRightquantumImg from "../../../../assets/docs/slide-themes/quantum/image-right.webp";
+import twoColumnsquantumImg from "../../../../assets/docs/slide-themes/quantum/two-columns.webp";
+
+import defaultfrostImg from "../../../../assets/docs/slide-themes/frost/default.webp";
+import introfrostImg from "../../../../assets/docs/slide-themes/frost/intro.webp";
+import sectionfrostImg from "../../../../assets/docs/slide-themes/frost/section.webp";
+import quotefrostImg from "../../../../assets/docs/slide-themes/frost/quote.webp";
+import imagefrostImg from "../../../../assets/docs/slide-themes/frost/image.webp";
+import imageLeftfrostImg from "../../../../assets/docs/slide-themes/frost/image-left.webp";
+import imageRightfrostImg from "../../../../assets/docs/slide-themes/frost/image-right.webp";
+import twoColumnsfrostImg from "../../../../assets/docs/slide-themes/unnamed/two-columns.webp";
+
 Personalization matters! Demo Time allows you to customize the look and feel of your slides by selecting a built-in theme or creating your own.
 
 Similar like defining the `layout` in the front matter of a slide, you can also define a `theme` to apply a specific theme to a slide. If you don't specify a theme, the `default` theme will be used.
@@ -71,10 +89,12 @@ You can also use a custom theme by providing a CSS file in the slide action conf
 - `minimal`
 - `monomi`
 - `unnamed`
+- `quantum`
+- `frost`
 
 ### Theme overview
 
-<div class="grid grid-cols-2 gap-4">
+<div class="grid grid-cols-2 gap-x-4 gap-y-8 mb-8">
   <div class="relative">
     <div class="images w-full relative">
       <div class="slideshow">
@@ -160,6 +180,50 @@ You can also use a custom theme by providing a CSS file in the slide action conf
     <p class="text-sm !mt-1">The unnamed theme is based on the <a href="https://marketplace.visualstudio.com/items?itemName=eliostruyf.vscode-unnamed-theme" title="The Unnamed - VS Code theme">VS Code theme</a></p>
     <p class="text-sm !mt-1">
       <a href="unnamed/" title='View more'>View more</a>
+    </p>
+  </div>
+
+  <div class="relative !mt-0">
+    <div class="images w-full relative">
+      <div class="slideshow">
+        <Image class="h-full" src={defaultquantumImg} alt="Default" />
+        <Image class="h-full" src={introquantumImg} alt="Intro" />
+        <Image class="h-full" src={sectionquantumImg} alt="Section" />
+        <Image class="h-full" src={quotequantumImg} alt="Quote" />
+        <Image class="h-full" src={imagequantumImg} alt="Image" />
+        <Image class="h-full" src={imageLeftquantumImg} alt="Image Left" />
+        <Image class="h-full" src={imageRightquantumImg} alt="Image Right" />
+        <Image class="h-full" src={twoColumnsquantumImg} alt="Two Columns" />
+      </div>
+    </div>
+    
+    <p class="text-base font-bold mb-0">Quantum</p>
+    <p class="text-sm !mt-1">Theme name: <code>quantum</code></p>
+    <p class="text-sm !mt-1">A dark mode theme with vibrant gradient accents</p>
+    <p class="text-sm !mt-1">
+      <a href="quantum/" title='View more'>View more</a>
+    </p>
+  </div>
+
+  <div class="relative !mt-0">
+    <div class="images w-full relative">
+      <div class="slideshow">
+        <Image class="h-full" src={defaultfrostImg} alt="Default" />
+        <Image class="h-full" src={introfrostImg} alt="Intro" />
+        <Image class="h-full" src={sectionfrostImg} alt="Section" />
+        <Image class="h-full" src={quotefrostImg} alt="Quote" />
+        <Image class="h-full" src={imagefrostImg} alt="Image" />
+        <Image class="h-full" src={imageLeftfrostImg} alt="Image Left" />
+        <Image class="h-full" src={imageRightfrostImg} alt="Image Right" />
+        <Image class="h-full" src={twoColumnsfrostImg} alt="Two Columns" />
+      </div>
+    </div>
+    
+    <p class="text-base font-bold mb-0">Frost</p>
+    <p class="text-sm !mt-1">Theme name: <code>frost</code></p>
+    <p class="text-sm !mt-1">Light mode design with a clean, airy feel</p>
+    <p class="text-sm !mt-1">
+      <a href="frost/" title='View more'>View more</a>
     </p>
   </div>
 </div>

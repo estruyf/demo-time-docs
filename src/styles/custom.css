@@ -126,28 +126,28 @@ h1 {
     transform: translateX(0);
   }
   12.5% {
-    transform: translateX(-100%);
+    transform: translateX(0);
   }
   25% {
-    transform: translateX(-200%);
+    transform: translateX(-100%);
   }
   37.5% {
-    transform: translateX(-300%);
+    transform: translateX(-200%);
   }
   50% {
-    transform: translateX(-400%);
+    transform: translateX(-300%);
   }
   62.5% {
-    transform: translateX(-500%);
+    transform: translateX(-400%);
   }
   75% {
-    transform: translateX(-600%);
+    transform: translateX(-500%);
   }
   87.5% {
-    transform: translateX(-700%);
+    transform: translateX(-600%);
   }
   100% {
-    transform: translateX(-800%);
+    transform: translateX(-700%);
   }
 }
 
