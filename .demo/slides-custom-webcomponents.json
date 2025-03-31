@@ -1,15 +1,15 @@
 {
   "$schema": "https://demotime.elio.dev/demo-time.schema.json",
-  "title": "Custom Web Components",
+  "title": "Slides - Custom Web Components",
   "description": "",
   "demos": [
     {
-      "title": "Simple Greeting",
+      "title": "Custom highlight text",
       "description": "",
       "steps": [
         {
           "action": "openSlide",
-          "path": "/.demo/components/text-highlight-component.md"
+          "path": "/.demo/slides/components/text-highlight-component.md"
         }
       ]
     }
