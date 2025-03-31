@@ -1,7 +1,7 @@
 ---
 title: Settings
 description: Customize the settings of Demo Time to fit your needs.
-lastmod: 2025-02-15T15:08:17.575Z
+lastmod: 2025-03-31T13:42:32.783Z
 tableOfContents: false
 ---
 
@@ -23,9 +23,16 @@ Here is a list of all the settings available in Demo Time.
 | `demoTime.api.enabled` | Enable the API to control the extension. | `false` |
 | `demoTime.api.port` | The port on which the API should run. | `3710` |
 | `demoTime.hideEditorActions` | Hide the editor actions (add new demo and toggle highlight). | `false` |
+| `demoTime.customWebComponents` | Custom web components to be used in the slides. Provide the relative paths to the JS file(s). | `[]` |
 
 <Aside>
 The `demoTime.previousEnabled` is by default disabled to avoid conflicts when the previous action inserted content into a file.
 
 When you enable this setting, you can use the `Demo Time: Previous` command to go back to the previous step or use the left clicker button.
 </Aside>
+
+<style>{`
+table th:nth-child(1) {
+  width: 40%;
+}
+`}</style>

@@ -9,7 +9,7 @@
       "steps": [
         {
           "action": "openSlide",
-          "path": "/.demo/slides/simple-greeting.md"
+          "path": "/.demo/components/text-highlight-component.md"
         }
       ]
     }

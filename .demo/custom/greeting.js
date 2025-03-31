@@ -5,7 +5,10 @@ import {
 } from 'https://esm.run/lit';
 
 export class SimpleGreeting extends LitElement {
-  static styles = css`p { color: blue }`;
+  static styles = css`p { 
+    color: var(--vscode-badge-foreground); 
+    background: var(--vscode-badge-background);
+  }`;
 
   static properties = {
     name: {type: String},
@@ -15,9 +18,14 @@ export class SimpleGreeting extends LitElement {
     super();
     this.name = 'from Demo Time!';
   }
+  
+  _handleClick(e) {
+    e.preventDefault();
+    console.log(`Thank you for clicking me!`);
+  }
 
   render() {
-    return html`<p>Hello ${this.name}</p>`;
+    return html`<div><p>Hello ${this.name}</p><button @click="${this._handleClick}">Click me</button></div>`;
   }
 }
 customElements.define('simple-greeting', SimpleGreeting);
