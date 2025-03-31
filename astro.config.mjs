@@ -102,6 +102,7 @@ export default defineConfig({
             { label: '- Frost theme', slug: 'slides/themes/frost' },
             { label: '- Custom theme', slug: 'slides/themes/custom' },
             { label: 'Animations & Components', slug: 'slides/components' },
+            { label: '- Custom components', slug: 'slides/custom-components' },
             { label: 'Transitions', slug: 'slides/transitions' },
             { label: 'Exporting slides', slug: 'slides/export' },
           ]
