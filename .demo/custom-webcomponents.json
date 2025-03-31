@@ -1,0 +1,17 @@
+{
+  "$schema": "https://demotime.elio.dev/demo-time.schema.json",
+  "title": "Custom Web Components",
+  "description": "",
+  "demos": [
+    {
+      "title": "Simple Greeting",
+      "description": "",
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/simple-greeting.md"
+        }
+      ]
+    }
+  ]
+}
