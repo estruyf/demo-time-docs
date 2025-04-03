@@ -5,6 +5,10 @@
   "demoTime.highlightBackground": "#ffd43b4d",
   "demoTime.highlightOpacity": 0.5,
   "demoTime.highlightBlur": 2,
+  "demoTime.customWebComponents": [
+    ".demo/custom/greeting.js",
+    ".demo/custom/highlight.js",
+  ],
   "workbench.statusBar.visible": true,
   "workbench.editor.showTabs": "multiple",
   "workbench.activityBar.location": "default",
