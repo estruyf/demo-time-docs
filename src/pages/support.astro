@@ -335,7 +335,7 @@ import stickerImage from "../assets/demo-time-sticker.png";
               <input
                 type="text"
                 id="githubUsername"
-                name="githubUsername"
+                name="$githubUsername"
                 placeholder="johndoe"
                 required
               />
@@ -351,7 +351,7 @@ import stickerImage from "../assets/demo-time-sticker.png";
               <Home className="input-icon" />
               <textarea
                 id="address"
-                name="address"
+                name="$address"
                 rows={3}
                 placeholder="Your full shipping address"
                 required></textarea>
@@ -833,8 +833,6 @@ import stickerImage from "../assets/demo-time-sticker.png";
         for (let [key, value] of formData.entries()) {
           data[key] = value;
         }
-
-        console.log("Form submitted:", data);
 
         // Here you would typically send the data to a server
 
