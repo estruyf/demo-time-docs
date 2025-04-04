@@ -38,6 +38,18 @@
       ]
     },
     {
+      "title": "Highlight text (via position - first line)",
+      "description": "",
+      "steps": [
+        {
+          "action": "highlight",
+          "path": "src/content/docs/actions/text.mdx",
+          "position": "3",
+          "highlightWholeLine": true
+        }
+      ]
+    },
+    {
       "title": "Highlight text (zoom)",
       "description": "",
       "steps": [
