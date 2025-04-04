@@ -380,7 +380,11 @@ import stickerImage from "../assets/demo-time-sticker.png";
           <script src="https://www.google.com/recaptcha/api.js" is:inline
           ></script>
 
-          <button type="submit" class="button primary full-width">
+          <button
+            id="stickerSubmitButton"
+            type="submit"
+            class="button primary full-width"
+          >
             <Send className="icon" /> Request Stickers
           </button>
 
@@ -797,7 +801,7 @@ import stickerImage from "../assets/demo-time-sticker.png";
         e.preventDefault();
 
         const submitButton = document.getElementById(
-          "submitButton"
+          "stickerSubmitButton"
         ) as HTMLButtonElement;
         const buttonText = document.getElementById("buttonText");
 
@@ -823,9 +827,9 @@ import stickerImage from "../assets/demo-time-sticker.png";
           },
           body: urlEncodedData.toString(),
         })
-          .then((response) => response.json())
+          .then((response) => response.text())
           .then((result) => {
-            if (result.success) {
+            if (result === "Form submitted successfully") {
               // Show success message
               const formContainer = form.parentElement;
 
