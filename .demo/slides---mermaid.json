@@ -1,0 +1,35 @@
+{
+  "$schema": "https://demotime.elio.dev/demo-time.schema.json",
+  "title": "Slides - Mermaid",
+  "description": "",
+  "demos": [
+    {
+      "title": "Mermaid slide",
+      "description": "",
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/mermaid-slide.md"
+        }
+      ],
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      }
+    },
+    {
+      "title": "Mermaid - Sequence diagram",
+      "description": "",
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/mermaid---sequence-diagram.md"
+        }
+      ],
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      }
+    }
+  ]
+}
