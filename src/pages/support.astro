@@ -280,17 +280,18 @@ import stickerImage from "../assets/demo-time-sticker.png";
           action="https://api.staticforms.xyz/submit"
           method="POST"
         >
+          <!-- Hidden StaticForms fields -->
           <input
             type="hidden"
             name="apiKey"
-            value="sf_2g9h855e668na16n94fl0lh4"
+            value="sf_gld699cd736f4ml7e1chgb28"
           />
           <input
             type="hidden"
-            name="replyTo"
-            value="elio@struyfconsulting.be"
+            name="subject"
+            value="Demo Time Sticker Request"
           />
-
+          <input type="hidden" name="replyTo" value="@replyEmail" />
           <!-- Anti-spam honeypot field -->
           <input
             type="text"
@@ -373,13 +374,17 @@ import stickerImage from "../assets/demo-time-sticker.png";
 
           <div
             class="g-recaptcha"
-            data-sitekey="6Ldk9gkrAAAAAMioVXZ2qzGzyah5SWFKsKopfwcb"
+            data-sitekey="6Lct-gkrAAAAANXSF_L-hUZUyP-pF4oWzyO0M4jL"
           >
           </div>
           <script src="https://www.google.com/recaptcha/api.js" is:inline
           ></script>
 
-          <button type="submit" class="button primary full-width">
+          <button
+            id="stickerSubmitButton"
+            type="submit"
+            class="button primary full-width"
+          >
             <Send className="icon" /> Request Stickers
           </button>
 
@@ -777,89 +782,94 @@ import stickerImage from "../assets/demo-time-sticker.png";
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("stickerForm");
+    const form = document.getElementById("stickerForm") as HTMLFormElement;
 
     if (form) {
+      // Update reply-to email
+      const emailInput = document.getElementById("email");
+      const replyToField = document.querySelector(
+        'input[name="replyTo"]'
+      ) as HTMLInputElement;
+
+      if (emailInput && replyToField) {
+        emailInput.addEventListener("input", (e: any) => {
+          replyToField.value = e.target.value;
+        });
+      }
+
       form.addEventListener("submit", (e) => {
         e.preventDefault();
 
-        // Create FormData from the form
-        const formData = new FormData(e.target);
-        const data = {};
-        for (let [key, value] of formData.entries()) {
-          data[key] = value;
+        const submitButton = document.getElementById(
+          "stickerSubmitButton"
+        ) as HTMLButtonElement;
+        const buttonText = document.getElementById("buttonText");
+
+        if (submitButton && buttonText) {
+          submitButton.disabled = true;
+          buttonText.innerHTML = "Processing...";
         }
-
-        console.log("Form submitted:", data);
-
-        // Here you would typically send the data to a server
-
-        // Show success message
-        const formContainer = form.parentElement;
-
-        if (formContainer) {
-          formContainer.innerHTML = `
-            <div class="success-message">
-              <div class="success-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                </svg>
-              </div>
-              <h2>Thank You For Your Support!</h2>
-              <p>
-                Your request for Demo Time stickers has been received. We'll verify your GitHub sponsorship and ship the stickers to you as soon as possible.
-              </p>
-            </div>
-          `;
-        }
-      });
-    }
-  });
-</script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // Form submission handler
-    const form = document.getElementById("stickerForm");
-
-    if (form) {
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
 
         // Create FormData from the form
-        const formData = new FormData(e.target);
-        const data = {};
-        for (let [key, value] of formData.entries()) {
-          data[key] = value;
-        }
+        const formData = new FormData(form);
 
-        console.log("Form submitted:", data);
+        // Convert FormData to URL-encoded string
+        const urlEncodedData = new URLSearchParams();
+        formData.forEach((value, key) => {
+          urlEncodedData.append(key, value);
+        });
 
-        // Here you would typically send the data to a server
+        // Send the form data to StaticForms
+        fetch("https://api.staticforms.xyz/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: urlEncodedData.toString(),
+        })
+          .then((response) => response.text())
+          .then((result) => {
+            if (result === "Form submitted successfully") {
+              // Show success message
+              const formContainer = form.parentElement;
 
-        // Show success message
-        const formContainer = form.parentElement;
-
-        if (formContainer) {
-          formContainer.innerHTML = `
-            <div class="success-message">
-              <div class="success-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                </svg>
-              </div>
-              <h2>Thank You For Your Support!</h2>
-              <p>
-                Your request for Demo Time stickers has been received. We'll verify your GitHub sponsorship and ship the stickers to you as soon as possible.
-              </p>
-              <button class="button primary" onclick="window.location.reload()">
-                Back to Homepage
-              </button>
+              if (formContainer) {
+                formContainer.innerHTML = `
+          <div class="success-message">
+            <div class="success-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
             </div>
+            <h2>Thank you for your support!</h2>
+            <p>
+            Your request for Demo Time stickers has been received. We'll verify your GitHub sponsorship and ship the stickers to you as soon as possible.
+            </p>
+          </div>
           `;
-        }
+              }
+            } else {
+              // Handle error
+              alert(
+                "There was an error submitting the form. Please try again."
+              );
+              if (submitButton && buttonText) {
+                submitButton.disabled = false;
+                buttonText.innerHTML =
+                  '<span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg> Request Stickers</span>';
+              }
+            }
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            alert("There was an error submitting the form. Please try again.");
+            if (submitButton && buttonText) {
+              submitButton.disabled = false;
+              buttonText.innerHTML =
+                '<span><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg> Request Stickers</span>';
+            }
+          });
       });
     }
 

@@ -105,6 +105,7 @@ export default defineConfig({
             { label: 'Components', slug: 'slides/components' },
             { label: '- Custom components', slug: 'slides/custom-components' },
             { label: 'Transitions', slug: 'slides/transitions' },
+            { label: 'Import PowerPoint slides', slug: 'slides/powerpoint-import' },
             { label: 'Exporting slides', slug: 'slides/export' },
           ]
         },

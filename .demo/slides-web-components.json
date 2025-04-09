@@ -72,6 +72,16 @@
           "path": "/.demo/slides/components/circle-component.md"
         }
       ]
+    },
+    {
+      "title": "Text animation component",
+      "description": "",
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/text-animation-component.md"
+        }
+      ]
     }
   ]
 }
