@@ -1,0 +1,39 @@
+---
+title: Animations
+description: Learn how to use animation components in your slides.
+lastmod: 2025-04-09T12:47:23.200Z
+---
+
+import { Code, Aside } from '@astrojs/starlight/components';
+import { Image } from 'astro:assets';
+
+Demo Time provides you a couple of animation components to show or hide content during your presentations. On this page, you will learn how to use them.
+
+## Show Content
+
+The `dt-show` component allows you to reveal content after a specific number of clicks:
+
+```markdown title="Click twice to show content"
+<dt-show clicks="2">
+  This content appears after 2 clicks
+</dt-show>
+```
+
+If no clicks attribute is specified, the content will show after 1 click:
+
+```markdown title="Click to show content"
+<dt-show>
+  This content appears after 1 click
+</dt-show>
+```
+
+## Hide Content
+
+The `dt-hide` component allows you to hide content after a specific number of clicks:
+
+```markdown title="Click twice to hide content"
+<dt-hide clicks="2">
+  This content disappears after 2 clicks
+</dt-hide>
+```
+
