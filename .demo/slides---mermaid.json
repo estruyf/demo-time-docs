@@ -4,7 +4,7 @@
   "description": "",
   "demos": [
     {
-      "title": "Mermaid slide",
+      "title": "Mermaid - Flowchart diagram",
       "description": "",
       "steps": [
         {
@@ -24,6 +24,34 @@
         {
           "action": "openSlide",
           "path": "/.demo/slides/mermaid---sequence-diagram.md"
+        }
+      ],
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      }
+    },
+    {
+      "title": "Mermaid - Timeline diagram",
+      "description": "",
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/mermaid---timeline-diagram.md"
+        }
+      ],
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      }
+    },
+    {
+      "title": "Mermaid - Multiple diagrams",
+      "description": "",
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/mermaid---multiple-diagrams.md"
         }
       ],
       "icons": {

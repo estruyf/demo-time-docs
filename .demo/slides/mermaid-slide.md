@@ -3,7 +3,7 @@ theme: default
 layout: default
 ---
 
-# Mermaid slide
+# Mermaid - Flowchart diagram
 
 ```mermaid
 graph TD;

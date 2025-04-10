@@ -1,7 +1,7 @@
 ---
-title: Animations & Components
+title: Components
 description: Learn how to use animations and components in your slides.
-lastmod: 2025-03-27T20:54:03.479Z
+lastmod: 2025-04-09T13:10:42.113Z
 ---
 
 import { Code, Aside } from '@astrojs/starlight/components';
@@ -12,43 +12,9 @@ import rectangleCompImg from "../../../assets/docs/rectangle-component.webp";
 import circleCompImg from "../../../assets/docs/circle-component.webp";
 import mouseCoordinatesImg from "../../../assets/docs/mouse-coordinates.webp";
 
-## Animations
-
-Demo Time provides click-based animations to show or hide content during your presentations.
-
-### Show Content
-
-The `dt-show` component allows you to reveal content after a specific number of clicks:
-
-```markdown title="Click twice to show content"
-<dt-show clicks="2">
-  This content appears after 2 clicks
-</dt-show>
-```
-
-If no clicks attribute is specified, the content will show after 1 click:
-
-```markdown title="Click to show content"
-<dt-show>
-  This content appears after 1 click
-</dt-show>
-```
-
-### Hide Content
-
-The `dt-hide` component allows you to hide content after a specific number of clicks:
-
-```markdown title="Click twice to hide content"
-<dt-hide clicks="2">
-  This content disappears after 2 clicks
-</dt-hide>
-```
-
-## Components
-
 Demo Time includes several visual components to enhance your presentations.
 
-### Arrow
+## Arrow
 
 The `dt-arrow` component draws an arrow with customizable properties:
 
@@ -66,7 +32,7 @@ The `dt-arrow` component draws an arrow with customizable properties:
 
 <Image class="mx-auto" src={arrowCompImg} alt="Arrow component" width={400} />
 
-#### Properties
+### Properties
 
 - `x1` and `y1`: Coordinates for the starting point.
 - `x2` and `y2`: Coordinates for the ending point or dimensions.
@@ -77,7 +43,7 @@ The `dt-arrow` component draws an arrow with customizable properties:
   - `start`: Arrow head at the start
   - `both`: Arrow heads at both ends
 
-### Rectangle
+## Rectangle
 
 The `dt-rectangle` component draws a rectangle with customizable properties:
 
@@ -95,7 +61,7 @@ The `dt-rectangle` component draws a rectangle with customizable properties:
 
 <Image class="mx-auto" src={rectangleCompImg} alt="Rectangle component" width="400" />
 
-#### Properties
+### Properties
 
 - `x1` and `y1`: Coordinates for the starting point.
 - `x2` and `y2`: Coordinates for the ending point or dimensions.
@@ -103,7 +69,7 @@ The `dt-rectangle` component draws a rectangle with customizable properties:
 - `line-width`: Thickness of the line or border.
 - `fill-color`: Fill color for the shape (use `transparent` for no fill).
 
-### Circle
+## Circle
 
 The `dt-circle` component draws a circle with customizable properties:
 
@@ -121,7 +87,7 @@ The `dt-circle` component draws a circle with customizable properties:
 
 <Image class="mx-auto" src={circleCompImg} alt="Circle component" width="400" />
 
-#### Properties
+### Properties
 
 - `x1` and `y1`: Coordinates for the starting point.
 - `x2` and `y2`: Coordinates for the ending point or dimensions.
