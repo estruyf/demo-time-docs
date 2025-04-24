@@ -131,6 +131,7 @@ export default defineConfig({
             { label: 'Using clock and timer', slug: 'tips/time-your-presentation' },
             { label: 'Providing demo notes', slug: 'tips/providing-demo-notes' },
             { label: 'Trigger from a link', slug: 'tips/uri-handler' },
+            { label: 'Control the next demo shortcut', slug: 'tips/control-next-demo' },
           ],
         },
         {
