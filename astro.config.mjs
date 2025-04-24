@@ -111,6 +111,15 @@ export default defineConfig({
           ]
         },
         {
+          label: 'Other features',
+          items: [
+            { label: 'Presenter view', slug: 'features/presenter-view' },
+            { label: 'Using notes', slug: 'features/using-notes' },
+            { label: 'URI handler', slug: 'features/uri-handler' },
+            { label: 'Timer and clock', slug: 'features/timer-clock' },
+          ],
+        },
+        {
           label: 'References',
           items: [
             { label: 'Commands', slug: 'references/commands' },
@@ -126,11 +135,7 @@ export default defineConfig({
             { label: 'Adding steps to your demo', slug: 'tips/adding-steps' },
             { label: 'Highlight code', slug: 'tips/highlighting' },
             { label: 'Working with variables', slug: 'tips/variables' },
-            { label: 'Presenter view', slug: 'tips/presenter-view' },
             { label: 'Activity bar action', slug: 'tips/move-to-activity-bar' },
-            { label: 'Using clock and timer', slug: 'tips/time-your-presentation' },
-            { label: 'Providing demo notes', slug: 'tips/providing-demo-notes' },
-            { label: 'Trigger from a link', slug: 'tips/uri-handler' },
             { label: 'Control the next demo shortcut', slug: 'tips/control-next-demo' },
           ],
         },
@@ -160,7 +165,7 @@ export default defineConfig({
         {
           label: 'Support the project ❤️',
           link: 'support'
-        }
+        },
       ],
     }), 
     tailwind({

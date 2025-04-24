@@ -1,12 +1,12 @@
 ---
-title: Providing demo notes
+title: Using notes
 description: Learn how to provide notes for your demos in Demo Time.
-tableOfContents: false
-lastmod: 2025-02-03T15:21:00.539Z
+lastmod: 2025-04-24T13:59:23.772Z
 ---
 
 import { Image } from 'astro:assets';
 import notesAction  from "../../../assets/docs/notes-action.webp";
+import notesImg from "../../../assets/docs/notes-presenter-view.webp";
 
 Notes can be added to your demos to provide additional information for yourself or others. If you are preparing a demo for a presentation, you can use these notes to provide additional context or reminders for each step. For you audience, these notes can provide additional information about the demo, such as the purpose of the demo, the expected outcome, or any additional information they should know. This can be helpful when sharing the demo with others who may not be familiar with the code or the context of the demo.
 
@@ -39,3 +39,9 @@ Another way is to click on the **Notes** status bar action to open the notes for
 By default, the notes for a demo are hidden until you click on the book icon to view them. However, you can configure the demo to automatically show the notes when the demo is triggered. To do this, set the `showOnTrigger` property in the notes object to `true`.
 
 When the `showOnTrigger` property is set to `true`, the notes will automatically appear when the demo is triggered, providing additional context and information for the audience.
+
+## Notes on the presenter view
+
+If you are using the presenter view, the notes will automatically be shown. This allows you to see the notes while presenting without showing them to your audience.
+
+<Image class="mx-auto" src={notesImg} alt="Notes shown on the presenter view" />
