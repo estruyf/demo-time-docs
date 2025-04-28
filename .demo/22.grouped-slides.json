@@ -1,0 +1,21 @@
+{
+  "$schema": "https://demotime.elio.dev/demo-time.schema.json",
+  "title": "Grouped slides",
+  "description": "",
+  "demos": [
+    {
+      "title": "Grouped slide",
+      "description": "",
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/grouped-slide.md"
+        }
+      ],
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      }
+    }
+  ]
+}
