@@ -159,6 +159,10 @@ export default defineConfig({
           ],
         },
         {
+          label: 'Beta version',
+          link: 'beta'
+        },
+        {
           label: 'Contributing',
           link: 'contribute'
         },
