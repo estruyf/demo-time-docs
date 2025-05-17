@@ -16,7 +16,6 @@
   "workbench.statusBar.visible": true,
   "workbench.editor.showTabs": "multiple",
   "workbench.activityBar.location": "default",
-  "demoTime.relativeFromWorkspace": false,
   // "editor.cursorStyle": "block",
   // "editor.cursorBlinking": "expand",
   // "editor.hover.enabled": false,

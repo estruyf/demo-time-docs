@@ -2,6 +2,7 @@
   "$schema": "https://demotime.elio.dev/demo-time.schema.json",
   "title": "Text actions",
   "description": "",
+  "version": 2,
   "demos": [
     {
       "title": "Highlight text (via placeholders)",
@@ -163,7 +164,7 @@
         {
           "action": "create",
           "path": "temp/file-action.md",
-          "contentPath": "content/file-action.md"
+          "contentPath": ".demo/content/file-action.md"
         },
         {
           "action": "open",
@@ -173,7 +174,7 @@
           "action": "insert",
           "path": "temp/file-action.md",
           "position": "4",
-          "contentPath": "content/file-insert.md"
+          "contentPath": ".demo/content/file-insert.md"
         }
       ]
     },
@@ -184,7 +185,7 @@
         {
           "action": "create",
           "path": "temp/file-action.md",
-          "contentPath": "content/file-action.md"
+          "contentPath": ".demo/content/file-action.md"
         },
         {
           "action": "open",
@@ -205,7 +206,7 @@
         {
           "action": "create",
           "path": "temp/file-action.md",
-          "contentPath": "content/file-action.md"
+          "contentPath": ".demo/content/file-action.md"
         },
         {
           "action": "open",
@@ -229,7 +230,7 @@
         {
           "action": "create",
           "path": "temp/unformatted.json",
-          "contentPath": "content/unformatted.json"
+          "contentPath": ".demo/content/unformatted.json"
         },
         {
           "action": "open",
@@ -267,7 +268,7 @@
         {
           "action": "create",
           "path": "temp/file-action.md",
-          "contentPath": "content/file-action.md"
+          "contentPath": ".demo/content/file-action.md"
         },
         {
           "action": "open",
