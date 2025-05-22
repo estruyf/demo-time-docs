@@ -30,7 +30,7 @@ Configure the MCP server in your workspace by creating or editing `.vscode/mcp.j
      "servers": {
        "Demo Time": {
          "type": "stdio",
-         "command": "node",
+         "command": "npx",
          "args": ["-y", "@demotime/mcp"],
        }
      }
