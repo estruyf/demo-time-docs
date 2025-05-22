@@ -26,11 +26,12 @@
     "fuse.js": "^7.1.0"
   },
   "devDependencies": {
+    "@types/node": "^22.15.21",
+    "@types/react": "^18.2.62",
+    "@types/react-dom": "^18.2.18",
     "debug": "^4.4.1",
     "gray-matter": "^4.0.3",
     "rimraf": "^6.0.1",
-    "typescript": "^5.8.3",
-    "@types/react": "^18.2.62",
-    "@types/react-dom": "^18.2.18"
+    "typescript": "^5.8.3"
   }
 }
