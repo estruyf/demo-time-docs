@@ -41,7 +41,11 @@ const data = files.map(filename => {
 
 // Configure Fuse.js options
 const options = {
-  keys: ['title', 'content', 'description']
+  keys: ['title', 'content', 'description'],
+  useExtendedSearch: true,
+  ignoreLocation: true,
+  threshold: 0.3,
+  fieldNormWeight: 2,
 };
 
 // Build the index

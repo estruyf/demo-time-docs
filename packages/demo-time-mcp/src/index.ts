@@ -35,6 +35,10 @@ const fuse = new Fuse(
   data,
   {
     keys: ["title", "content", "description", "slug"],
+    useExtendedSearch: true,
+    ignoreLocation: true,
+    threshold: 0.3,
+    fieldNormWeight: 2,
   },
   fuseIndex
 );
@@ -56,15 +60,22 @@ const server = new McpServer({
  * @returns {string} - Markdown formatted search results
  */
 function squashSearchResults(searchResults: Array<FuseResult<any>>): string {
+  // Sort results by score (lowest score = best match)
+  const sortedResults = [...searchResults].sort(
+    (a, b) => (a.score ?? 0) - (b.score ?? 0)
+  );
+
   // Create a map to track unique documents by ID
   const uniqueDocsMap = new Map<string, { title: string; content: string }>();
 
-  searchResults.forEach((result) => {
+  sortedResults.forEach((result) => {
     const doc = result.item;
-    uniqueDocsMap.set(doc.id, {
-      title: doc.title,
-      content: doc.content,
-    });
+    if (!uniqueDocsMap.has(doc.id)) {
+      uniqueDocsMap.set(doc.id, {
+        title: doc.title,
+        content: doc.content,
+      });
+    }
   });
 
   // Convert map to markdown formatted string
@@ -84,7 +95,7 @@ server.tool(
   "Search in Demo Time documentation using keywords",
   { query: z.string().min(1) },
   async ({ query }) => {
-    const rawResults = fuse.search(query, { limit: 10 });
+    const rawResults = fuse.search(`"${query}"`, { limit: 10 });
     const markdownResults = squashSearchResults(rawResults);
     return {
       content: [
