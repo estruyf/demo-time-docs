@@ -1,7 +1,7 @@
 ---
 title: Adding demos
 description: Add your demos to your demo time configuration.
-lastmod: 2025-02-12T14:33:04.255Z
+lastmod: 2025-05-30T12:19:00.258Z
 ---
 
 import { Aside } from '@astrojs/starlight/components';
@@ -32,6 +32,7 @@ The default content of the `demo.json` file looks like this:
   "$schema": "https://demotime.elio.dev/demo-time.schema.json",
   "title": "Demo",
   "description": "Demo description",
+  "version": 2,
   "demos": []
 }
 ```
@@ -42,6 +43,7 @@ You can start adding your demos in the `demos` array. Each demo should have the 
 {
   "title": "<title>",
   "description": "<description>",
+  "version": 2,
   "steps": []
 }
 ```
@@ -52,6 +54,7 @@ You can also add icons to the demo to make them more recognizable.
 {
   "title": "<title>",
   "description": "<description>",
+  "version": 2,
   "icons": {
     "start": "<name of the icon (optional)>",
     "end": "<name of the icon (optional)>"
@@ -71,6 +74,7 @@ Here is an example of a demo where you create a file and open it:
   "$schema": "https://demotime.elio.dev/demo-time.schema.json",
   "title": "Demo",
   "description": "Demo description",
+  "version": 2,
   "demos": [
     {
       "title": "Create and open sample.json",
@@ -126,9 +130,10 @@ The notes should be created as a markdown file in the `.demo` folder. Here is an
 {
   "title": "<title>",
   "description": "<description>",
+  "version": 2,
   "steps": [...],
   "notes": {
-    "path": "<relative path in the .demo folder>",
+    "path": "<relative path to the file>",
     "showOnTrigger": "<show notes on trigger (optional) - default is false>"
   }
 }

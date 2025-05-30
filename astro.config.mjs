@@ -141,6 +141,7 @@ export default defineConfig({
             { label: 'Using notes', slug: 'features/using-notes' },
             { label: 'URI handler', slug: 'features/uri-handler' },
             { label: 'Timer and clock', slug: 'features/timer-clock' },
+            { label: 'MCP server support', slug: 'features/mcp-server' },
           ],
         },
         {
