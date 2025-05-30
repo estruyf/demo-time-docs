@@ -2,7 +2,7 @@
 title: VS Code Settings
 description: Learn about additional VS Code Settings that may be useful
 tableOfContents: false
-lastmod: 2025-05-30T18:47:35.677Z
+lastmod: 2025-05-30T18:50:50.708Z
 ---
 
 import { Aside } from '@astrojs/starlight/components';
@@ -14,9 +14,9 @@ By default VS Code places any new terminal windows at the bottom of the screen.
 
 When presenting it can be useful to set the default location of new terminal windows to `editor` rather than `view`. This will then create new terminals in an editor tab providing more space.
 
-```
+```json
 {
-    "terminal.integrated.defaultLocation": "editor"
+  "terminal.integrated.defaultLocation": "editor"
 }
 ```
 
@@ -25,10 +25,10 @@ Demo Time allows you to set the zoom level when highlighting text however it can
 
 This can be done for both the editor and the terminal independently.
 
-```
+```json
 {
-    "editor.fontSize": 20,
-    "terminal.integrated.fontSize": 25
+  "editor.fontSize": 20,
+  "terminal.integrated.fontSize": 25
 }
 ```
 
@@ -38,20 +38,20 @@ By default, Visual Studio Code uses a thin blinking cursor, which can be hard to
 
 Changing the cursor to a block which expands gives a better visual cue of where the cursor is located.
 
-```
+```json
 {
-    "editor.cursorStyle": "block",
-    "editor.cursorBlinking": "expand"
+  "editor.cursorStyle": "block",
+  "editor.cursorBlinking": "expand"
 }
 ```
 
 You can also give your cursor a different color to make it stand out more. 
 
-```
+```json
 {
-    "workbench.colorCustomizations": {
-        "editorCursor.foreground": "#FF0000"
-    }
+  "workbench.colorCustomizations": {
+    "editorCursor.foreground": "#FF0000"
+  }
 }
 ```
 
@@ -61,9 +61,9 @@ When hovering over code, VS Code shows a hover panel with information about the 
 
 To turn off the hover panels, you can set the following setting:
 
-```
+```json
 {
-    "editor.hover.enabled": false
+  "editor.hover.enabled": false
 }
 ```
 
