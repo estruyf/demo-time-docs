@@ -1,7 +1,7 @@
 ---
 title: Present your slides
 description: From Markdown to slides - present your slides with Demo Time
-lastmod: 2025-03-23T16:14:05.146Z
+lastmod: 2025-05-30T09:18:09.695Z
 ---
 
 import { Code, Aside } from '@astrojs/starlight/components';
@@ -21,12 +21,38 @@ To create slides, start by creating a new Markdown file and adding your content:
 
 ```md
 ---
+theme: default
 ---
 
 # Title
 
 Hello, **Demo Time**!
 ```
+
+You can also create multiple slides within the same Markdown file by separating them with three hyphens (`---`). This is useful for grouping related slides together. For example:
+
+```md
+---
+theme: default
+---
+
+# Slide 1 Title
+
+Content for the first slide.
+
+---
+
+# Slide 2 Title
+
+Content for the second slide.
+```
+
+<Aside type="tip">
+When using **grouped slides**, each slide will inherit the following properties from the front matter of the first slide:
+- `theme`
+- `customTheme`
+- `transition`
+</Aside>
 
 <Aside type="tip">
 To make the process easier, you can use the `Demo Time: Create a slide` command. This command will start the slide creation process where you will be asked for a title and if you want to add it to any of your demos.
@@ -122,5 +148,9 @@ When presenting slides, you have the following control available:
 - **Presentation view**: This toggles the presentation view, which hides the status bar, tabs, and activity bar to provide a distraction-free experience. You can also use the `setPresentationView` and `unsetPresentationView` actions to control the presentation view programmatically, or from the `Demo Time: Toggle presentation view (hides status bar, tabs, and activity bar)` command.
 - **Close side panel**: Closes the side panel to provide more space for your slides.
 - **Open the Demo Time panel**: Opens the Demo Time panel to access your demos and slides.
-- **Previous step**: Triggers the previous demo step (only if the `demo-time.previousEnabled` setting is enabled).
+- **Previous step**: Triggers the previous demo step (only if the `demo-time.previousEnabled` setting is enabled or when using grouped slides).
 - **Next step**: Triggers the next demo step.
+
+## Notes
+
+If you want to add notes to your slides or demos, you can check the [notes section](/features/using-notes/) of the documentation.

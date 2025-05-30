@@ -1,0 +1,20 @@
+---
+title: Image Slide Layout
+description: Learn about the image slide layout in Demo Time
+lastmod: 2025-05-30T09:09:55.024Z
+---
+
+import { Aside, Code } from '@astrojs/starlight/components';
+import { Image } from 'astro:assets';
+import imageImg from "../../../../assets/docs/slide-layouts/image.webp";
+
+The `image` layout is used to display an image on the slide. It provides a large image area and a smaller content area.
+
+```md
+---
+layout: image
+image: "<url to the image>"
+---
+```
+
+<Image class="mx-auto" src={imageImg} alt="Image" />

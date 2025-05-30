@@ -92,20 +92,57 @@ export default defineConfig({
           label: 'Slides',
           items: [
             { label: 'Present your slides', slug: 'slides' },
-            { label: 'Layouts', slug: 'slides/layouts' },
-            { label: 'Themes', slug: 'slides/themes' },
-            { label: '- Default theme', slug: 'slides/themes/default' },
-            { label: '- Minimal theme', slug: 'slides/themes/minimal' },
-            { label: '- Monomi theme', slug: 'slides/themes/monomi' },
-            { label: '- Unnamed theme', slug: 'slides/themes/unnamed' },
-            { label: '- Quantum theme', slug: 'slides/themes/quantum' },
-            { label: '- Frost theme', slug: 'slides/themes/frost' },
-            { label: '- Custom theme', slug: 'slides/themes/custom' },
-            { label: 'Animations & Components', slug: 'slides/components' },
-            { label: '- Custom components', slug: 'slides/custom-components' },
-            { label: 'Transitions', slug: 'slides/transitions' },
+            {
+              label: 'Layouts',
+              items: [
+                { label: 'Overview', slug: 'slides/layouts' },
+                { label: 'Default layout', slug: 'slides/layouts/default' },
+                { label: 'Intro layout', slug: 'slides/layouts/intro' },
+                { label: 'Section layout', slug: 'slides/layouts/section' },
+                { label: 'Quote layout', slug: 'slides/layouts/quote' },
+                { label: 'Image layout', slug: 'slides/layouts/image' },
+                { label: 'Image left layout', slug: 'slides/layouts/image-left' },
+                { label: 'Image right layout', slug: 'slides/layouts/image-right' },
+                { label: 'Two columns layout', slug: 'slides/layouts/two-columns' },
+                { label: 'Custom layout', slug: 'slides/layouts/custom' },
+              ],
+            },
+            {
+              label: 'Themes',
+              items: [
+                { label: 'Overview', slug: 'slides/themes' },
+                { label: 'Default theme', slug: 'slides/themes/default' },
+                { label: 'Minimal theme', slug: 'slides/themes/minimal' },
+                { label: 'Monomi theme', slug: 'slides/themes/monomi' },
+                { label: 'Unnamed theme', slug: 'slides/themes/unnamed' },
+                { label: 'Quantum theme', slug: 'slides/themes/quantum' },
+                { label: 'Frost theme', slug: 'slides/themes/frost' },
+                { label: 'Custom theme', slug: 'slides/themes/custom' },
+              ],
+            },
+            { label: 'Slide transitions', slug: 'slides/transitions' },
+            { label: 'Animations', slug: 'slides/animations' },
+            {
+              label: 'Components',
+              items: [
+                { label: 'Overview', slug:  'slides/components' },
+                { label: 'Custom components', slug: 'slides/components/custom' },
+              ],
+            },
+            { label: 'Mermaid', slug: 'slides/mermaid' },
+            { label: 'Import PowerPoint slides', slug: 'slides/powerpoint-import' },
             { label: 'Exporting slides', slug: 'slides/export' },
           ]
+        },
+        {
+          label: 'Other features',
+          items: [
+            { label: 'Presenter view', slug: 'features/presenter-view' },
+            { label: 'Using notes', slug: 'features/using-notes' },
+            { label: 'URI handler', slug: 'features/uri-handler' },
+            { label: 'Timer and clock', slug: 'features/timer-clock' },
+            { label: 'MCP server support', slug: 'features/mcp-server' },
+          ],
         },
         {
           label: 'References',
@@ -123,11 +160,9 @@ export default defineConfig({
             { label: 'Adding steps to your demo', slug: 'tips/adding-steps' },
             { label: 'Highlight code', slug: 'tips/highlighting' },
             { label: 'Working with variables', slug: 'tips/variables' },
-            { label: 'Presenter view', slug: 'tips/presenter-view' },
             { label: 'Activity bar action', slug: 'tips/move-to-activity-bar' },
-            { label: 'Using clock and timer', slug: 'tips/time-your-presentation' },
-            { label: 'Providing demo notes', slug: 'tips/providing-demo-notes' },
-            { label: 'Trigger from a link', slug: 'tips/uri-handler' },
+            { label: 'Control the next demo shortcut', slug: 'tips/control-next-demo' },
+            { label: 'VS Code Settings', slug: 'tips/vscode-settings' },
           ],
         },
         {
@@ -150,13 +185,17 @@ export default defineConfig({
           ],
         },
         {
+          label: 'Beta version',
+          link: 'beta'
+        },
+        {
           label: 'Contributing',
           link: 'contribute'
         },
         {
           label: 'Support the project ❤️',
           link: 'support'
-        }
+        },
       ],
     }), 
     tailwind({

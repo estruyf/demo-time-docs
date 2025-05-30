@@ -1,7 +1,7 @@
 ---
 title: Settings
 description: Customize the settings of Demo Time to fit your needs.
-lastmod: 2025-03-31T13:42:32.783Z
+lastmod: 2025-05-30T09:34:36.273Z
 tableOfContents: false
 ---
 
@@ -17,6 +17,7 @@ Here is a list of all the settings available in Demo Time.
 | `demoTime.highlightOpacity` | The opacity of the text which is not highlighted. Number between 0 and 1. | `0.5` |
 | `demoTime.highlightZoomEnabled` | Enable zooming when highlighting code. | `false` \| `number (zoom level)` |
 | `demoTime.previousEnabled` | Enable the previous command when in presentation mode. | `false` |
+| `demoTime.nextActionBehaviour` | Defines how the next action/step behaves. <br /><br />**lastExecuted (default):** The "Next" action always advances from the furthest step you have executed, even if you go back and view previous steps. This is the current behavior.<br /><br />**currentPosition:** The "Next" action advances from your current position, regardless of how far you have previously gone. If you go back and then press "Next", it moves forward from where you are. | `lastExecuted` |
 | `demoTime.showClock` | Show a clock in the status bar. | `true` |
 | `demoTime.timer` | Count down timer for how long the session should last. If not set, it will not count down. The value is the number of minutes. | `null` |
 | `demoTime.lineInsertionDelay` | The speed in milliseconds for inserting lines. If you set it to `0`, it will insert its content immediately. | `25` |
@@ -24,6 +25,7 @@ Here is a list of all the settings available in Demo Time.
 | `demoTime.api.port` | The port on which the API should run. | `3710` |
 | `demoTime.hideEditorActions` | Hide the editor actions (add new demo and toggle highlight). | `false` |
 | `demoTime.customWebComponents` | Custom web components to be used in the slides. Provide the relative paths to the JS file(s). | `[]` |
+| `demoTime.customTheme` | Custom CSS file to be used in the slides. Provide the relative path to the CSS file. | `` |
 
 <Aside>
 The `demoTime.previousEnabled` is by default disabled to avoid conflicts when the previous action inserted content into a file.
