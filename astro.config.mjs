@@ -122,8 +122,13 @@ export default defineConfig({
             },
             { label: 'Slide transitions', slug: 'slides/transitions' },
             { label: 'Animations', slug: 'slides/animations' },
-            { label: 'Components', slug: 'slides/components' },
-            { label: '- Custom components', slug: 'slides/custom-components' },
+            {
+              label: 'Components',
+              items: [
+                { label: 'Overview', slug:  'slides/components' },
+                { label: 'Custom components', slug: 'slides/components/custom' },
+              ],
+            },
             { label: 'Mermaid', slug: 'slides/mermaid' },
             { label: 'Import PowerPoint slides', slug: 'slides/powerpoint-import' },
             { label: 'Exporting slides', slug: 'slides/export' },
