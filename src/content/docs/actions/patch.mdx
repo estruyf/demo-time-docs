@@ -1,7 +1,7 @@
 ---
 title: Patch actions
 description: File patch actions can be used to insert code based on a snapshot of the file and a patch file.
-lastmod: 2025-02-16T16:17:18.887Z
+lastmod: 2025-05-30T12:15:12.185Z
 ---
 
 import { Aside } from '@astrojs/starlight/components';
@@ -50,8 +50,8 @@ To apply the changes, you can use the `applyPatch` action. This action takes the
 {
   "action": "applyPatch",
   "path": "<relative path to the file>", // This will be the source file to update
-  "contentPath": "<relative path to the snapshot file in the .demo folder>",
-  "patch": "<relative path to the patch file in the .demo folder>"
+  "contentPath": "<relative path to the snapshot file>",
+  "patch": "<relative path to the patch file>"
 }
 ```
 
