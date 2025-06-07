@@ -4,6 +4,7 @@
   "description": "",
   "demos": [
     {
+      "id": "default-slide",
       "title": "Default slide",
       "description": "",
       "steps": [
