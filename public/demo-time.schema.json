@@ -87,7 +87,8 @@
                     "executeTerminalCommand",
                     "executeScript",
                     "closeTerminal",
-                    "snippet"
+                    "snippet",
+                    "openPowerPoint"
                   ],
                   "title": "Action to perform"
                 },
