@@ -1,10 +1,11 @@
 ---
 title: API
 description: Demo Time provides an API to control the extension programmatically.
-lastmod: 2025-01-09T10:44:30.678Z
+lastmod: 2025-06-10T06:43:04.171Z
 tableOfContents: false
 ---
 
+import { Aside } from '@astrojs/starlight/components';
 import { Image } from 'astro:assets';
 import apiPortImg from "../../../assets/docs/api-port.webp";
 
@@ -29,6 +30,10 @@ This endpoint will execute the next step in the demo.
 - Method: `GET`
 - Query parameters:
   - `bringToFront`: Bring the Visual Studio Code window to the front. Default is `false`.
+
+<Aside type="caution">
+  To make use of the `bringToFront` parameter, you need to make sure the `code` command is available in your system's PATH. If you have not yet installed the `code` command, you can do so by executing the `Shell Command: Install 'code' command in PATH` command from the command palette in Visual Studio Code.
+</Aside>
 
 ### `/api/runById`
 
