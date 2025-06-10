@@ -9,6 +9,7 @@
     ".demo/custom/greeting.js",
     ".demo/custom/highlight.js",
   ],
+  "demoTime.api.enabled": true,
   "[markdown]": {
     "editor.formatOnSave": false
   },
