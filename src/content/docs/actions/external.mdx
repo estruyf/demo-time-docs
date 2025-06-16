@@ -1,0 +1,23 @@
+---
+title: External application actions
+description: Perform actions that interact with external applications from your demos.
+lastmod: 2025-06-16T11:39:21.469Z
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+External application actions allow you to open or interact with applications outside of your editor as part of your demo flow.
+
+## Open PowerPoint
+
+Open Microsoft PowerPoint directly from your demo using the `openPowerPoint` action. This is useful when you want to demonstrate or reference a PowerPoint presentation as part of your workflow.
+
+```json
+{
+  "action": "openPowerPoint"
+}
+```
+
+<Aside type="note" title="PowerPoint must be installed">
+  This action requires Microsoft PowerPoint to be installed on your system. The action attempts to open the running PowerPoint instance.
+</Aside>
