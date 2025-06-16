@@ -8,7 +8,7 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://demotime.elio.dev',
+  site: 'https://demotime.show',
   trailingSlash: 'always',
   integrations: [
     starlight({
@@ -39,7 +39,7 @@ export default defineConfig({
           tag: 'meta',
           attrs: {
             property: 'og:image',
-            content: 'https://demotime.elio.dev/demo-time-og.png',
+            content: 'https://demotime.show/demo-time-og.png',
           }
         },
         {
