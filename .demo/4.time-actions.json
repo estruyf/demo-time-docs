@@ -1,5 +1,5 @@
 {
-  "$schema": "https://demotime.elio.dev/demo-time.schema.json",
+  "$schema": "https://demotime.show/demo-time.schema.json",
   "title": "Time actions",
   "description": "",
   "demos": [
