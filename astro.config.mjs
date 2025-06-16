@@ -171,6 +171,7 @@ export default defineConfig({
           label: 'Integrations',
           items: [
             { label: 'Slidev', slug: 'integrations/slidev' },
+            { label: 'PowerPoint', slug: 'integrations/powerpoint' },
           ]
         },
         {
