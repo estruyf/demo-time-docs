@@ -1,6 +1,6 @@
 # Demo Time MCP
 
-Demo Time MCP is a package that provides Model Context Protocol (MCP) server capabilities for the [Demo Time](https://demotime.elio.dev/) extension. It enables advanced scripting, automation, and integration features for live coding demos and presentations in Visual Studio Code.
+Demo Time MCP is a package that provides Model Context Protocol (MCP) server capabilities for the [Demo Time](https://demotime.show/) extension. It enables advanced scripting, automation, and integration features for live coding demos and presentations in Visual Studio Code.
 
 ## What this package does
 
@@ -50,7 +50,7 @@ Configure the MCP server in your workspace by creating or editing `.vscode/mcp.j
 
 ## Resources
 
-- [Demo Time Documentation](https://demotime.elio.dev/)
+- [Demo Time Documentation](https://demotime.show/)
 
 ## License
 

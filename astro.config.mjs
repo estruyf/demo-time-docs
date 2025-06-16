@@ -8,7 +8,7 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://demotime.elio.dev',
+  site: 'https://demotime.show',
   trailingSlash: 'always',
   integrations: [
     starlight({
@@ -39,7 +39,7 @@ export default defineConfig({
           tag: 'meta',
           attrs: {
             property: 'og:image',
-            content: 'https://demotime.elio.dev/demo-time-og.png',
+            content: 'https://demotime.show/demo-time-og.png',
           }
         },
         {
@@ -86,6 +86,7 @@ export default defineConfig({
             { label: 'Time actions', slug: 'actions/time' },
             { label: 'VS Code actions', slug: 'actions/vscode' },
             { label: 'Snippet actions', slug: 'actions/snippet' },
+            { label: 'External Apps actions', slug: 'actions/external' },
           ],
         },
         {
@@ -105,6 +106,7 @@ export default defineConfig({
                 { label: 'Image right layout', slug: 'slides/layouts/image-right' },
                 { label: 'Two columns layout', slug: 'slides/layouts/two-columns' },
                 { label: 'Custom layout', slug: 'slides/layouts/custom' },
+                { label: 'Header & Footer', slug: 'slides/layouts/header-footer' },
               ],
             },
             {
@@ -169,6 +171,7 @@ export default defineConfig({
           label: 'Integrations',
           items: [
             { label: 'Slidev', slug: 'integrations/slidev' },
+            { label: 'PowerPoint', slug: 'integrations/powerpoint' },
           ]
         },
         {

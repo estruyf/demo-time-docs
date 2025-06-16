@@ -1,7 +1,7 @@
 ---
 title: Components
 description: Learn how to use animations and components in your slides.
-lastmod: 2025-05-30T09:13:35.952Z
+lastmod: 2025-06-16T11:43:08.541Z
 ---
 
 import { Code, Aside } from '@astrojs/starlight/components';
@@ -94,6 +94,40 @@ The `dt-circle` component draws a circle with customizable properties:
 - `line-color`: Color of the line or border.
 - `line-width`: Thickness of the line or border.
 - `fill-color`: Fill color for the shape (use `transparent` for no fill).
+
+## List
+
+The `dt-list` component allows you to progressively reveal list items one by one with each click during your presentation. This makes it easier to present step-by-step lists without manually wrapping each item in a `dt-show` component.
+
+### Usage
+
+You can use either Markdown or HTML list syntax inside the `dt-list` component. Each list item will appear one by one as you advance through your slide:
+
+```html title="Unordered list (Markdown syntax)"
+<dt-list>
+- First step - appears on first click
+- Second step - appears on second click
+- Third step - appears on third click
+- Final step - appears on fourth click
+</dt-list>
+```
+
+```html title="Ordered list (HTML syntax)"
+<dt-list type="ol">
+  <li>First step - appears on first click</li>
+  <li>Second step - appears on second click</li>
+  <li>Third step - appears on third click</li>
+  <li>Final step - appears on fourth click</li>
+</dt-list>
+```
+
+### Properties
+
+- `type` (optional): Set to `ol` for an ordered (numbered) list. Defaults to unordered list if omitted.
+
+<Aside type="tip">
+You can mix Markdown and HTML list items, but for best results, use one style per list.
+</Aside>
 
 ## Finding the right coordinates
 

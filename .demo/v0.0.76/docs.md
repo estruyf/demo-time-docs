@@ -4,4 +4,4 @@ layout: section
 
 # Documentation
 
-📖 [demotime.elio.dev/slides](https://demotime.elio.dev/slides/)
+📖 [demotime.show/slides](https://demotime.show/slides/)

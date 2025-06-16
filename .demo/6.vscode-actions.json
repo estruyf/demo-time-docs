@@ -1,5 +1,5 @@
 {
-  "$schema": "https://demotime.elio.dev/demo-time.schema.json",
+  "$schema": "https://demotime.show/demo-time.schema.json",
   "title": "VSCode actions",
   "description": "",
   "demos": [
@@ -72,7 +72,7 @@
       "steps": [
         {
           "action": "openWebsite",
-          "url": "https://demotime.elio.dev"
+          "url": "https://demotime.show"
         }
       ]
     },
@@ -82,7 +82,7 @@
       "steps": [
         {
           "action": "openWebsite",
-          "url": "https://demotime.elio.dev",
+          "url": "https://demotime.show",
           "openInVSCode": true
         }
       ]
