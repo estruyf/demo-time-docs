@@ -106,6 +106,7 @@ export default defineConfig({
                 { label: 'Image right layout', slug: 'slides/layouts/image-right' },
                 { label: 'Two columns layout', slug: 'slides/layouts/two-columns' },
                 { label: 'Custom layout', slug: 'slides/layouts/custom' },
+                { label: 'Header & Footer', slug: 'slides/layouts/header-footer' },
               ],
             },
             {

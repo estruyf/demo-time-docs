@@ -13,6 +13,8 @@
   "[markdown]": {
     "editor.formatOnSave": false
   },
+  // "demoTime.slideHeaderTemplate": ".demo/header_footer/header.html",
+  // "demoTime.slideFooterTemplate": ".demo/header_footer/footer.html",
   // "demoTime.customTheme": ".demo/custom/theme.css",
   "workbench.statusBar.visible": true,
   "workbench.editor.showTabs": "multiple",
