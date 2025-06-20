@@ -1,7 +1,7 @@
 ---
 title: External application actions
 description: Perform actions that interact with external applications from your demos.
-lastmod: 2025-06-16T11:40:39.042Z
+lastmod: 2025-06-20T14:37:36.978Z
 ---
 
 import { Aside } from '@astrojs/starlight/components';
@@ -21,3 +21,13 @@ Open Microsoft PowerPoint directly from your demo using the `openPowerPoint` act
 <Aside type="note" title="PowerPoint must be installed">
   This action requires Microsoft PowerPoint to be installed on your system. The action attempts to open the running PowerPoint instance.
 </Aside>
+
+## Open Keynote
+
+Open Apple Keynote directly from your demo using the `openKeynote` action. This is useful for demonstrating or referencing a Keynote presentation as part of your workflow.
+
+```json
+{
+  "action": "openKeynote"
+}
+```

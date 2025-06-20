@@ -172,6 +172,7 @@ export default defineConfig({
           items: [
             { label: 'Slidev', slug: 'integrations/slidev' },
             { label: 'PowerPoint', slug: 'integrations/powerpoint' },
+            { label: 'Apple Keynote', slug: 'integrations/keynote' },
           ]
         },
         {

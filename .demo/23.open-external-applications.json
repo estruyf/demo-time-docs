@@ -12,6 +12,15 @@
           "action": "openPowerPoint"
         }
       ]
+    },
+    {
+      "title": "Open Keynote",
+      "description": "",
+      "steps": [
+        {
+          "action": "openKeynote"
+        }
+      ]
     }
   ]
 }

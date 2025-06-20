@@ -88,7 +88,8 @@
                     "executeScript",
                     "closeTerminal",
                     "snippet",
-                    "openPowerPoint"
+                    "openPowerPoint",
+                    "openKeynote"
                   ],
                   "title": "Action to perform"
                 },
