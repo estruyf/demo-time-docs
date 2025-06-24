@@ -89,7 +89,13 @@
                     "closeTerminal",
                     "snippet",
                     "openPowerPoint",
-                    "openKeynote"
+                    "openKeynote",
+                    "openCopilotChat",
+                    "newCopilotChat",
+                    "askCopilotChat",
+                    "editCopilotChat",
+                    "agentCopilotChat",
+                    "copilotClose"
                   ],
                   "title": "Action to perform"
                 },
@@ -392,6 +398,22 @@
                   },
                   "then": {
                     "required": ["path"]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "enum": [
+                          "askCopilotChat",
+                          "editCopilotChat",
+                          "agentCopilotChat"
+                        ]
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": ["message"]
                   }
                 },
                 {
