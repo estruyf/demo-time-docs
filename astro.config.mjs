@@ -87,6 +87,7 @@ export default defineConfig({
             { label: 'VS Code actions', slug: 'actions/vscode' },
             { label: 'Snippet actions', slug: 'actions/snippet' },
             { label: 'External Apps actions', slug: 'actions/external' },
+            { label: "GitHub Copilot actions", slug: 'actions/copilot' },
           ],
         },
         {
