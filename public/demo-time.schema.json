@@ -17,6 +17,10 @@
       "enum": [1, 2],
       "default": 1
     },
+    "timer": {
+      "type": "number",
+      "description": "The timer in minutes for the demo."
+    },
     "demos": {
       "type": "array",
       "items": {

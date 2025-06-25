@@ -1,7 +1,7 @@
 ---
 title: Adding demos
 description: Add your demos to your demo time configuration.
-lastmod: 2025-06-16T09:21:08.154Z
+lastmod: 2025-06-25T16:05:16.259Z
 ---
 
 import { Aside } from '@astrojs/starlight/components';
@@ -33,6 +33,7 @@ The default content of the `demo.json` file looks like this:
   "title": "Demo",
   "description": "Demo description",
   "version": 2,
+  "timer": 5, // Optional timer in minutes. You can also set it on global level with the `demoTime.timer` setting.
   "demos": []
 }
 ```
@@ -43,7 +44,6 @@ You can start adding your demos in the `demos` array. Each demo should have the 
 {
   "title": "<title>",
   "description": "<description>",
-  "version": 2,
   "steps": []
 }
 ```
