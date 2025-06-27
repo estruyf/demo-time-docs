@@ -2,6 +2,7 @@
   "$schema": "https://demotime.show/demo-time.schema.json",
   "title": "VSCode actions",
   "description": "",
+  "version": 2,
   "demos": [
     {
       "title": "Execute VSCode command (zoom in)",
@@ -84,6 +85,43 @@
           "action": "openWebsite",
           "url": "https://demotime.show",
           "openInVSCode": true
+        }
+      ]
+    },
+    {
+      "title": "Copy content to clipboard",
+      "description": "",
+      "steps": [
+        {
+          "action": "copyToClipboard",
+          "content": "Hello from Demo Time!"
+        }
+      ]
+    },
+    {
+      "title": "Copy file content to clipboard",
+      "description": "",
+      "steps": [
+        {
+          "action": "copyToClipboard",
+          "contentPath": ".demo/vscode/copy-test.txt"
+        }
+      ]
+    },
+    {
+      "title": "Copy file content to clipboard (with variables)",
+      "description": "",
+      "steps": [
+        {
+          "action": "setState",
+          "state": {
+            "key": "TEST_STATE",
+            "value": "DEMO TIME"
+          }
+        },
+        {
+          "action": "copyToClipboard",
+          "content": "Clipboard with state value: {STATE_TEST_STATE}"
         }
       ]
     }
