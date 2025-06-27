@@ -1,7 +1,7 @@
 ---
 title: Visual Studio Code actions
 description: Perform Visual Studio Code actions in your demos like executing commands or showing an information message.
-lastmod: 2025-06-24T07:47:58.865Z
+lastmod: 2025-06-27T15:14:45.919Z
 ---
 
 import { Image } from 'astro:assets';
@@ -105,3 +105,55 @@ Open a website in your browser or in the editor using the `openWebsite` action.
   "openInVSCode": "<true/false>"
 }
 ```
+
+## Copy content to clipboard
+
+Copy text or file content to your clipboard using the `copyToClipboard` action.
+
+### Copy a string to the clipboard
+
+Use the `content` property to copy a specific string:
+
+```json
+{
+  "action": "copyToClipboard",
+  "content": "Hello from Demo Time!"
+}
+```
+
+### Copy file content to the clipboard
+
+Use the `contentPath` property to copy the contents of a file:
+
+```json
+{
+  "action": "copyToClipboard",
+  "contentPath": ".demo/vscode/copy-test.txt"
+}
+```
+
+### Copy content with variables
+
+You can use state variables in the clipboard content. First, set a state value, then reference it in the `content` property:
+
+```json
+[
+  {
+    "action": "setState",
+    "state": {
+      "key": "TEST_STATE",
+      "value": "DEMO TIME"
+    }
+  },
+  {
+    "action": "copyToClipboard",
+    "content": "Clipboard with state value: {STATE_TEST_STATE}"
+  }
+]
+```
+
+The `{STATE_TEST_STATE}` variable will be replaced with the value you set in the state.
+
+<Aside type="tip">
+  You can use both <code>content</code> and <code>contentPath</code> to control what gets copied to the clipboard, and combine with state for dynamic content.
+</Aside>
