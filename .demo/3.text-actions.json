@@ -51,19 +51,6 @@
       ]
     },
     {
-      "title": "Highlight text (zoom)",
-      "description": "",
-      "steps": [
-        {
-          "action": "highlight",
-          "path": "src/content/docs/actions/text.mdx",
-          "startPlaceholder": "## Highlight text",
-          "endPlaceholder": "specific location.",
-          "zoom": 2
-        }
-      ]
-    },
-    {
       "title": "Highlight text (highlight settings)",
       "description": "",
       "steps": [
@@ -136,6 +123,19 @@
       ]
     },
     {
+      "title": "Highlight text (zoom)",
+      "description": "",
+      "steps": [
+        {
+          "action": "highlight",
+          "path": "src/content/docs/actions/text.mdx",
+          "startPlaceholder": "## Highlight text",
+          "endPlaceholder": "specific location.",
+          "zoom": 2
+        }
+      ]
+    },
+    {
       "title": "Position cursor (via position)",
       "description": "",
       "steps": [
@@ -174,7 +174,55 @@
           "action": "insert",
           "path": "temp/file-action.md",
           "position": "4",
-          "contentPath": ".demo/content/file-insert.md"
+          "contentPath": ".demo/content/file-insert.md",
+          "insertTypingMode": "instant",
+          "insertTypingSpeed": 50
+        }
+      ]
+    },
+    {
+      "title": "Insert text (line-by-line)",
+      "description": "",
+      "steps": [
+        {
+          "action": "create",
+          "path": "temp/file-action.md",
+          "contentPath": ".demo/content/file-action.md"
+        },
+        {
+          "action": "open",
+          "path": "temp/file-action.md"
+        },
+        {
+          "action": "insert",
+          "path": "temp/file-action.md",
+          "position": "4",
+          "contentPath": ".demo/content/file-insert.md",
+          "insertTypingMode": "line-by-line",
+          "insertTypingSpeed": 50
+        }
+      ]
+    },
+    {
+      "title": "Insert text (character-by-character)",
+      "description": "",
+      "steps": [
+        {
+          "action": "create",
+          "path": "temp/file-action.md",
+          "contentPath": ".demo/content/file-action.md"
+        },
+        {
+          "action": "open",
+          "path": "temp/file-action.md"
+        },
+        {
+          "action": "insert",
+          "path": "temp/file-action.md",
+          "position": "4",
+          "contentPath": ".demo/content/file-insert.md",
+          "insertTypingMode": "character-by-character",
+          "insertTypingSpeed": 10
         }
       ]
     },
@@ -195,7 +243,55 @@
           "action": "replace",
           "path": "temp/file-action.md",
           "position": "3:3",
-          "content": "THIS IS A DEMO"
+          "content": "THIS IS A DEMO",
+          "insertTypingMode": "instant",
+          "insertTypingSpeed": 10
+        }
+      ]
+    },
+    {
+      "title": "Replace text (line-by-line)",
+      "description": "",
+      "steps": [
+        {
+          "action": "create",
+          "path": "temp/file-action.md",
+          "contentPath": ".demo/content/file-action.md"
+        },
+        {
+          "action": "open",
+          "path": "temp/file-action.md"
+        },
+        {
+          "action": "replace",
+          "path": "temp/file-action.md",
+          "position": "3:3",
+          "content": "THIS IS A DEMO",
+          "insertTypingMode": "line-by-line",
+          "insertTypingSpeed": 10
+        }
+      ]
+    },
+    {
+      "title": "Replace text (character-by-character)",
+      "description": "",
+      "steps": [
+        {
+          "action": "create",
+          "path": "temp/file-action.md",
+          "contentPath": ".demo/content/file-action.md"
+        },
+        {
+          "action": "open",
+          "path": "temp/file-action.md"
+        },
+        {
+          "action": "replace",
+          "path": "temp/file-action.md",
+          "position": "3:3",
+          "content": "THIS IS A DEMO",
+          "insertTypingMode": "character-by-character",
+          "insertTypingSpeed": 10
         }
       ]
     },
