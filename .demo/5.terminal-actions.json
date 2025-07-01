@@ -14,6 +14,64 @@
       ]
     },
     {
+      "title": "Execute terminal command (auto execute - true)",
+      "description": "",
+      "steps": [
+        {
+          "action": "executeTerminalCommand",
+          "command": "echo 'Hello, world!'",
+          "autoExecute": true
+        }
+      ]
+    },
+    {
+      "title": "Execute terminal command (auto execute - false)",
+      "description": "",
+      "steps": [
+        {
+          "action": "executeTerminalCommand",
+          "command": "echo 'Hello, world!'",
+          "autoExecute": false
+        }
+      ]
+    },
+    {
+      "title": "Execute terminal command (insertTypingMode)",
+      "description": "",
+      "steps": [
+        {
+          "action": "executeTerminalCommand",
+          "command": "echo 'Hello, world!'",
+          "insertTypingMode": "character-by-character",
+          "insertTypingSpeed": 50
+        }
+      ]
+    },
+    {
+      "title": "Execute terminal command (insertTypingMode - word-by-word)",
+      "description": "",
+      "steps": [
+        {
+          "action": "executeTerminalCommand",
+          "command": "echo 'Hello, world!'",
+          "insertTypingMode": "word-by-word",
+          "insertTypingSpeed": 100
+        }
+      ]
+    },
+    {
+      "title": "Execute terminal command (insertTypingMode - line-by-line)",
+      "description": "",
+      "steps": [
+        {
+          "action": "executeTerminalCommand",
+          "command": "echo 'Hello, world!'",
+          "insertTypingMode": "line-by-line",
+          "insertTypingSpeed": 200
+        }
+      ]
+    },
+    {
       "title": "Close terminal",
       "description": "",
       "steps": [
