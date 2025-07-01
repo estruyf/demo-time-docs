@@ -88,6 +88,7 @@
                     "showInfoMessage",
                     "setState",
                     "openWebsite",
+                    "copyToClipboard",
                     "executeTerminalCommand",
                     "executeScript",
                     "closeTerminal",
@@ -298,6 +299,21 @@
                   },
                   "then": {
                     "required": ["url"]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "const": "copyToClipboard"
+                      }
+                    }
+                  },
+                  "then": {
+                    "oneOf": [
+                      { "required": ["content"] },
+                      { "required": ["contentPath"] }
+                    ]
                   }
                 },
                 {
