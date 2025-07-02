@@ -1,7 +1,7 @@
 ---
 title: Settings
 description: Customize the settings of Demo Time to fit your needs.
-lastmod: 2025-05-30T09:34:36.273Z
+lastmod: 2025-07-02T12:10:41.903Z
 tableOfContents: false
 ---
 
@@ -20,7 +20,8 @@ Here is a list of all the settings available in Demo Time.
 | `demoTime.nextActionBehaviour` | Defines how the next action/step behaves. <br /><br />**lastExecuted (default):** The "Next" action always advances from the furthest step you have executed, even if you go back and view previous steps. This is the current behavior.<br /><br />**currentPosition:** The "Next" action advances from your current position, regardless of how far you have previously gone. If you go back and then press "Next", it moves forward from where you are. | `lastExecuted` |
 | `demoTime.showClock` | Show a clock in the status bar. | `true` |
 | `demoTime.timer` | Count down timer for how long the session should last. If not set, it will not count down. The value is the number of minutes. | `null` |
-| `demoTime.lineInsertionDelay` | The speed in milliseconds for inserting lines. If you set it to `0`, it will insert its content immediately. | `25` |
+| `demoTime.insertTypingMode` | The typing mode for inserting text. Options are: `instant`, `line-by-line`, or `character-by-character` | `instant` |
+| `demoTime.insertTypingSpeed` | The speed in milliseconds for inserting text. | `50` |
 | `demoTime.api.enabled` | Enable the API to control the extension. | `false` |
 | `demoTime.api.port` | The port on which the API should run. | `3710` |
 | `demoTime.hideEditorActions` | Hide the editor actions (add new demo and toggle highlight). | `false` |
