@@ -1,7 +1,7 @@
 ---
 title: Text actions
 description: Text actions are used to insert, replace, highlight, delete or unselect text in the editor.
-lastmod: 2025-06-24T07:47:42.069Z
+lastmod: 2025-07-02T12:00:48.829Z
 ---
 
 import { Aside } from '@astrojs/starlight/components';
@@ -133,7 +133,8 @@ Insert text in the editor at a specific location.
   "position": "<position>",
   "content": "<content of the file> (optional)",
   "contentPath": "<relative path to the file (optional)>",
-  "lineInsertionDelay": "<delay in milliseconds to insert each line (optional)>"
+  "insertTypingMode": "<typing mode: 'instant', 'line-by-line' or 'character-by-character'> (optional, default is 'instant')",
+  "insertTypingSpeed": "<delay in milliseconds to insert (optional)>"
 }
 
 // Via placeholders
@@ -144,7 +145,8 @@ Insert text in the editor at a specific location.
   "endPlaceholder": "<end placeholder>",
   "content": "<content of the file> (optional)",
   "contentPath": "<relative path to the file (optional)>",
-  "lineInsertionDelay": "<delay in milliseconds to insert each line (optional)>"
+  "insertTypingMode": "<typing mode: 'instant', 'line-by-line' or 'character-by-character'> (optional, default is 'instant')",
+  "insertTypingSpeed": "<delay in milliseconds to insert (optional)>"
 }
 ```
 
@@ -160,7 +162,8 @@ Replace text in the editor at a specific location.
   "position": "<position>",
   "content": "<content of the file> (optional)",
   "contentPath": "<relative path to the file (optional)>",
-  "lineInsertionDelay": "<delay in milliseconds to insert each line (optional)>"
+  "insertTypingMode": "<typing mode: 'instant', 'line-by-line' or 'character-by-character'> (optional, default is 'instant')",
+  "insertTypingSpeed": "<delay in milliseconds to insert (optional)>"
 }
 
 // Via placeholders
@@ -171,7 +174,8 @@ Replace text in the editor at a specific location.
   "endPlaceholder": "<end placeholder>",
   "content": "<content of the file> (optional)",
   "contentPath": "<relative path to the file (optional)>",
-  "lineInsertionDelay": "<delay in milliseconds to insert each line (optional)>"
+  "insertTypingMode": "<typing mode: 'instant', 'line-by-line' or 'character-by-character'> (optional, default is 'instant')",
+  "insertTypingSpeed": "<delay in milliseconds to insert (optional)>"
 }
 ```
 
