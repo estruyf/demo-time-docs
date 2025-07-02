@@ -1,7 +1,7 @@
 ---
 title: Terminal actions
 description: Perform terminal actions in your demos like running commands, clearing the terminal, and more.
-lastmod: 2025-06-24T07:47:32.594Z
+lastmod: 2025-07-02T12:14:56.863Z
 ---
 
 import { Aside, Code } from '@astrojs/starlight/components';
@@ -22,7 +22,62 @@ Execute a terminal command in the terminal.
 {
   "action": "executeTerminalCommand",
   "command": "<command to execute>",
-  "terminalId": "<terminal id (optional)>"
+  "terminalId": "<terminal id (optional)>",
+  "autoExecute": "<true/false (optional - default is true)>",
+  "insertTypingMode": "<typing mode (optional - default is 'instant')>",
+  "insertTypingSpeed": "<speed in milliseconds (optional)>"
+}
+```
+
+### Properties
+
+- **command**: The command to execute in the terminal
+- **terminalId**: Optional. Define a custom name for the terminal. Default is "DemoTime"
+- **autoExecute**: Optional. Whether to automatically execute the command after typing it. Default behavior varies
+- **insertTypingMode**: Optional. How the command should be typed. Options:
+  - `instant`: Types the command instantly
+  - `character-by-character`: Types each character individually
+- **insertTypingSpeed**: Optional. Speed in milliseconds between each typing unit.
+
+### Examples
+
+#### Basic terminal command
+
+```json
+{
+  "action": "executeTerminalCommand",
+  "command": "echo 'Hello, world!'"
+}
+```
+
+#### Manually execute command
+
+```json
+{
+  "action": "executeTerminalCommand",
+  "command": "echo 'Hello, world!'",
+  "autoExecute": false
+}
+
+#### Command with character-by-character typing
+
+```json
+{
+  "action": "executeTerminalCommand",
+  "command": "echo 'Hello, world!'",
+  "insertTypingMode": "character-by-character",
+  "insertTypingSpeed": 50,
+  "insertTypingSpeed": 100
+}
+```
+
+#### Command with custom terminal ID
+
+```json
+{
+  "action": "executeTerminalCommand",
+  "command": "echo 'Hello, world!'",
+  "terminalId": "demo-terminal"
 }
 ```
 
@@ -78,11 +133,30 @@ Make sure you defined the `id` property and that your script only writes a singl
 
 ## Close a terminal
 
-Close the terminal.
+Close the terminal. You can optionally specify a terminal ID to close a specific terminal.
 
 ```json
 {
   "action": "closeTerminal",
   "terminalId": "<terminal id (optional)>"
+}
+```
+
+### Examples
+
+#### Close the default terminal
+
+```json
+{
+  "action": "closeTerminal"
+}
+```
+
+#### Close a specific terminal by ID
+
+```json
+{
+  "action": "closeTerminal",
+  "terminalId": "demo-terminal"
 }
 ```
