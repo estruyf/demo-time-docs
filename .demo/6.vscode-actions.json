@@ -87,43 +87,6 @@
           "openInVSCode": true
         }
       ]
-    },
-    {
-      "title": "Copy content to clipboard",
-      "description": "",
-      "steps": [
-        {
-          "action": "copyToClipboard",
-          "content": "Hello from Demo Time!"
-        }
-      ]
-    },
-    {
-      "title": "Copy file content to clipboard",
-      "description": "",
-      "steps": [
-        {
-          "action": "copyToClipboard",
-          "contentPath": ".demo/vscode/copy-test.txt"
-        }
-      ]
-    },
-    {
-      "title": "Copy file content to clipboard (with variables)",
-      "description": "",
-      "steps": [
-        {
-          "action": "setState",
-          "state": {
-            "key": "TEST_STATE",
-            "value": "DEMO TIME"
-          }
-        },
-        {
-          "action": "copyToClipboard",
-          "content": "Clipboard with state value: {STATE_TEST_STATE}"
-        }
-      ]
     }
   ]
 }

@@ -88,6 +88,7 @@ export default defineConfig({
             { label: 'Snippet actions', slug: 'actions/snippet' },
             { label: 'External Apps actions', slug: 'actions/external' },
             { label: "GitHub Copilot actions", slug: 'actions/copilot' },
+            { label: 'Interaction actions', slug: 'actions/interactions' },
           ],
         },
         {

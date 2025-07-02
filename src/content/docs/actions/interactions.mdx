@@ -1,0 +1,177 @@
+---
+title: Interaction actions
+description: Perform interaction actions in your demos like copying to clipboard, pasting content, typing text, and pressing keys.
+lastmod: 2025-07-02T11:49:37.287Z
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import GitHubFileOpener from '../../../components/GitHubFileOpener.astro';
+
+Interaction actions allow you to simulate user interactions in your demos. You can copy content to clipboard, paste from clipboard, type text, and press keys to create realistic demo scenarios.
+
+<Aside type="note" title='Samples'>
+  You can find interaction actions samples on GitHub: 
+  <GitHubFileOpener filePath=".demo/25-interaction-actions.json" />
+</Aside>
+
+## Copy content to clipboard
+
+Copy text or file content to your clipboard using the `copyToClipboard` action.
+
+### Copy a string to the clipboard
+
+Use the `content` property to copy a specific string:
+
+```json
+{
+  "action": "copyToClipboard",
+  "content": "Hello from Demo Time!"
+}
+```
+
+### Copy file content to the clipboard
+
+Use the `contentPath` property to copy the contents of a file:
+
+```json
+{
+  "action": "copyToClipboard",
+  "contentPath": ".demo/vscode/copy-test.txt"
+}
+```
+
+### Copy content with variables
+
+You can use state variables in the clipboard content. First, set a state value, then reference it in the `content` property:
+
+```json
+[
+  {
+    "action": "setState",
+    "state": {
+      "key": "TEST_STATE",
+      "value": "DEMO TIME"
+    }
+  },
+  {
+    "action": "copyToClipboard",
+    "content": "Clipboard with state value: {STATE_TEST_STATE}"
+  }
+]
+```
+
+The `{STATE_TEST_STATE}` variable will be replaced with the value you set in the state.
+
+<Aside type="tip">
+  You can use both <code>content</code> and <code>contentPath</code> to control what gets copied to the clipboard, and combine with state for dynamic content.
+</Aside>
+
+## Paste from clipboard
+
+Paste content from the clipboard using the `pasteFromClipboard` action. This action will paste whatever content is currently in your clipboard at the current cursor position.
+
+```json
+{
+  "action": "pasteFromClipboard"
+}
+```
+
+### Example: Copy and paste workflow
+
+You can combine clipboard actions to create a copy-paste workflow:
+
+```json
+[
+  {
+    "action": "copyToClipboard",
+    "content": "welcome"
+  },
+  {
+    "action": "executeVSCodeCommand",
+    "command": "workbench.action.showCommands"
+  },
+  {
+    "action": "pasteFromClipboard"
+  }
+]
+```
+
+## Type text
+
+Simulate typing text using the `typeText` action. This action will type the specified content character by character, making it appear as if someone is actually typing.
+
+```json
+{
+  "action": "typeText",
+  "content": "Hello, this is typed text!"
+}
+```
+
+### Control typing speed
+
+You can control the typing speed by adding the `insertTypingSpeed` property. The value is in milliseconds between each character:
+
+```json
+{
+  "action": "typeText",
+  "content": "This is typed slowly...",
+  "insertTypingSpeed": 250
+}
+```
+
+### Example: Type in command palette
+
+```json
+[
+  {
+    "action": "executeVSCodeCommand",
+    "command": "workbench.action.showCommands"
+  },
+  {
+    "action": "waitForTimeout",
+    "timeout": 1000
+  },
+  {
+    "action": "typeText",
+    "content": "welcome"
+  }
+]
+```
+
+## Press Enter
+
+Simulate pressing the Enter key using the `pressEnter` action. This is useful for confirming commands, submitting forms, or moving to the next line.
+
+```json
+{
+  "action": "pressEnter"
+}
+```
+
+### Example: Type and execute command
+
+You can combine typing and pressing Enter to execute commands:
+
+```json
+[
+  {
+    "action": "executeVSCodeCommand",
+    "command": "workbench.action.showCommands"
+  },
+  {
+    "action": "waitForTimeout",
+    "timeout": 1000
+  },
+  {
+    "action": "typeText",
+    "content": "welcome"
+  },
+  {
+    "action": "pressEnter"
+  }
+]
+```
+
+<Aside type="tip">
+  Interaction actions are perfect for creating realistic demos that show users exactly how to perform certain tasks step by step.
+</Aside>
