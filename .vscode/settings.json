@@ -29,4 +29,7 @@
   // "workbench.colorCustomizations": {
   //   "editorCursor.foreground": "#ff0000"
   // }
+  // "yaml.schemas": {
+  //   "https://demotime.show/demo-time.schema.json": ".demo/*"
+  // }
 }
