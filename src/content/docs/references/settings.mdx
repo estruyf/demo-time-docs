@@ -1,11 +1,11 @@
 ---
 title: Settings
 description: Customize the settings of Demo Time to fit your needs.
-lastmod: 2025-07-02T12:10:41.903Z
+lastmod: 2025-07-04T14:53:33.021Z
 tableOfContents: false
 ---
 
-import { Aside } from '@astrojs/starlight/components';
+import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
 
 Here is a list of all the settings available in Demo Time.
 
@@ -27,12 +27,59 @@ Here is a list of all the settings available in Demo Time.
 | `demoTime.hideEditorActions` | Hide the editor actions (add new demo and toggle highlight). | `false` |
 | `demoTime.customWebComponents` | Custom web components to be used in the slides. Provide the relative paths to the JS file(s). | `[]` |
 | `demoTime.customTheme` | Custom CSS file to be used in the slides. Provide the relative path to the CSS file. | `` |
+| `demoTime.defaultFileType` | The default file type for new demo files. Options: `json` (default), `yaml`. | `json` |
 
 <Aside>
 The `demoTime.previousEnabled` is by default disabled to avoid conflicts when the previous action inserted content into a file.
 
 When you enable this setting, you can use the `Demo Time: Previous` command to go back to the previous step or use the left clicker button.
 </Aside>
+
+## Demo File Format Examples
+
+Demo Time supports both JSON and YAML formats for demo files. You can configure the default format with the `demoTime.defaultFileType` setting.
+
+<Tabs syncKey="demo-file-format">
+<TabItem label="JSON">
+
+```json
+{
+  "$schema": "https://demotime.show/demo-time.schema.json",
+  "title": "My Demo",
+  "description": "A sample demo",
+  "version": 2,
+  "demos": [
+    {
+      "title": "Step 1",
+      "steps": [
+        {
+          "action": "create",
+          "path": "test.txt",
+          "content": "Hello World"
+        }
+      ]
+    }
+  ]
+}
+```
+
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+title: My Demo
+description: A sample demo
+version: 2
+demos:
+  - title: Step 1
+    steps:
+      - action: create
+        path: test.txt
+        content: Hello World
+```
+
+</TabItem>
+</Tabs>
 
 <style>{`
 table th:nth-child(1) {
