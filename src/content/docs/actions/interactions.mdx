@@ -1,7 +1,7 @@
 ---
 title: Interaction actions
 description: Perform interaction actions in your demos like copying to clipboard, pasting content, typing text, and pressing keys.
-lastmod: 2025-07-04T14:53:50.799Z
+lastmod: 2025-07-04T15:03:54.800Z
 ---
 
 import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
@@ -27,6 +27,9 @@ Copy text or file content to your clipboard using the `copyToClipboard` action.
 
 Use the `content` property to copy a specific string:
 
+<Tabs syncKey="copy-clipboard-string">
+<TabItem label="JSON">
+
 ```json
 {
   "action": "copyToClipboard",
@@ -34,9 +37,23 @@ Use the `content` property to copy a specific string:
 }
 ```
 
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+action: copyToClipboard
+content: "Hello from Demo Time!"
+```
+
+</TabItem>
+</Tabs>
+
 ### Copy file content to the clipboard
 
 Use the `contentPath` property to copy the contents of a file:
+
+<Tabs syncKey="copy-clipboard-file">
+<TabItem label="JSON">
 
 ```json
 {
@@ -45,9 +62,23 @@ Use the `contentPath` property to copy the contents of a file:
 }
 ```
 
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+action: copyToClipboard
+contentPath: ".demo/vscode/copy-test.txt"
+```
+
+</TabItem>
+</Tabs>
+
 ### Copy content with variables
 
 You can use state variables in the clipboard content. First, set a state value, then reference it in the `content` property:
+
+<Tabs syncKey="copy-clipboard-variables">
+<TabItem label="JSON">
 
 ```json
 [
@@ -65,6 +96,21 @@ You can use state variables in the clipboard content. First, set a state value, 
 ]
 ```
 
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+- action: setState
+  state:
+    key: TEST_STATE
+    value: "DEMO TIME"
+- action: copyToClipboard
+  content: "Clipboard with state value: {STATE_TEST_STATE}"
+```
+
+</TabItem>
+</Tabs>
+
 The `{STATE_TEST_STATE}` variable will be replaced with the value you set in the state.
 
 <Aside type="tip">
@@ -75,15 +121,31 @@ The `{STATE_TEST_STATE}` variable will be replaced with the value you set in the
 
 Paste content from the clipboard using the `pasteFromClipboard` action. This action will paste whatever content is currently in your clipboard at the current cursor position.
 
+<Tabs syncKey="paste-from-clipboard">
+<TabItem label="JSON">
+
 ```json
 {
   "action": "pasteFromClipboard"
 }
 ```
 
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+action: pasteFromClipboard
+```
+
+</TabItem>
+</Tabs>
+
 ### Example: Copy and paste workflow
 
 You can combine clipboard actions to create a copy-paste workflow:
+
+<Tabs syncKey="copy-paste-workflow">
+<TabItem label="JSON">
 
 ```json
 [
@@ -101,9 +163,26 @@ You can combine clipboard actions to create a copy-paste workflow:
 ]
 ```
 
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+- action: copyToClipboard
+  content: welcome
+- action: executeVSCodeCommand
+  command: "workbench.action.showCommands"
+- action: pasteFromClipboard
+```
+
+</TabItem>
+</Tabs>
+
 ## Type text
 
 Simulate typing text using the `typeText` action. This action will type the specified content character by character, making it appear as if someone is actually typing.
+
+<Tabs syncKey="type-text-action">
+<TabItem label="JSON">
 
 ```json
 {
@@ -112,9 +191,23 @@ Simulate typing text using the `typeText` action. This action will type the spec
 }
 ```
 
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+action: typeText
+content: "Hello, this is typed text!"
+```
+
+</TabItem>
+</Tabs>
+
 ### Control typing speed
 
 You can control the typing speed by adding the `insertTypingSpeed` property. The value is in milliseconds between each character:
+
+<Tabs syncKey="type-text-speed">
+<TabItem label="JSON">
 
 ```json
 {
@@ -124,7 +217,22 @@ You can control the typing speed by adding the `insertTypingSpeed` property. The
 }
 ```
 
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+action: typeText
+content: "This is typed slowly..."
+insertTypingSpeed: 250
+```
+
+</TabItem>
+</Tabs>
+
 ### Example: Type in command palette
+
+<Tabs syncKey="type-in-command-palette">
+<TabItem label="JSON">
 
 ```json
 [
@@ -143,6 +251,21 @@ You can control the typing speed by adding the `insertTypingSpeed` property. The
 ]
 ```
 
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+- action: executeVSCodeCommand
+  command: "workbench.action.showCommands"
+- action: waitForTimeout
+  timeout: 1000
+- action: typeText
+  content: welcome
+```
+
+</TabItem>
+</Tabs>
+
 ## Press Enter
 
 Simulate pressing the Enter key using the `pressEnter` action. This is useful for confirming commands, submitting forms, or moving to the next line.
@@ -155,15 +278,31 @@ Simulate pressing the Enter key using the `pressEnter` action. This is useful fo
   On Linux, you need to have <code>xdotool</code> installed to allow Visual Studio Code to perform key presses. Install it using your package manager (for example, <code>sudo apt install xdotool</code> on Ubuntu). Without <code>xdotool</code>, key press actions will not work.
 </Aside>
 
+<Tabs syncKey="press-enter-action">
+<TabItem label="JSON">
+
 ```json
 {
   "action": "pressEnter"
 }
 ```
 
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+action: pressEnter
+```
+
+</TabItem>
+</Tabs>
+
 ### Example: Type and execute command
 
 You can combine typing and pressing Enter to execute commands:
+
+<Tabs syncKey="type-and-execute-command">
+<TabItem label="JSON">
 
 ```json
 [
@@ -184,4 +323,20 @@ You can combine typing and pressing Enter to execute commands:
   }
 ]
 ```
+
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+- action: executeVSCodeCommand
+  command: "workbench.action.showCommands"
+- action: waitForTimeout
+  timeout: 1000
+- action: typeText
+  content: welcome
+- action: pressEnter
+```
+
+</TabItem>
+</Tabs>
 

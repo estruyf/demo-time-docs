@@ -1,10 +1,11 @@
 ---
 title: Using notes
 description: Learn how to provide notes for your demos in Demo Time.
-lastmod: 2025-05-30T12:15:56.048Z
+lastmod: 2025-07-04T17:53:49.835Z
 ---
 
 import { Image } from 'astro:assets';
+import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
 import notesAction  from "../../../assets/docs/notes-action.webp";
 import notesImg from "../../../assets/docs/notes-presenter-view.webp";
 
@@ -13,6 +14,9 @@ Notes can be added to your demos to provide additional information for yourself 
 To add notes to your demos, you can create a markdown file in the `.demo` folder. Once you have created the notes file, you can reference it in the demo JSON file using the `notes` property.
 
 Here is an example of how you can add notes to your demo:
+
+<Tabs syncKey="demo-notes">
+<TabItem label="JSON">
 
 ```json
 {
@@ -25,6 +29,21 @@ Here is an example of how you can add notes to your demo:
   }
 }
 ```
+
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+title: <title>
+description: <description>
+steps: [...]
+notes:
+  path: <relative path to the file>
+  showOnTrigger: <show notes on trigger (optional) - default is false>
+```
+
+</TabItem>
+</Tabs>
 
 ## Viewing the notes
 

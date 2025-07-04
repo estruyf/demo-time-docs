@@ -1,7 +1,7 @@
 ---
 title: Time actions
 description: Perform time actions in your demos like waiting for a specific time, waiting for user input, and more.
-lastmod: 2025-07-04T14:53:50.793Z
+lastmod: 2025-07-04T17:50:40.172Z
 ---
 
 import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
@@ -18,6 +18,9 @@ Time actions are used to perform actions related to time in the editor. You can 
 
 Wait for a specific time before executing the next action.
 
+<Tabs syncKey="wait-for-time">
+<TabItem label="JSON">
+
 ```json
 {
   "action": "waitForTimeout",
@@ -25,12 +28,36 @@ Wait for a specific time before executing the next action.
 }
 ```
 
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+action: waitForTimeout
+timeout: <timeout in milliseconds>
+```
+
+</TabItem>
+</Tabs>
+
 ## Wait for user input
 
 Wait until the user presses a key.
+
+<Tabs syncKey="wait-for-input">
+<TabItem label="JSON">
 
 ```json
 {
   "action": "waitForInput"
 }
 ```
+
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+action: waitForInput
+```
+
+</TabItem>
+</Tabs>

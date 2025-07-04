@@ -1,7 +1,7 @@
 ---
 title: Patch actions
 description: File patch actions can be used to insert code based on a snapshot of the file and a patch file.
-lastmod: 2025-07-04T14:53:50.792Z
+lastmod: 2025-07-04T15:04:23.034Z
 ---
 
 import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
@@ -46,6 +46,9 @@ Follow these steps:
 
 To apply the changes, you can use the `applyPatch` action. This action takes the `path`, `contentPath`, and `patch` properties as input.
 
+<Tabs syncKey="patch-action">
+<TabItem label="JSON">
+
 ```json
 {
   "action": "applyPatch",
@@ -56,4 +59,19 @@ To apply the changes, you can use the `applyPatch` action. This action takes the
   "insertTypingSpeed": "<delay in milliseconds (optional)>"
 }
 ```
+
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+action: applyPatch
+path: <relative path to the file> # This will be the source file to update
+contentPath: <relative path to the snapshot file>
+patch: <relative path to the patch file>
+insertTypingMode: <typing mode: 'instant', 'line-by-line' or 'character-by-character'> # optional, default is 'instant'
+insertTypingSpeed: <delay in milliseconds> # optional
+```
+
+</TabItem>
+</Tabs>
 

@@ -1,7 +1,7 @@
 ---
 title: Visual Studio Code actions
 description: Perform Visual Studio Code actions in your demos like executing commands or showing an information message.
-lastmod: 2025-07-04T14:53:50.798Z
+lastmod: 2025-07-04T17:51:35.344Z
 ---
 
 import { Image } from 'astro:assets';
@@ -22,6 +22,9 @@ Visual Studio Code actions are used to perform actions related to Visual Studio 
 
 Execute a Visual Studio Code command using the `executeVSCodeCommand` action.
 
+<Tabs syncKey="vscode-execute-command">
+<TabItem label="JSON">
+
 ```json
 {
   "action": "executeVSCodeCommand",
@@ -30,6 +33,19 @@ Execute a Visual Studio Code command using the `executeVSCodeCommand` action.
   "path": "<relative path to the file (optional, when defined, the args property is ignored.)>"
 }
 ```
+
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+action: executeVSCodeCommand
+command: <command to execute>
+args: <arguments to pass to the command> # optional
+path: <relative path to the file> # optional, when defined, the args property is ignored.
+```
+
+</TabItem>
+</Tabs>
 
 ### How to find the command to execute
 
@@ -45,6 +61,9 @@ Next to the command, you can see the "gear" icon. When you click on this icon, y
 
 Show an information message in Visual Studio Code using the `showInfoMessage` action.
 
+<Tabs syncKey="vscode-show-info-message">
+<TabItem label="JSON">
+
 ```json
 {
   "action": "showInfoMessage",
@@ -52,9 +71,23 @@ Show an information message in Visual Studio Code using the `showInfoMessage` ac
 }
 ```
 
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+action: showInfoMessage
+message: <message>
+```
+
+</TabItem>
+</Tabs>
+
 ## Set state
 
 The `setState` action allows you to set a key/value pair in the extension state which can be accessed by other actions. You can use the state value in your demo steps by using the following `{STATE_<key>}` syntax.
+
+<Tabs syncKey="vscode-set-state">
+<TabItem label="JSON">
 
 ```json
 {
@@ -66,6 +99,19 @@ The `setState` action allows you to set a key/value pair in the extension state 
 }
 ```
 
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+action: setState
+state:
+  key: <key>
+  value: <value>
+```
+
+</TabItem>
+</Tabs>
+
 ### Store the clipboard content in the extension state
 
 For example, you could use this action in combination with the `{DT_CLIPBOARD}` variable to store the clipboard content in the extension state and then use it in another action.
@@ -73,6 +119,9 @@ For example, you could use this action in combination with the `{DT_CLIPBOARD}` 
 <Aside type="danger" title="Important">
 The variables extension state gets reset when the extension starts up, or when you reset all the demos.
 </Aside>
+
+<Tabs syncKey="vscode-set-state-clipboard">
+<TabItem label="JSON">
 
 ```json
 {
@@ -84,7 +133,23 @@ The variables extension state gets reset when the extension starts up, or when y
 }
 ```
 
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+action: setState
+state:
+  key: resourceID
+  value: "{DT_CLIPBOARD}"
+```
+
+</TabItem>
+</Tabs>
+
 To use the stored value in another action, you can reference it using the `{STATE_<key>}` syntax.
+
+<Tabs syncKey="vscode-create-with-state">
+<TabItem label="JSON">
 
 ```json
 {
@@ -94,9 +159,27 @@ To use the stored value in another action, you can reference it using the `{STAT
 }
 ```
 
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+action: create
+path: sample.json
+content: |
+  {
+    "firstName": "{STATE_resourceID}"
+  }
+```
+
+</TabItem>
+</Tabs>
+
 ## Open a website
 
 Open a website in your browser or in the editor using the `openWebsite` action.
+
+<Tabs syncKey="vscode-open-website">
+<TabItem label="JSON">
 
 ```json
 {
@@ -105,3 +188,15 @@ Open a website in your browser or in the editor using the `openWebsite` action.
   "openInVSCode": "<true/false>"
 }
 ```
+
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+action: openWebsite
+url: <URL>
+openInVSCode: <true/false>
+```
+
+</TabItem>
+</Tabs>

@@ -1,7 +1,7 @@
 ---
 title: GitHub Copilot actions
 description: Actions for integrating GitHub Copilot in Demo Time
-lastmod: 2025-07-04T14:53:50.796Z
+lastmod: 2025-07-04T15:00:22.158Z
 ---
 
 import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
@@ -17,15 +17,31 @@ GitHub Copilot actions allow you to interact with GitHub Copilot directly from y
 
 To open the Copilot chat panel, use the `openCopilotChat` action.
 
+<Tabs syncKey="copilot-open-chat">
+<TabItem label="JSON">
+
 ```json
 {
   "action": "openCopilotChat"
 }
 ```
 
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+action: openCopilotChat
+```
+
+</TabItem>
+</Tabs>
+
 ## Start a new Copilot chat
 
 To start a new Copilot chat session, use the `newCopilotChat` action.
+
+<Tabs syncKey="copilot-new-chat">
+<TabItem label="JSON">
 
 ```json
 {
@@ -33,9 +49,22 @@ To start a new Copilot chat session, use the `newCopilotChat` action.
 }
 ```
 
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+action: newCopilotChat
+```
+
+</TabItem>
+</Tabs>
+
 ## Ask a question in Copilot chat
 
 To ask a question, use the `askCopilotChat` action with a `message` property.
+
+<Tabs syncKey="copilot-ask-chat">
+<TabItem label="JSON">
 
 ```json
 {
@@ -44,9 +73,23 @@ To ask a question, use the `askCopilotChat` action with a `message` property.
 }
 ```
 
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+action: askCopilotChat
+message: "Write a function that returns 'Hello from Demo Time'."
+```
+
+</TabItem>
+</Tabs>
+
 ## Start an edit chat with Copilot
 
 To start an edit chat, use the `editCopilotChat` action with a `message` property.
+
+<Tabs syncKey="copilot-edit-chat">
+<TabItem label="JSON">
 
 ```json
 {
@@ -55,9 +98,23 @@ To start an edit chat, use the `editCopilotChat` action with a `message` propert
 }
 ```
 
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+action: editCopilotChat
+message: "Write a function that returns 'Hello from Demo Time'."
+```
+
+</TabItem>
+</Tabs>
+
 ## Start an agent chat with Copilot
 
 To start an agent chat, use the `agentCopilotChat` action with a `message` property.
+
+<Tabs syncKey="copilot-agent-chat">
+<TabItem label="JSON">
 
 ```json
 {
@@ -66,12 +123,36 @@ To start an agent chat, use the `agentCopilotChat` action with a `message` prope
 }
 ```
 
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+action: agentCopilotChat
+message: "Write a function that returns 'Hello from Demo Time'."
+```
+
+</TabItem>
+</Tabs>
+
 ## Close Copilot chat
 
 To close the Copilot chat panel, use the `copilotClose` action.
+
+<Tabs syncKey="copilot-close-chat">
+<TabItem label="JSON">
 
 ```json
 {
   "action": "copilotClose"
 }
 ```
+
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+action: copilotClose
+```
+
+</TabItem>
+</Tabs>

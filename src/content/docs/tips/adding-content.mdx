@@ -2,7 +2,7 @@
 title: Adding Content
 description: Learn how to add content to a file in Demo Time.
 tableOfContents: false
-lastmod: 2025-07-04T14:53:50.802Z
+lastmod: 2025-07-04T18:02:57.716Z
 ---
 
 import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
@@ -18,6 +18,9 @@ When you want to insert content to a file, you can use the `content` or `content
 
 When you use the `content` property, you can add the content directly in the JSON file. This property is best used when you want to add a single line of text.
 
+<Tabs syncKey="adding-content">
+<TabItem label="JSON">
+
 ```json
 {
   "action": "insert",
@@ -26,6 +29,19 @@ When you use the `content` property, you can add the content directly in the JSO
   "content": "Learn how to add content to a file in Demo Time."
 }
 ```
+
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+action: insert
+path: "src/content/docs/tips/adding-content.mdx"
+position: end
+content: "Learn how to add content to a file in Demo Time."
+```
+
+</TabItem>
+</Tabs>
 
 <Aside type="tip">
 When you want to add a large content, it is best to use the `contentPath` property. This way you can keep your JSON file clean and add the content in separate files.
@@ -43,11 +59,14 @@ You can add an `executeVSCodeCommand` action with the `editor.action.reindentlin
 
 ## Add a line by line insertion delay
 
-You also have the option to define the speed of each line that is inserted. You can define this on global level with the `demoTime.lineInsertionDelay` setting or on a per step level with the `insertLineSpeed` property.
+You also have the option to define the speed of each line that is inserted. You can define this on global level with the `demoTime.lineInsertionDelay` setting or on a per step level with the `insertTypingSpeed` property.
 
 <Aside type="note">
-By default the `insertLineSpeed` is set to `0`, which means that the content will be inserted immediately.
+By default the `insertTypingSpeed` is set to `25`, which means that the content will be inserted immediately.
 </Aside>
+
+<Tabs syncKey="insert-line-speed">
+<TabItem label="JSON">
 
 ```json
 {
@@ -55,6 +74,20 @@ By default the `insertLineSpeed` is set to `0`, which means that the content wil
   "path": "src/content/docs/tips/adding-content.mdx",
   "position": "end",
   "contentPath": "multiple-lines.md",
-  "insertLineSpeed": 25
+  "insertTypingSpeed": 25
 }
 ```
+
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+action: insert
+path: "src/content/docs/tips/adding-content.mdx"
+position: end
+contentPath: "multiple-lines.md"
+insertTypingSpeed: 25
+```
+
+</TabItem>
+</Tabs>

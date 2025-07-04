@@ -1,11 +1,11 @@
 ---
 title: Using clock and timer functions
 description: To keep an eye on the time, you can use the clock and timer functions from Demo Time.
-lastmod: 2025-06-26T15:15:16.559Z
+lastmod: 2025-07-04T17:53:18.682Z
 ---
 
-import { Code } from '@astrojs/starlight/components';
 import { Image } from 'astro:assets';
+import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
 
 import clockImage from "../../../assets/docs/clock-timer.webp";
 
@@ -19,13 +19,16 @@ You can define the duration of the timer in two ways:
 
 - **Globally:** Set the `demotime.timer` setting in your `.vscode/settings.json` file to specify the default timer duration (in minutes) for all demos.
 
-  <Code code={`{
+  ```json title=".vscode/settings.json"
+  {
     "demotime.timer": 45
-  }`} 
-    lang="json" 
-    title={`.vscode/settings.json`} />
+  }
+  ```
 
 - **Per demo file:** Override the timer duration for a specific demo by adding a `timer` property to the demo file's frontmatter.
+
+  <Tabs syncKey="demo-timer">
+  <TabItem label="JSON">
 
   ```json title="demo.json"
   {
@@ -36,7 +39,21 @@ You can define the duration of the timer in two ways:
     "timer": 45, // Set the timer to 45 minutes
     "demos": []
   }
-    ```
+  ```
+
+  </TabItem>
+  <TabItem label="YAML">
+
+  ```yaml title="demo.yaml"
+  title: Demo
+  description: Demo description
+  version: 2
+  timer: 45 # Set the timer to 45 minutes
+  demos: []
+  ```
+  
+  </TabItem>
+  </Tabs>
 
 You can also pause and resume the timer as needed. To pause the timer, simply click on it in the status bar. Clicking it again will resume the timer from where it left off. This allows for flexibility during your presentation, for instance, when you need to address questions or engage in discussions.
 

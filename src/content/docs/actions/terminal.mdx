@@ -1,10 +1,10 @@
 ---
 title: Terminal actions
 description: Perform terminal actions in your demos like running commands, clearing the terminal, and more.
-lastmod: 2025-07-02T12:14:56.863Z
+lastmod: 2025-07-04T15:17:08.458Z
 ---
 
-import { Aside, Code } from '@astrojs/starlight/components';
+import { Aside, Code, Tabs, TabItem } from '@astrojs/starlight/components';
 import GitHubFileOpener from '../../../components/GitHubFileOpener.astro';
 
 Terminal actions are used to perform actions related to the terminal in the editor. You can use these actions to run commands, clear the terminal, and more.
@@ -18,6 +18,9 @@ Terminal actions are used to perform actions related to the terminal in the edit
 
 Execute a terminal command in the terminal.
 
+<Tabs syncKey="execute-terminal-command">
+<TabItem label="JSON">
+
 ```json
 {
   "action": "executeTerminalCommand",
@@ -28,6 +31,21 @@ Execute a terminal command in the terminal.
   "insertTypingSpeed": "<speed in milliseconds (optional)>"
 }
 ```
+
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+action: executeTerminalCommand
+command: <command to execute>
+terminalId: <terminal id (optional)>
+autoExecute: <true/false (optional - default is true)>
+insertTypingMode: <typing mode (optional - default is 'instant')>
+insertTypingSpeed: <speed in milliseconds (optional)>
+```
+
+</TabItem>
+</Tabs>
 
 ### Properties
 
@@ -43,6 +61,9 @@ Execute a terminal command in the terminal.
 
 #### Basic terminal command
 
+<Tabs syncKey="execute-terminal-command-example">
+<TabItem label="JSON">
+
 ```json
 {
   "action": "executeTerminalCommand",
@@ -50,7 +71,21 @@ Execute a terminal command in the terminal.
 }
 ```
 
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+action: executeTerminalCommand
+command: "echo 'Hello, world!'"
+```
+
+</TabItem>
+</Tabs>
+
 #### Manually execute command
+
+<Tabs syncKey="execute-terminal-command-manual">
+<TabItem label="JSON">
 
 ```json
 {
@@ -58,8 +93,24 @@ Execute a terminal command in the terminal.
   "command": "echo 'Hello, world!'",
   "autoExecute": false
 }
+```
+
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+action: executeTerminalCommand
+command: "echo 'Hello, world!'"
+autoExecute: false
+```
+
+</TabItem>
+</Tabs>
 
 #### Command with character-by-character typing
+
+<Tabs syncKey="execute-terminal-command-character-by-character">
+<TabItem label="JSON">
 
 ```json
 {
@@ -71,7 +122,23 @@ Execute a terminal command in the terminal.
 }
 ```
 
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+action: executeTerminalCommand
+command: "echo 'Hello, world!'"
+insertTypingMode: character-by-character
+insertTypingSpeed: 50
+```
+
+</TabItem>
+</Tabs>
+
 #### Command with custom terminal ID
+
+<Tabs syncKey="execute-terminal-command-custom-id">
+<TabItem label="JSON">
 
 ```json
 {
@@ -81,9 +148,24 @@ Execute a terminal command in the terminal.
 }
 ```
 
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+action: executeTerminalCommand
+command: "echo 'Hello, world!'"
+terminalId: demo-terminal
+```
+
+</TabItem>
+</Tabs>
+
 ## Execute a script in the background
 
 Execute a script in the background of which you can use the output in the next steps.
+
+<Tabs syncKey="execute-script">
+<TabItem label="JSON">
 
 ```json
 {
@@ -94,6 +176,19 @@ Execute a script in the background of which you can use the output in the next s
 }
 ```
 
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+action: executeScript
+id: <script id>
+path: <script to execute>
+command: node # Can be powershell, bash, shell, python, etc.
+```
+
+</TabItem>
+</Tabs>
+
 <Aside>
 If you want, you can use the output of the script in the next steps with `STATE_<script id>` syntax.
 
@@ -102,7 +197,11 @@ Make sure you defined the `id` property and that your script only writes a singl
 
 ### Example of using the output of a script
 
-<Code code={`{
+<Tabs syncKey="execute-script-example">
+<TabItem label="JSON">
+
+```json title="demo.json"
+{
     "title": "Script example",
     "description": "",
     "steps": [
@@ -122,18 +221,40 @@ Make sure you defined the `id` property and that your script only writes a singl
             "path": "sample.json"
         }
     ]
-}`} 
-  lang="js" 
-  title={`demo.json`}
-  desciption={`test`} />
+}
+```
 
-<Code code={`console.log('Elio');`} 
-  lang="js" 
-  title={`writeFirstName.mjs`} />
+</TabItem>
+<TabItem label="YAML">
+
+```yaml title="demo.yaml"
+title: Script example
+description: ""
+steps:
+  - action: executeScript
+    id: firstName
+    path: writeFirstName.mjs
+    command: node
+  - action: create
+    path: sample.json
+    content: "{\\n  \\"firstName\\": \\"{SCRIPT_firstName}\\"\\n}"
+  - action: open
+    path: sample.json
+```
+
+</TabItem>
+</Tabs>
+
+```js title="writeFirstName.mjs"
+console.log('Elio');
+```
 
 ## Close a terminal
 
 Close the terminal. You can optionally specify a terminal ID to close a specific terminal.
+
+<Tabs syncKey="close-terminal">
+<TabItem label="JSON">
 
 ```json
 {
@@ -142,9 +263,23 @@ Close the terminal. You can optionally specify a terminal ID to close a specific
 }
 ```
 
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+action: closeTerminal
+terminalId: <terminal id (optional)>
+```
+
+</TabItem>
+</Tabs>
+
 ### Examples
 
 #### Close the default terminal
+
+<Tabs syncKey="close-terminal-default">
+<TabItem label="JSON">
 
 ```json
 {
@@ -152,7 +287,20 @@ Close the terminal. You can optionally specify a terminal ID to close a specific
 }
 ```
 
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+action: closeTerminal
+```
+
+</TabItem>
+</Tabs>
+
 #### Close a specific terminal by ID
+
+<Tabs syncKey="close-terminal-by-id">
+<TabItem label="JSON">
 
 ```json
 {
@@ -160,3 +308,14 @@ Close the terminal. You can optionally specify a terminal ID to close a specific
   "terminalId": "demo-terminal"
 }
 ```
+
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+action: closeTerminal
+terminalId: demo-terminal
+```
+
+</TabItem>
+</Tabs>

@@ -1,7 +1,7 @@
 ---
 title: Adding demos
 description: Add your demos to your demo time configuration.
-lastmod: 2025-07-04T14:53:50.779Z
+lastmod: 2025-07-04T14:58:59.355Z
 ---
 
 import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
@@ -27,6 +27,9 @@ It is a good practice to split your demos into multiple files. This way, you can
 
 The default content of the `demo.json` file looks like this:
 
+<Tabs syncKey="demo-file-format">
+<TabItem label="JSON">
+
 ```json
 {
   "$schema": "https://demotime.show/demo-time.schema.json",
@@ -38,7 +41,24 @@ The default content of the `demo.json` file looks like this:
 }
 ```
 
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+title: Demo
+description: Demo description
+version: 2
+timer: 5 # Optional timer in minutes. You can also set it on global level with
+demos: []
+```
+
+</TabItem>
+</Tabs>
+
 You can start adding your demos in the `demos` array. Each demo should have the following structure:
+
+<Tabs syncKey="demo-structure">
+<TabItem label="JSON">
 
 ```json
 {
@@ -48,7 +68,22 @@ You can start adding your demos in the `demos` array. Each demo should have the 
 }
 ```
 
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+title: <title>
+description: <description>
+steps: []
+```
+
+</TabItem>
+</Tabs>
+
 You can also add icons to the demo to make them more recognizable.
+
+<Tabs syncKey="demo-icons">
+<TabItem label="JSON">
 
 ```json
 {
@@ -63,11 +98,30 @@ You can also add icons to the demo to make them more recognizable.
 }
 ```
 
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+title: <title>
+description: <description>
+version: 2
+icons:
+  start: <name of the icon (optional)>
+  end: <name of the icon (optional)>
+steps: []
+```
+
+</TabItem>
+</Tabs>
+
 <Aside type="note">
 Use the icon names you can find in the [icon listing](https://code.visualstudio.com/api/references/icons-in-labels#icon-listing) from the Visual Studio Code documentation.
 </Aside>
 
 Here is an example of a demo where you create a file and open it:
+
+<Tabs syncKey="demo-example">
+<TabItem label="JSON">
 
 ```json
 {
@@ -99,9 +153,29 @@ Here is an example of a demo where you create a file and open it:
 }
 ```
 
-## Using the add demo step command
+</TabItem>
+<TabItem label="YAML">
 
-You can use the **Demo Time: Add demo step** command to quickly add the current text selection as a demo step to insert, highlight, unselect, or delete the text.
+```yaml
+title: Demo
+description: Demo description
+version: 2
+demos:
+  - title: Create and open sample.json
+    description: Create a sample.json file with some content.
+    icons:
+      start: file-code
+      end: pass-filled
+    steps:
+      - action: create
+        path: sample.json
+        content: "{\n  \"firstName\": \"Elio\",\n  \"lastName\": \"Struyf\"\n}"
+      - action: open
+        path: sample.json
+```
+
+</TabItem>
+</Tabs>
 
 To use this command, you can follow these steps:
 
@@ -126,6 +200,9 @@ You are also able to add notes to your demos. These notes can be used to provide
 
 The notes should be created as a markdown file in the `.demo` folder. Here is an example of how you can add notes to your demo:
 
+<Tabs syncKey="demo-notes">
+<TabItem label="JSON">
+
 ```json
 {
   "title": "<title>",
@@ -138,6 +215,22 @@ The notes should be created as a markdown file in the `.demo` folder. Here is an
   }
 }
 ```
+
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+title: <title>
+description: <description>
+version: 2
+steps: [...]
+notes:
+  path: <relative path to the notes file>
+  showOnTrigger: <show notes on trigger (optional) - default is false>
+```
+
+</TabItem>
+</Tabs>
 
 ## Implementing other demos and steps
 

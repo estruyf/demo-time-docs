@@ -1,7 +1,7 @@
 ---
 title: Text actions
 description: Text actions are used to insert, replace, highlight, delete or unselect text in the editor.
-lastmod: 2025-07-04T14:53:50.782Z
+lastmod: 2025-07-04T17:50:08.399Z
 ---
 
 import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
@@ -37,12 +37,32 @@ For the `position` property, you can use the following values:
 
 Examples:
 
+<Tabs syncKey="text-position">
+<TabItem label="JSON">
+
 ```jsonc
 "position": "10" // Line 10
 "position": "10:20" // Lines 10 to 20
 "position": "10,5" // Start line 10, character 5
 "position": "10,5:20,10" // Start line 10, character 5 to end line 20, character 10
+"position": "start" // First line
+"position": "end" // Last line
 ```
+
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+position: "10" # Line 10
+position: "10:20" # Lines 10 to 20
+position: "10,5" # Start line 10, character 5
+position: "10,5:20,10" # Start line 10, character 5
+position: start # First line
+position: end # Last line
+```
+
+</TabItem>
+</Tabs>
 
 ### Placeholder position
 
@@ -50,10 +70,23 @@ For the `startPlaceholder` and `endPlaceholder` properties, you specify the text
 
 Examples:
 
+<Tabs syncKey="text-placeholder-position">
+<TabItem label="JSON">
+
 ```jsonc
 "startPlaceholder": "// Start of demo1"
 "endPlaceholder": "// End of demo1"
 ```
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+startPlaceholder: // Start of demo1
+endPlaceholder: // End of demo1
+```
+</TabItem>
+</Tabs>
+
 
 <Aside>
 The text will be replaced from the start of the `startPlaceholder` to the end of the `endPlaceholder`.
@@ -70,6 +103,9 @@ const ext = 'Demo Time';
 ## Highlight text
 
 Highlight text in the editor at a specific location.
+
+<Tabs syncKey="highlight-text">
+<TabItem label="JSON">
 
 ```json
 // Via position
@@ -91,6 +127,28 @@ Highlight text in the editor at a specific location.
 }
 ```
 
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+# Via position
+action: highlight
+path: <relative path to the file>
+position: <position>
+zoom: <zoom level> # Optional
+
+# Via placeholders
+action: highlight
+path: <relative path to the file>
+startPlaceholder: <start placeholder>
+endPlaceholder: <end placeholder>
+highlightWholeLine: <highlight whole line (optional, default is true)>
+zoom: <zoom level> # Optional
+```
+
+</TabItem>
+</Tabs>
+
 <Aside>
 Check out the <a href="../../references/settings" title="settings">settings</a> section to customize the highlight colors.
 </Aside>
@@ -104,6 +162,9 @@ You can read more about it on the [highlighting](/tips/highlighting/) section.
 ## Position cursor
 
 Position your cursor in the editor at a specific location.
+
+<Tabs syncKey="position-cursor">
+<TabItem label="JSON">
 
 ```json
 // Via position
@@ -121,9 +182,30 @@ Position your cursor in the editor at a specific location.
 }
 ```
 
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+# Via position
+action: positionCursor
+path: <relative path to the file>
+position: <position>
+
+# Via start placeholder
+action: positionCursor
+path: <relative path to the file>
+startPlaceholder: <start placeholder>
+```
+
+</TabItem>
+</Tabs>
+
 ## Insert text
 
 Insert text in the editor at a specific location.
+
+<Tabs syncKey="insert-text">
+<TabItem label="JSON">
 
 ```json
 // Via position
@@ -149,11 +231,41 @@ Insert text in the editor at a specific location.
   "insertTypingSpeed": "<delay in milliseconds to insert (optional)>"
 }
 ```
+
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+# Via position
+action: insert
+path: <relative path to the file>
+position: <position>
+content: <content of the file> # optional
+contentPath: <relative path to the file> # optional
+insertTypingMode: <typing mode: 'instant', 'line-by-line' or 'character-by-character'> # optional, default is 'instant'
+insertTypingSpeed: <delay in milliseconds to insert> # Optional
+
+# Via placeholders
+action: insert
+path: <relative path to the file>
+startPlaceholder: <start placeholder>
+endPlaceholder: <end placeholder>
+content: <content of the file> # optional
+contentPath: <relative path to the file> # optional
+insertTypingMode: <typing mode: 'instant', 'line-by-line' or 'character-by-character'> # optional, default is 'instant'
+insertTypingSpeed: <delay in milliseconds to insert> # Optional
+``` 
+
+</TabItem>
+</Tabs>
 
 ## Replace text
 
 Replace text in the editor at a specific location.
 
+<Tabs syncKey="replace-text">
+<TabItem label="JSON">
+
 ```json
 // Via position
 {
@@ -179,9 +291,39 @@ Replace text in the editor at a specific location.
 }
 ```
 
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+# Via position
+action: replace
+path: <relative path to the file>
+position: <position>
+content: <content of the file> # optional
+contentPath: <relative path to the file> # optional
+insertTypingMode: <typing mode: 'instant', 'line-by-line' or 'character-by-character'> # optional, default is 'instant'
+insertTypingSpeed: <delay in milliseconds to insert> # Optional
+
+# Via placeholders
+action: replace
+path: <relative path to the file>
+startPlaceholder: <start placeholder>
+endPlaceholder: <end placeholder>
+content: <content of the file> # optional
+contentPath: <relative path to the file> # optional
+insertTypingMode: <typing mode: 'instant', 'line-by-line' or 'character-by-character'> # optional, default is 'instant'
+insertTypingSpeed: <delay in milliseconds to insert> # Optional
+```
+
+</TabItem>
+</Tabs>
+
 ## Write single line
 
 Write a single line of text in the editor at the current location or specific location.
+
+<Tabs syncKey="write-text">
+<TabItem label="JSON">
 
 ```jsonc
 // Write to current active position
@@ -208,9 +350,38 @@ Write a single line of text in the editor at the current location or specific lo
 }
 ```
 
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+# Write to current active position
+action: write
+content: "Hello World"
+
+# Write to a specific position in a file
+# Via position
+action: write
+content: "Hello World"
+path: <relative path to the file>
+position: <position>
+
+# Via start placeholder
+action: write
+content: "Hello World"
+path: <relative path to the file>
+startPlaceholder: <start placeholder>
+```
+
+</TabItem>
+</Tabs>
+
 ## Format text
 
 Format the content of the active file.
+
+<Tabs syncKey="format-text">
+<TabItem label="JSON">
+
 
 ```json
 {
@@ -218,9 +389,22 @@ Format the content of the active file.
 }
 ```
 
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+action: format
+```
+
+</TabItem>
+</Tabs>
+
 ## Unselect text
 
 Unselect or undo text highlighting in a specific file.
+
+<Tabs syncKey="unselect-text">
+<TabItem label="JSON">
 
 ```json
 {
@@ -229,9 +413,23 @@ Unselect or undo text highlighting in a specific file.
 }
 ```
 
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+action: unselect
+path: <relative path to the file>
+```
+
+</TabItem>
+</Tabs>
+
 ## Delete text
 
 Delete text in the editor at a specific location.
+
+<Tabs syncKey="delete-text">
+<TabItem label="JSON">
 
 ```json
 // Via position
@@ -249,3 +447,22 @@ Delete text in the editor at a specific location.
   "endPlaceholder": "<end placeholder>"
 }
 ```
+
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+# Via position
+action: delete
+path: <relative path to the file>
+position: <position>
+
+# Via placeholders
+action: delete
+path: <relative path to the file>
+startPlaceholder: <start placeholder>
+endPlaceholder: <end placeholder>
+``` 
+
+</TabItem>
+</Tabs>
