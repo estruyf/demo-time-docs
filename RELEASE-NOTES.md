@@ -1,0 +1,30 @@
+# Release Notes
+
+## 1.7.0 (July 5, 2025)
+
+### 🚀 New Features
+- **GitHub Copilot Chat Integration**: Added actions for `openChat`, `newChat`, `askChat`, `editChat`, `agentChat`, and `closeChat` ([#176](https://github.com/estruyf/vscode-demo-time/issues/176)). Easily script Copilot chat interactions in your demos. See the [Copilot actions documentation](src/content/docs/actions/copilot.mdx).
+- **YAML Demo File Support**: You can now use YAML for demo files, configurable via the `demoTime.defaultFileType` setting ([#189](https://github.com/estruyf/vscode-demo-time/issues/189)). This makes it easier to write and maintain demo files in your preferred format.
+- **Sample Demos**: Extension initialization now includes sample demos to help users get started ([#175](https://github.com/estruyf/vscode-demo-time/issues/175)). Learn more about [adding new steps to a demo](src/content/docs/tips/adding-steps.mdx).
+- **New Actions**:
+  - `copyToClipboard`: Copy text, file content, or variables to the clipboard ([#177](https://github.com/estruyf/vscode-demo-time/issues/177)). See [Working with Variables](src/content/docs/tips/variables.mdx) for clipboard usage.
+  - `typeText`: Simulate typing text in the editor ([#186](https://github.com/estruyf/vscode-demo-time/issues/186)).
+  - `pasteFromClipboard`: Paste clipboard content into the editor ([#187](https://github.com/estruyf/vscode-demo-time/issues/187)).
+  - `pressEnter`: Simulate pressing Enter in the editor ([#188](https://github.com/estruyf/vscode-demo-time/issues/188)).
+  - See all interaction actions in the [Interaction actions documentation](src/content/docs/actions/interactions.mdx).
+
+### 🛠 Improvements
+- **Timer at Demo File Level**: You can now set the timer on the demo file level ([#173](https://github.com/estruyf/vscode-demo-time/issues/173)). See [adding new steps to a demo](src/content/docs/tips/adding-steps.mdx) for details.
+- **Text Typing Simulation**: Improved simulation for typing text ([#182](https://github.com/estruyf/vscode-demo-time/issues/182)). See [Interaction actions](src/content/docs/actions/interactions.mdx).
+- **Terminal Command Execution**:
+  - Editor refocuses after executing a terminal command ([#169](https://github.com/estruyf/vscode-demo-time/issues/169)).
+  - `autoExecute` option allows users to choose between manual or automatic command execution ([#184](https://github.com/estruyf/vscode-demo-time/issues/184)).
+  - `insertTypingMode` and `insertTypingSpeed` options for `executeTerminalCommand` action ([#185](https://github.com/estruyf/vscode-demo-time/issues/185)).
+  - See [Terminal actions documentation](src/content/docs/actions/terminal.mdx) for more info.
+
+### 🐞 Fixes
+- **Path Parsing**: Fixed path parsing for Windows and two-column slides ([#180](https://github.com/estruyf/vscode-demo-time/issues/180)).
+
+---
+
+For more details, see the [pull request #195](https://github.com/estruyf/vscode-demo-time/pull/195).

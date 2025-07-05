@@ -9,7 +9,7 @@ import react from '@astrojs/react';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://demotime.show',
-  trailingSlash: 'always',
+  trailingSlash: 'ignore',
   integrations: [
     starlight({
       logo: {
