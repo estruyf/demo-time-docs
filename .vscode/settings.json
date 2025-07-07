@@ -11,6 +11,7 @@
     ".demo/custom/highlight.js",
   ],
   "demoTime.api.enabled": true,
+  "demoTime.defaultFileType": "yaml",
   // "demoTime.insertTypingMode": "character-by-character",
   // "demoTime.lineInsertionDelay": 50,
   "[markdown]": {

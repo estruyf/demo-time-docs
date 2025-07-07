@@ -265,7 +265,7 @@
         {
           "action": "replace",
           "path": "temp/file-action.md",
-          "position": "3:3",
+          "position": "3,4:3,6",
           "content": "THIS IS A DEMO",
           "insertTypingMode": "line-by-line",
           "insertTypingSpeed": 10
