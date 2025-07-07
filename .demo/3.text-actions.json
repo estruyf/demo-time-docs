@@ -11,8 +11,8 @@
         {
           "action": "highlight",
           "path": "src/content/docs/actions/text.mdx",
-          "startPlaceholder": "## Highlight text",
-          "endPlaceholder": "specific location."
+          "startPlaceholder": "<Tabs syncKey=\"highlight-text\">",
+          "endPlaceholder": "</TabItem>"
         }
       ]
     },
