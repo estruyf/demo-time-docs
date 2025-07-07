@@ -6,7 +6,7 @@
     "prebuild": "node scripts/update-changelog.cjs",
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "npm run prebuild && astro build",
+    "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
