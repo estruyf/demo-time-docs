@@ -5,6 +5,20 @@ import SponsorButton from "./SponsorButton.astro";
 // Fetch sponsors data from the API
 const response = await fetch("https://api.frontmatter.codes/sponsors");
 const sponsors = await response.json();
+const oneTimeSponsors = [
+  {
+    name: "Pieter Nijs",
+    login: "PieEatingNinjas",
+    url: "https://github.com/PieEatingNinjas",
+    avatarUrl: "https://avatars.githubusercontent.com/u/13808075?v=4",
+  },
+  {
+    name: "Marc Duiker",
+    login: "marcduiker",
+    url: "https://github.com/marcduiker",
+    avatarUrl: "https://avatars.githubusercontent.com/u/4191277?v=4",
+  },
+];
 ---
 
 <div class="container px-4 mx-auto">
@@ -38,7 +52,7 @@ const sponsors = await response.json();
               Current Sponsors
             </h3>
             <div class="flex flex-wrap justify-center gap-4">
-              {sponsors.map((sponsor) => (
+              {[...oneTimeSponsors, ...sponsors].map((sponsor) => (
                 <a
                   href={sponsor.url}
                   target="_blank"

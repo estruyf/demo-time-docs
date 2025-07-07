@@ -3,6 +3,7 @@
   "title": "GitHub Copilot",
   "description": "",
   "version": 2,
+  "timer": 10,
   "demos": [
     {
       "title": "Open GitHub Copilot",

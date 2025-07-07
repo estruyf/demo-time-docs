@@ -1,10 +1,10 @@
 ---
 title: Slide themes
 description: Learn about the different slide themes available in Demo Time
-lastmod: 2025-03-27T16:56:17.876Z
+lastmod: 2025-07-04T18:00:50.393Z
 ---
 
-import { Aside, Code } from '@astrojs/starlight/components';
+import { Aside, Code, Tabs, TabItem } from '@astrojs/starlight/components';
 import { Image } from 'astro:assets';
 
 import defaultImg from "../../../../assets/docs/slide-themes/default/default.webp";
@@ -75,6 +75,9 @@ theme: default
 
 You can also use a custom theme by providing a CSS file in the slide action configuration:
 
+<Tabs syncKey="open-slide">
+<TabItem label="JSON">
+
 ```json
 {
   "action": "openSlide",
@@ -82,6 +85,19 @@ You can also use a custom theme by providing a CSS file in the slide action conf
   "theme": "<relative path to the CSS file>"
 }
 ```
+
+</TabItem>
+<TabItem label="YAML">
+
+```yaml
+action: openSlide
+path: <relative path to the file>
+theme: <relative path to the CSS file>
+}
+```
+
+</TabItem>
+</Tabs>
 
 ## Built-in themes
 

@@ -73,10 +73,34 @@ const isProd = import.meta.env.PROD;
   <div class="flex justify-center">
     <a
       class="text-[var(--sl-color-gray-2)] hover:text-[var(--sl-color-text-accent)] text-sm"
+      href="/releases/"
+      title="View the releases"
+    >
+      Releases
+    </a>
+    <span class="mx-2 text-[var(--sl-color-gray-3)]">|</span>
+    <a
+      class="text-[var(--sl-color-gray-2)] hover:text-[var(--sl-color-text-accent)] text-sm"
+      href="/releases.xml"
+      title="Subscribe to the releases RSS feed"
+    >
+      RSS
+    </a>
+    <span class="mx-2 text-[var(--sl-color-gray-3)]">|</span>
+    <a
+      class="text-[var(--sl-color-gray-2)] hover:text-[var(--sl-color-text-accent)] text-sm"
       href="https://marketplace.visualstudio.com/items/eliostruyf.vscode-demo-time/changelog"
       title="View the changelog"
     >
       Changelog
+    </a>
+    <span class="mx-2 text-[var(--sl-color-gray-3)]">|</span>
+    <a
+      class="text-[var(--sl-color-gray-2)] hover:text-[var(--sl-color-text-accent)] text-sm"
+      href="https://stats.demotime.show/"
+      title="View the extension stats"
+    >
+      Stats
     </a>
   </div>
 
@@ -118,37 +142,37 @@ const isProd = import.meta.env.PROD;
       </a>
     )
   }
+
+  <style>
+    footer {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .meta {
+      gap: 0.75rem 3rem;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-top: 3rem;
+      font-size: var(--sl-text-sm);
+      color: var(--sl-color-gray-3);
+    }
+    .meta > :global(p:only-child) {
+      margin-inline-start: auto;
+    }
+
+    .kudos {
+      align-items: center;
+      gap: 0.5em;
+      margin: 1.5rem auto;
+      font-size: var(--sl-text-xs);
+      text-decoration: none;
+      color: var(--sl-color-gray-3);
+    }
+    .kudos :global(svg) {
+      color: var(--sl-color-orange);
+    }
+    .kudos:hover {
+      color: var(--sl-color-white);
+    }
+  </style>
 </footer>
-
-<style>
-  footer {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  .meta {
-    gap: 0.75rem 3rem;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-top: 3rem;
-    font-size: var(--sl-text-sm);
-    color: var(--sl-color-gray-3);
-  }
-  .meta > :global(p:only-child) {
-    margin-inline-start: auto;
-  }
-
-  .kudos {
-    align-items: center;
-    gap: 0.5em;
-    margin: 1.5rem auto;
-    font-size: var(--sl-text-xs);
-    text-decoration: none;
-    color: var(--sl-color-gray-3);
-  }
-  .kudos :global(svg) {
-    color: var(--sl-color-orange);
-  }
-  .kudos:hover {
-    color: var(--sl-color-white);
-  }
-</style>

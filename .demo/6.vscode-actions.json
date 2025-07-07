@@ -2,6 +2,7 @@
   "$schema": "https://demotime.show/demo-time.schema.json",
   "title": "VSCode actions",
   "description": "",
+  "version": 2,
   "demos": [
     {
       "title": "Execute VSCode command (zoom in)",

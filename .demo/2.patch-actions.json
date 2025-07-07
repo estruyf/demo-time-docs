@@ -20,7 +20,61 @@
           "action": "applyPatch",
           "path": "/temp/author.json",
           "contentPath": "/snapshots/author.snapshot.json",
-          "patch": "/patches/author.socials.patch"
+          "patch": "/patches/author.socials.patch",
+          "insertTypingMode": "instant"
+        },
+        {
+          "action": "save"
+        }
+      ]
+    },
+    {
+      "title": "Apply patch (line-by-line)",
+      "description": "",
+      "steps": [
+        {
+          "action": "create",
+          "path": "/temp/author.json",
+          "contentPath": "/snapshots/author.snapshot.json"
+        },
+        {
+          "action": "open",
+          "path": "/temp/author.json"
+        },
+        {
+          "action": "applyPatch",
+          "path": "/temp/author.json",
+          "contentPath": "/snapshots/author.snapshot.json",
+          "patch": "/patches/author.socials.patch",
+          "insertTypingMode": "line-by-line",
+        },
+        {
+          "action": "save"
+        }
+      ]
+    },
+    {
+      "title": "Apply patch (character-by-character)",
+      "description": "",
+      "steps": [
+        {
+          "action": "create",
+          "path": "/temp/author.json",
+          "contentPath": "/snapshots/author.snapshot.json"
+        },
+        {
+          "action": "open",
+          "path": "/temp/author.json"
+        },
+        {
+          "action": "applyPatch",
+          "path": "/temp/author.json",
+          "contentPath": "/snapshots/author.snapshot.json",
+          "patch": "/patches/author.socials.patch",
+          "insertTypingMode": "character-by-character",
+        },
+        {
+          "action": "save"
         }
       ]
     }

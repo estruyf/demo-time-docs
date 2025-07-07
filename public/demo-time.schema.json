@@ -17,6 +17,10 @@
       "enum": [1, 2],
       "default": 1
     },
+    "timer": {
+      "type": "number",
+      "description": "The timer in minutes for the demo."
+    },
     "demos": {
       "type": "array",
       "items": {
@@ -95,7 +99,11 @@
                     "askCopilotChat",
                     "editCopilotChat",
                     "agentCopilotChat",
-                    "copilotClose"
+                    "copilotClose",
+                    "copyToClipboard",
+                    "pasteFromClipboard",
+                    "typeText",
+                    "pressEnter"
                   ],
                   "title": "Action to perform"
                 },
@@ -151,10 +159,6 @@
                 "zoom": {
                   "type": "number",
                   "title": "The zoom level for the editor when highlighting code"
-                },
-                "lineInsertionDelay": {
-                  "type": "number",
-                  "title": "Speed in milliseconds to insert each line. If not defined, the \"demoTime.lineInsertionDelay\" setting will be used. To turn off the line insertion effect, set it to 0."
                 },
                 "overwrite": {
                   "type": "boolean",
@@ -234,6 +238,10 @@
                     }
                   },
                   "required": ["key", "value"]
+                },
+                "insertTypingSpeed": {
+                  "type": "number",
+                  "title": "Speed in milliseconds between each character when typing text. Used with the typeText action."
                 }
               },
               "required": ["action"],
@@ -294,6 +302,21 @@
                   },
                   "then": {
                     "required": ["url"]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "const": "copyToClipboard"
+                      }
+                    }
+                  },
+                  "then": {
+                    "oneOf": [
+                      { "required": ["content"] },
+                      { "required": ["contentPath"] }
+                    ]
                   }
                 },
                 {
@@ -426,6 +449,18 @@
                   },
                   "then": {
                     "required": ["message"]
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "const": "typeText"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": ["content"]
                   }
                 }
               ],
