@@ -242,6 +242,12 @@
                 "insertTypingSpeed": {
                   "type": "number",
                   "title": "Speed in milliseconds between each character when typing text. Used with the typeText action."
+                },
+                "insertTypingMode": {
+                  "type": "string",
+                  "enum": ["instant", "line-by-line", "character-by-character"],
+                  "default": "instant",
+                  "title": "Typing mode defines how you enter the text. Default is 'instant'."
                 }
               },
               "required": ["action"],
