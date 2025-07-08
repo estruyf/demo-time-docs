@@ -8,4 +8,4 @@ In this `repository`, you can find the documentation for the extension. It conta
 
 > **Note**: The extension is available on the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=eliostruyf.vscode-demo-time).
 >
-> **Note**: Demo Time works not only in Visual Studio Code, but also in any code editor built on top of Visual Studio Code (such as VSCodium, GitHub Codespaces, and other VS Code derivatives).
+> **Note**: Demo Time works not only in Visual Studio Code, but also in any code editor built on top of Visual Studio Code (such as Cursor, VSCodium, GitHub Codespaces, and other VS Code derivatives).
