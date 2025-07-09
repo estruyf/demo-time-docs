@@ -182,3 +182,36 @@ h1 {
 .success-icon svg {
   color: var(--sl-color-green);
 }
+
+/* Call-to-Action Section */
+.cta-section {
+  text-align: center;
+  background: var(--sl-color-gray-6);
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  border: 1px solid var(--sl-color-gray-5);
+}
+
+.cta-section h2 {
+  margin: 0 0 1rem 0;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--sl-color-white);
+}
+
+.cta-section p {
+  margin: 0 0 2rem 0;
+  font-size: 1.125rem;
+  color: var(--sl-color-gray-2);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 640px) {
+  .cta-buttons {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+}
