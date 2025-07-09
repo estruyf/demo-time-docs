@@ -19,7 +19,7 @@ hero:
       link: https://marketplace.visualstudio.com/items?itemName=eliostruyf.vscode-demo-time
       icon: external
       variant: secondary
-lastmod: 2025-07-08T16:22:05.538Z
+lastmod: 2025-07-09T08:06:52.874Z
 ---
 
 import { Image } from 'astro:assets';
@@ -27,85 +27,15 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 import Reviewers from '../../components/Reviewers.astro';
 import CustomCard from '../../components/CustomCard.astro';
 import YouTubeEmbed from '../../components/YouTubeEmbed.astro';
-
-import scriptedStepsImg from "../../assets/docs/screenshot-scripted-steps.webp";
-import codeHighlightImg from "../../assets/docs/screenshot-code-highlight.webp";
-import slideIntegrationImg from "../../assets/docs/screenshot-slide-integration.webp";
+import Benefits from '../../components/Benefits.astro';
+import Cta from '../../components/Cta.astro';
+import Preview from '../../components/Preview.astro';
+import Features from '../../components/Features.astro';
 
 <div class="space-y-24">
-	<section>
-		<h2 class="text-4xl font-bold text-center mb-6">
-			Stress-free live coding
-		</h2>
-		<div class="flex flex-col items-center gap-6 border border-gray-200 dark:border-gray-700 rounded-lg p-2">
-			<img
-				src="/demotime-pitch.gif"
-				alt="Demo Time pitch animation"
-				class="rounded-lg w-full max-w-2xl"
-			/>
-		</div>
+	<Preview />
 
-		<blockquote class="mt-8 opacity-90 text-sm">
-			Each action was performed by pressing the right arrow key. No typos, no missteps, just flawless, stress-free presentations.
-		</blockquote>
-	</section>
-
-  <section>
-		<h2>Features</h2>
-
-		<CardGrid stagger>
-			<Card title="Scripted Demos" icon="rocket">
-				Never miss a step or fumble with notes.
-			</Card>
-			<Card title="Smart Highlights" icon="pen">
-				Keep your audience focused on the code that matters.
-			</Card>
-			<Card title="Slide Integration" icon="laptop">
-				Present slides and code seamlessly in one place.
-			</Card>
-			<Card title="Custom Actions" icon="seti:html">
-				Automate commands, open files, and run tasks with a click.
-			</Card>
-		</CardGrid>
-	
-	  <br />
-		
-		<div class="flex flex-col md:flex-row gap-8 justify-center mt-8">
-			<div class="flex-1 text-center">
-				<Image
-					class="mx-auto rounded-lg shadow-md w-[260px] h-[180px] object-cover"
-					src={scriptedStepsImg}
-					alt="Scripted Demo Steps"
-					width={220}
-					height={140}
-				/>
-				<p class="mt-4 font-bold">Scripted Demo Steps</p>
-				<p>Advance through your demo step-by-step—no more missed beats or manual notes.</p>
-			</div>
-			<div class="flex-1 text-center !mt-0">
-				<Image
-					class="mx-auto rounded-lg shadow-md w-[260px] h-[180px] object-cover"
-					src={codeHighlightImg}
-					alt="Code Highlighting Feature"
-					width={220}
-					height={140}
-				/>
-				<p class="mt-4 font-bold">Smart Code Highlighting</p>
-				<p>Draw attention to the exact lines you want your audience to see.</p>
-			</div>
-			<div class="flex-1 text-center !mt-0">
-				<Image
-					class="mx-auto rounded-lg shadow-md w-[260px] h-[180px] object-cover"
-					src={slideIntegrationImg}
-					alt="Slides in VS Code"
-					width={220}
-					height={140}
-				/>
-				<p class="mt-4 font-bold">Slides in VS Code</p>
-				<p>Present slides seamlessly alongside your code—no need to switch windows.</p>
-			</div>
-		</div>
-	</section>
+	<Features />
 
 	<section>
 		<h2>Check out the overview video</h2>
@@ -161,5 +91,9 @@ import slideIntegrationImg from "../../assets/docs/screenshot-slide-integration.
 		</CardGrid>
 	</section>
 
+	<Benefits />
+
 	<Reviewers />
+
+	<Cta />
 </div>
