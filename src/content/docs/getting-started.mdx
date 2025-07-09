@@ -1,21 +1,31 @@
 ---
 title: Getting started
 description: Get started with Demo Time
-lastmod: 2025-07-08T16:23:05.139Z
+lastmod: 2025-07-09T08:30:54.258Z
 ---
 
-import { Card, CardGrid, LinkButton, Aside } from '@astrojs/starlight/components';
-import { Image } from 'astro:assets';
+import {
+  Card,
+  CardGrid,
+  LinkButton,
+  Aside,
+} from "@astrojs/starlight/components";
+import { Image } from "astro:assets";
 
 import initializeImage from "../../assets/docs/initialize.webp";
 
-> **Note**: Demo Time works not only in Visual Studio Code, but also in any code editor built on top of Visual Studio Code (such as Cursor, VSCodium, GitHub Codespaces, and other VS Code derivatives).
+> **Note**: Demo Time works not only in Visual Studio Code, but also in any code editor built on top of Visual Studio Code (such as Cursor, Windsurf, GitHub Codespaces, and other VS Code derivatives).
 
 To get started with Demo Time, you need to install the extension in Visual Studio Code. You can find the extension in the [Visual Studio Code Marketplace](https://marketplace.visualstudio.com/items?itemName=eliostruyf.vscode-demo-time).
 
-You can install the extension via the following link: 
+You can install the extension via the following link:
 
-<LinkButton href="vscode:extension/eliostruyf.vscode-demo-time" title={`Install the extension`}>Install the extension</LinkButton>
+<LinkButton
+  href="vscode:extension/eliostruyf.vscode-demo-time"
+  title={`Install the extension`}
+>
+  Install the extension
+</LinkButton>
 
 Or you can search for "Demo Time" in the extensions panel in Visual Studio Code.
 
@@ -29,10 +39,17 @@ Watch the video to learn more about why Demo Time was created and how it can hel
 
 Once you have installed the extension, it is time to initialize it in your project where you want to use it. You can do this by opening the explorer panel in Visual Studio Code. There should be a **Demo Time** view available in which you find the **Initialize** button.
 
-<Image class="mx-auto" src={initializeImage} alt="Initialize Demo Time" width="400" />
+<Image
+  class="mx-auto"
+  src={initializeImage}
+  alt="Initialize Demo Time"
+  width="400"
+/>
 
 Once you clicked on the **Initialize** button, the extension will create a `.demo` folder in your workspace with a `demo.json` file.
 
 <Aside type="tip">
-You can change the `demo.json` filename to any other name you prefer. The extension will still recognize it. You can also create multiple files if you want to split your demos.
+  You can change the `demo.json` filename to any other name you prefer. The
+  extension will still recognize it. You can also create multiple files if you
+  want to split your demos.
 </Aside>
