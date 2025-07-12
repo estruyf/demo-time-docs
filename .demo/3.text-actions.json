@@ -352,8 +352,7 @@
           "timeout": 1000
         },
         {
-          "action": "unselect",
-          "path": "src/content/docs/actions/text.mdx"
+          "action": "unselect"
         }
       ]
     },
