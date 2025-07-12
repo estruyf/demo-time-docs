@@ -1,7 +1,7 @@
 ---
 title: Snippets
 description: Snippets that you can use to automate some tasks in your demo.
-lastmod: 2025-07-04T14:53:50.810Z
+lastmod: 2025-07-12T14:05:04.396Z
 ---
 
 import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
@@ -23,8 +23,7 @@ The `insert_and_highlight.json` snippet contains a couple of steps to insert cod
 
 <Code code={`[
     {
-      "action": "unselect",
-      "path": "{MAIN_FILE}"
+      "action": "unselect"
     },
     {
       "action": "insert",
@@ -73,14 +72,14 @@ The `show_slide.json` snippet contains a step to show a slide within Visual Stud
       "command": "workbench.action.closePanel"
     }, {
       "action": "setSetting",
-      "args": {
-        "setting": "workbench.statusBar.visible",
+      "setting": {
+        "key": "workbench.statusBar.visible",
         "value": false
       }
     }, {
       "action": "setSetting",
-      "args": {
-        "setting": "workbench.activityBar.location",
+      "setting": {
+        "key": "workbench.activityBar.location",
         "value": "hidden"
       }
     }, {
@@ -115,14 +114,14 @@ The `[reset_view_after_slide.json` snippet contains the steps to reset the view 
 <Code code={`[
     {
       "action": "setSetting",
-      "args": {
-        "setting": "workbench.statusBar.visible",
+      "setting": {
+        "key": "workbench.statusBar.visible",
         "value": null
       }
     }, {
       "action": "setSetting",
-      "args": {
-        "setting": "workbench.activityBar.location",
+      "setting": {
+        "key": "workbench.activityBar.location",
         "value": null
       }
     }, {

@@ -1,7 +1,7 @@
 ---
 title: Text actions
 description: Text actions are used to insert, replace, highlight, delete or unselect text in the editor.
-lastmod: 2025-07-04T17:50:08.399Z
+lastmod: 2025-07-12T13:58:55.350Z
 ---
 
 import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
@@ -408,8 +408,7 @@ Unselect or undo text highlighting in a specific file.
 
 ```json
 {
-  "action": "unselect",
-  "path": "<relative path to the file>"
+  "action": "unselect"
 }
 ```
 
@@ -418,7 +417,6 @@ Unselect or undo text highlighting in a specific file.
 
 ```yaml
 action: unselect
-path: <relative path to the file>
 ```
 
 </TabItem>

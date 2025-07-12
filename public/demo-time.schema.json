@@ -3,7 +3,7 @@
   "$id": "https://demotime.show/demo-time.schema.json",
   "title": "Demo Time - Schema",
   "description": "The schema for the Demo Time - VSCode extension",
-  "lastModified": "2025-05-30",
+  "lastModified": "2025-07-12",
   "type": "object",
   "properties": {
     "title": {
@@ -107,148 +107,6 @@
                     "pressEnter"
                   ],
                   "title": "Action to perform"
-                },
-                "path": {
-                  "type": "string",
-                  "title": "Path to file"
-                },
-                "content": {
-                  "type": "string",
-                  "title": "Content to insert"
-                },
-                "contentPath": {
-                  "type": "string",
-                  "title": "Path to the content to use"
-                },
-                "patch": {
-                  "type": "string",
-                  "title": "Path to the patch file to use for the snapshot provided in the contentPath"
-                },
-                "position": {
-                  "type": ["string", "number"],
-                  "title": "Position in the file. Can be line number or \"<start line>,<start character>\" or \"<start line>:<end line>\" or \"<start line>,<start character>:<end line>,<end character>\"."
-                },
-                "startPlaceholder": {
-                  "type": "string",
-                  "title": "Start placeholder value for the start position"
-                },
-                "endPlaceholder": {
-                  "type": "string",
-                  "title": "End placeholder value for the end position"
-                },
-                "highlightWholeLine": {
-                  "type": "boolean",
-                  "default": true,
-                  "title": "Highlight the whole line"
-                },
-                "timeout": {
-                  "type": "number",
-                  "title": "Timeout in milliseconds"
-                },
-                "command": {
-                  "type": "string",
-                  "title": "VSCode or Terminal command to execute, or the name of the script type to execute. Example: node, powershell, bash, python, etc."
-                },
-                "message": {
-                  "type": "string",
-                  "title": "The message for the notification"
-                },
-                "dest": {
-                  "type": "string",
-                  "title": "The destination path for the file"
-                },
-                "zoom": {
-                  "type": "number",
-                  "title": "The zoom level for the editor when highlighting code"
-                },
-                "overwrite": {
-                  "type": "boolean",
-                  "title": "Overwrite the destination file if it exists. Default is false."
-                },
-                "terminalId": {
-                  "type": "string",
-                  "title": "Define the name for the terminal. Default is \"DemoTime\"."
-                },
-                "id": {
-                  "type": "string",
-                  "title": "The ID of the step"
-                },
-                "url": {
-                  "type": "string",
-                  "title": "The URL to open"
-                },
-                "openInVSCode": {
-                  "type": "boolean",
-                  "title": "Open the URL in VSCode. Default is false.",
-                  "default": false
-                },
-                "args": {
-                  "type": ["object", "array", "string", "number", "boolean"],
-                  "title": "Arguments to pass to the command for VSCode or placeholder names for your snippet"
-                },
-                "theme": {
-                  "type": "string",
-                  "oneOf": [
-                    {
-                      "enum": [
-                        "Default Dark Modern",
-                        "Default Dark+",
-                        "Default High Contrast Light",
-                        "Default High Contrast",
-                        "Default Light Modern",
-                        "Default Light+"
-                      ]
-                    },
-                    {
-                      "type": "string"
-                    }
-                  ],
-                  "title": "Provide the Visual Studio Code theme name, or for the `imagePreview` action, you could provide the relative path to the CSS file to use for your custom theme."
-                },
-                "setting": {
-                  "type": "object",
-                  "properties": {
-                    "key": {
-                      "type": "string",
-                      "description": "The setting key"
-                    },
-                    "value": {
-                      "type": [
-                        "string",
-                        "number",
-                        "boolean",
-                        "object",
-                        "array",
-                        "null"
-                      ],
-                      "description": "The setting value"
-                    }
-                  },
-                  "required": ["key", "value"]
-                },
-                "state": {
-                  "type": "object",
-                  "properties": {
-                    "key": {
-                      "type": "string",
-                      "description": "The state key"
-                    },
-                    "value": {
-                      "type": ["string"],
-                      "description": "The state value"
-                    }
-                  },
-                  "required": ["key", "value"]
-                },
-                "insertTypingSpeed": {
-                  "type": "number",
-                  "title": "Speed in milliseconds between each character when typing text. Used with the typeText action."
-                },
-                "insertTypingMode": {
-                  "type": "string",
-                  "enum": ["instant", "line-by-line", "character-by-character"],
-                  "default": "instant",
-                  "title": "Typing mode defines how you enter the text. Default is 'instant'."
                 }
               },
               "required": ["action"],
@@ -269,7 +127,9 @@
                   "then": {
                     "required": ["path"],
                     "properties": {
-                      "path": { "type": "string", "title": "Path to file" }
+                      "path": {
+                        "$ref": "#/definitions/path"
+                      }
                     }
                   }
                 },
@@ -284,17 +144,202 @@
                   "then": {
                     "required": ["path"],
                     "properties": {
+                      "path": {
+                        "$ref": "#/definitions/path"
+                      },
                       "content": {
-                        "type": "string",
-                        "title": "Content to write to the file"
+                        "$ref": "#/definitions/content"
                       },
                       "contentPath": {
-                        "type": "string",
-                        "title": "Path to the content file to use"
+                        "$ref": "#/definitions/contentPath"
+                      }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "enum": ["rename", "copy", "move"]
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": ["path", "dest"],
+                    "properties": {
+                      "path": {
+                        "$ref": "#/definitions/path"
+                      },
+                      "dest": {
+                        "$ref": "#/definitions/dest"
                       },
                       "overwrite": {
-                        "type": "boolean",
-                        "title": "Overwrite the destination file if it exists. Default is false."
+                        "$ref": "#/definitions/overwrite"
+                      }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "enum": ["highlight", "positionCursor"]
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": ["path"],
+                    "oneOf": [
+                      { "required": ["position"] },
+                      { "required": ["startPlaceholder", "endPlaceholder"] }
+                    ],
+                    "properties": {
+                      "path": {
+                        "$ref": "#/definitions/path"
+                      },
+                      "position": {
+                        "$ref": "#/definitions/position"
+                      },
+                      "startPlaceholder": {
+                        "$ref": "#/definitions/startPlaceholder"
+                      },
+                      "endPlaceholder": {
+                        "$ref": "#/definitions/endPlaceholder"
+                      },
+                      "highlightWholeLine": {
+                        "$ref": "#/definitions/highlightWholeLine"
+                      },
+                      "zoom": {
+                        "$ref": "#/definitions/zoom"
+                      }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "enum": ["positionCursor"]
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": ["path"],
+                    "oneOf": [
+                      { "required": ["position"] },
+                      { "required": ["startPlaceholder"] }
+                    ],
+                    "properties": {
+                      "path": {
+                        "$ref": "#/definitions/path"
+                      },
+                      "position": {
+                        "$ref": "#/definitions/position"
+                      },
+                      "startPlaceholder": {
+                        "$ref": "#/definitions/startPlaceholder"
+                      }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "enum": ["insert", "replace"]
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": ["path"],
+                    "oneOf": [
+                      { "required": ["content"] },
+                      { "required": ["contentPath"] }
+                    ],
+                    "anyOf": [
+                      { "required": ["position"] },
+                      { "required": ["startPlaceholder", "endPlaceholder"] }
+                    ],
+                    "properties": {
+                      "path": {
+                        "$ref": "#/definitions/path"
+                      },
+                      "content": {
+                        "$ref": "#/definitions/content"
+                      },
+                      "contentPath": {
+                        "$ref": "#/definitions/contentPath"
+                      },
+                      "position": {
+                        "$ref": "#/definitions/position"
+                      },
+                      "startPlaceholder": {
+                        "$ref": "#/definitions/startPlaceholder"
+                      },
+                      "endPlaceholder": {
+                        "$ref": "#/definitions/endPlaceholder"
+                      },
+                      "insertTypingMode": {
+                        "$ref": "#/definitions/insertTypingMode"
+                      },
+                      "insertTypingSpeed": {
+                        "$ref": "#/definitions/insertTypingSpeed"
+                      }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "const": "delete"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": ["path"],
+                    "oneOf": [
+                      { "required": ["position"] },
+                      { "required": ["startPlaceholder", "endPlaceholder"] }
+                    ],
+                    "properties": {
+                      "path": {
+                        "$ref": "#/definitions/path"
+                      },
+                      "position": {
+                        "$ref": "#/definitions/position"
+                      },
+                      "startPlaceholder": {
+                        "$ref": "#/definitions/startPlaceholder"
+                      },
+                      "endPlaceholder": {
+                        "$ref": "#/definitions/endPlaceholder"
+                      }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "const": "write"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": ["content"],
+                    "properties": {
+                      "content": {
+                        "$ref": "#/definitions/content"
+                      },
+                      "path": {
+                        "$ref": "#/definitions/path"
+                      },
+                      "position": {
+                        "$ref": "#/definitions/position"
+                      },
+                      "startPlaceholder": {
+                        "$ref": "#/definitions/startPlaceholder"
                       }
                     }
                   }
@@ -310,58 +355,11 @@
                   "then": {
                     "required": ["path"],
                     "properties": {
-                      "theme": {
-                        "type": "string",
-                        "title": "Relative path to a CSS file for custom styling of the image preview"
+                      "path": {
+                        "$ref": "#/definitions/path"
                       },
-                      "zoom": {
-                        "type": "number",
-                        "title": "The zoom level for the image preview"
-                      }
-                    }
-                  }
-                },
-                {
-                  "if": {
-                    "properties": {
-                      "action": {
-                        "enum": ["open", "openSlide", "markdownPreview"]
-                      }
-                    }
-                  },
-                  "then": {
-                    "properties": {
-                      "openInVSCode": {
-                        "type": "boolean",
-                        "title": "Open the file in VSCode. Default is false.",
-                        "default": false
-                      }
-                    }
-                  }
-                },
-                {
-                  "if": {
-                    "properties": {
-                      "action": {
-                        "enum": [
-                          "executeVSCodeCommand",
-                          "executeTerminalCommand"
-                        ]
-                      }
-                    }
-                  },
-                  "then": {
-                    "required": ["command"],
-                    "properties": {
-                      "args": {
-                        "type": [
-                          "object",
-                          "array",
-                          "string",
-                          "number",
-                          "boolean"
-                        ],
-                        "title": "Arguments to pass to the command for VSCode or placeholder names for your snippet"
+                      "theme": {
+                        "$ref": "#/definitions/cssTheme"
                       }
                     }
                   }
@@ -377,9 +375,196 @@
                   "then": {
                     "required": ["path", "contentPath", "patch"],
                     "properties": {
-                      "overwrite": {
-                        "type": "boolean",
-                        "title": "Overwrite the destination file if it exists. Default is false."
+                      "path": {
+                        "$ref": "#/definitions/path"
+                      },
+                      "contentPath": {
+                        "$ref": "#/definitions/contentPath"
+                      },
+                      "patch": {
+                        "$ref": "#/definitions/patch"
+                      },
+                      "insertTypingMode": {
+                        "$ref": "#/definitions/insertTypingMode"
+                      },
+                      "insertTypingSpeed": {
+                        "$ref": "#/definitions/insertTypingSpeed"
+                      }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "const": "setSetting"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": ["setting"],
+                    "properties": {
+                      "setting": {
+                        "$ref": "#/definitions/setting"
+                      }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "const": "setTheme"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": ["theme"],
+                    "properties": {
+                      "theme": {
+                        "$ref": "#/definitions/vscodeTheme"
+                      }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "const": "executeTerminalCommand"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": ["command"],
+                    "properties": {
+                      "autoExecute": {
+                        "$ref": "#/definitions/autoExecute"
+                      },
+                      "command": {
+                        "$ref": "#/definitions/terminalCommand"
+                      },
+                      "terminalId": {
+                        "$ref": "#/definitions/terminalId"
+                      },
+                      "insertTypingMode": {
+                        "$ref": "#/definitions/terminalInsertTypingMode"
+                      },
+                      "insertTypingSpeed": {
+                        "$ref": "#/definitions/insertTypingSpeed"
+                      }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "const": "executeScript"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": ["id", "command", "path"],
+                    "properties": {
+                      "id": {
+                        "$ref": "#/definitions/scriptId"
+                      },
+                      "command": {
+                        "$ref": "#/definitions/scriptCommand"
+                      },
+                      "path": {
+                        "$ref": "#/definitions/path"
+                      }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "enum": ["closeTerminal", "openTerminal"]
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "terminalId": {
+                        "$ref": "#/definitions/terminalId"
+                      }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "const": "waitForTimeout"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": ["timeout"],
+                    "properties": {
+                      "timeout": {
+                        "$ref": "#/definitions/timeout"
+                      }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "const": "executeVSCodeCommand"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": ["command"],
+                    "properties": {
+                      "command": {
+                        "$ref": "#/definitions/vscodeCommand"
+                      },
+                      "args": {
+                        "$ref": "#/definitions/args"
+                      },
+                      "path": {
+                        "$ref": "#/definitions/path"
+                      }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "const": "showInfoMessage"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": ["message"],
+                    "properties": {
+                      "message": {
+                        "$ref": "#/definitions/notificationMessage"
+                      }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "const": "setState"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": ["state"],
+                    "properties": {
+                      "state": {
+                        "$ref": "#/definitions/state"
                       }
                     }
                   }
@@ -395,10 +580,51 @@
                   "then": {
                     "required": ["url"],
                     "properties": {
+                      "url": {
+                        "$ref": "#/definitions/url"
+                      },
                       "openInVSCode": {
-                        "type": "boolean",
-                        "title": "Open the URL in VSCode. Default is false.",
-                        "default": false
+                        "$ref": "#/definitions/openInVSCode"
+                      }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "const": "snippet"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": ["contentPath"],
+                    "properties": {
+                      "contentPath": {
+                        "$ref": "#/definitions/contentPath"
+                      },
+                      "args": {
+                        "$ref": "#/definitions/args"
+                      }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "enum": [
+                          "askCopilotChat",
+                          "editCopilotChat",
+                          "agentCopilotChat"
+                        ]
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "message": {
+                        "$ref": "#/definitions/copilotMessage"
                       }
                     }
                   }
@@ -417,235 +643,13 @@
                       { "required": ["contentPath"] }
                     ],
                     "properties": {
-                      "message": {
-                        "type": "string",
-                        "title": "Optional message to show after copying to clipboard"
-                      }
-                    }
-                  }
-                },
-                {
-                  "if": {
-                    "properties": {
-                      "action": {
-                        "enum": ["insert", "replace"]
-                      }
-                    }
-                  },
-                  "then": {
-                    "required": ["path"],
-                    "oneOf": [
-                      {
-                        "required": ["content"]
+                      "content": {
+                        "$ref": "#/definitions/content"
                       },
-                      {
-                        "required": ["contentPath"]
-                      }
-                    ],
-                    "properties": {
-                      "overwrite": {
-                        "type": "boolean",
-                        "title": "Overwrite the destination file if it exists. Default is false."
+                      "contentPath": {
+                        "$ref": "#/definitions/contentPath"
                       }
                     }
-                  }
-                },
-                {
-                  "if": {
-                    "properties": {
-                      "action": {
-                        "const": "snippet"
-                      }
-                    }
-                  },
-                  "then": {
-                    "required": ["contentPath"],
-                    "properties": {
-                      "args": {
-                        "type": [
-                          "object",
-                          "array",
-                          "string",
-                          "number",
-                          "boolean"
-                        ],
-                        "title": "Arguments to pass to the snippet"
-                      }
-                    }
-                  }
-                },
-                {
-                  "if": {
-                    "properties": {
-                      "action": {
-                        "const": "executeScript"
-                      }
-                    }
-                  },
-                  "then": {
-                    "required": ["id", "command", "path"],
-                    "properties": {
-                      "args": {
-                        "type": [
-                          "object",
-                          "array",
-                          "string",
-                          "number",
-                          "boolean"
-                        ],
-                        "title": "Arguments to pass to the script"
-                      }
-                    }
-                  }
-                },
-                {
-                  "if": {
-                    "properties": {
-                      "action": {
-                        "enum": ["rename", "copy", "move"]
-                      }
-                    }
-                  },
-                  "then": {
-                    "required": ["path", "dest"],
-                    "properties": {
-                      "overwrite": {
-                        "type": "boolean",
-                        "title": "Overwrite the destination file if it exists. Default is false."
-                      }
-                    }
-                  }
-                },
-                {
-                  "if": {
-                    "properties": {
-                      "action": {
-                        "const": "setSetting"
-                      }
-                    }
-                  },
-                  "then": {
-                    "required": ["setting"],
-                    "properties": {
-                      "scope": {
-                        "type": "string",
-                        "title": "Scope for the setting (user, workspace, folder)"
-                      }
-                    }
-                  }
-                },
-                {
-                  "if": {
-                    "properties": {
-                      "action": {
-                        "enum": ["highlight", "positionCursor"]
-                      }
-                    }
-                  },
-                  "then": {
-                    "required": ["path"],
-                    "properties": {
-                      "zoom": {
-                        "type": "number",
-                        "title": "The zoom level for the editor when highlighting code"
-                      }
-                    }
-                  }
-                },
-                {
-                  "if": {
-                    "properties": {
-                      "action": {
-                        "const": "unselect"
-                      }
-                    }
-                  },
-                  "then": {
-                    "required": ["path"],
-                    "properties": {
-                      "clearHighlight": {
-                        "type": "boolean",
-                        "title": "Clear highlight when unselecting"
-                      }
-                    }
-                  }
-                },
-                {
-                  "if": {
-                    "properties": {
-                      "action": {
-                        "const": "delete"
-                      }
-                    }
-                  },
-                  "then": {
-                    "required": ["path"],
-                    "properties": {
-                      "permanent": {
-                        "type": "boolean",
-                        "title": "Permanently delete the file"
-                      }
-                    }
-                  }
-                },
-                {
-                  "if": {
-                    "properties": {
-                      "action": { "const": "askCopilotChat" }
-                    }
-                  },
-                  "then": {
-                    "properties": {
-                      "message": {
-                        "type": "string",
-                        "title": "The message for the Copilot Chat interaction",
-                        "description": "Optional message to pass to the Copilot Chat when asking a question"
-                      }
-                    }
-                  }
-                },
-                {
-                  "if": {
-                    "properties": {
-                      "action": { "const": "editCopilotChat" }
-                    }
-                  },
-                  "then": {
-                    "properties": {
-                      "message": {
-                        "type": "string",
-                        "title": "The message for editing the Copilot Chat",
-                        "description": "Optional message to modify in the Copilot Chat session"
-                      }
-                    }
-                  }
-                },
-                {
-                  "if": {
-                    "properties": {
-                      "action": { "const": "agentCopilotChat" }
-                    }
-                  },
-                  "then": {
-                    "properties": {
-                      "message": {
-                        "type": "string",
-                        "title": "The message for the Copilot Chat agent",
-                        "description": "Optional agent instruction to pass to the Copilot Chat"
-                      }
-                    }
-                  }
-                },
-                {
-                  "if": {
-                    "properties": {
-                      "action": {
-                        "const": "showInfoMessage"
-                      }
-                    }
-                  },
-                  "then": {
-                    "required": ["message"]
                   }
                 },
                 {
@@ -657,7 +661,15 @@
                     }
                   },
                   "then": {
-                    "required": ["content"]
+                    "required": ["content"],
+                    "properties": {
+                      "content": {
+                        "$ref": "#/definitions/content"
+                      },
+                      "insertTypingSpeed": {
+                        "$ref": "#/definitions/insertTypingSpeed"
+                      }
+                    }
                   }
                 }
               ],
@@ -684,5 +696,172 @@
       }
     }
   },
-  "required": ["title", "description", "demos"]
+  "required": ["title", "description", "demos"],
+  "definitions": {
+    "args": {
+      "type": ["object", "array", "string", "number", "boolean"],
+      "title": "Arguments to pass to the VS Code command, or placeholder names for your snippet"
+    },
+    "autoExecute": {
+      "type": "boolean",
+      "default": true,
+      "title": "Automatically execute the command. Default is true."
+    },
+    "content": {
+      "type": "string",
+      "title": "Content to insert"
+    },
+    "contentPath": {
+      "type": "string",
+      "title": "Path to the content to use"
+    },
+    "copilotMessage": {
+      "type": "string",
+      "title": "The message for the GitHub Copilot interaction"
+    },
+    "cssTheme": {
+      "type": "string",
+      "title": "Relative path to a CSS file for custom styling of the image preview"
+    },
+    "dest": {
+      "type": "string",
+      "title": "The destination path for the file"
+    },
+    "endPlaceholder": {
+      "type": "string",
+      "title": "End placeholder value for the end position"
+    },
+    "highlightWholeLine": {
+      "type": "boolean",
+      "default": true,
+      "title": "Highlight the whole line"
+    },
+    "insertTypingMode": {
+      "type": "string",
+      "enum": ["instant", "line-by-line", "character-by-character"],
+      "default": "instant",
+      "title": "Typing mode defines how you enter the text. Default is 'instant'."
+    },
+    "insertTypingSpeed": {
+      "type": "number",
+      "title": "Speed in milliseconds between each character when typing text. Used with the typeText action."
+    },
+    "notificationMessage": {
+      "type": "string",
+      "title": "The message for the notification"
+    },
+    "openInVSCode": {
+      "type": "boolean",
+      "title": "Open the URL in VSCode. Default is false.",
+      "default": false
+    },
+    "overwrite": {
+      "type": "boolean",
+      "title": "Overwrite the destination file if it exists. Default is false.",
+      "default": false
+    },
+    "patch": {
+      "type": "string",
+      "title": "Path to the patch file to use for the snapshot provided in the contentPath"
+    },
+    "path": {
+      "type": "string",
+      "title": "Path to file"
+    },
+    "position": {
+      "type": ["string", "number"],
+      "title": "Position in the file. Can be line number or \"<start line>,<start character>\" or \"<start line>:<end line>\" or \"<start line>,<start character>:<end line>,<end character>\"."
+    },
+    "scriptId": {
+      "type": "string",
+      "title": "The ID of the script"
+    },
+    "scriptCommand": {
+      "type": "string",
+      "title": "Type of script to execute (e.g., node, bash, shell, python, etc.). You can also define a path to a executeable for instance when using nvm."
+    },
+    "setting": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string",
+          "description": "The setting key"
+        },
+        "value": {
+          "type": ["string", "number", "boolean", "object", "array", "null"],
+          "description": "The setting value"
+        }
+      },
+      "required": ["key", "value"]
+    },
+    "startPlaceholder": {
+      "type": "string",
+      "title": "Start placeholder value for the start position"
+    },
+    "state": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string",
+          "description": "The state key"
+        },
+        "value": {
+          "type": ["string"],
+          "description": "The state value"
+        }
+      },
+      "required": ["key", "value"]
+    },
+    "terminalCommand": {
+      "type": "string",
+      "title": "Terminal command to execute."
+    },
+    "terminalId": {
+      "type": "string",
+      "title": "Define the name for the terminal. Default is \"DemoTime\"."
+    },
+    "terminalInsertTypingMode": {
+      "type": "string",
+      "enum": ["instant", "character-by-character"],
+      "default": "instant",
+      "title": "Typing mode defines how you enter the text. Default is 'instant'."
+    },
+    "timeout": {
+      "type": "number",
+      "title": "Timeout in milliseconds"
+    },
+    "url": {
+      "type": "string",
+      "title": "The URL to open"
+    },
+    "vscodeCommand": {
+      "type": "string",
+      "title": "VS Code command ID to execute. Example: 'workbench.action.files.save', 'workbench.action.closeActiveEditor', etc."
+    },
+    "vscodeTheme": {
+      "type": "string",
+      "anyOf": [
+        {
+          "type": "string",
+          "enum": [
+            "Default Dark Modern",
+            "Default Dark+",
+            "Default High Contrast Light",
+            "Default High Contrast",
+            "Default Light Modern",
+            "Default Light+"
+          ]
+        },
+        {
+          "type": "string"
+        }
+      ],
+      "title": "Provide the Visual Studio Code theme name."
+    },
+    "zoom": {
+      "type": "number",
+      "title": "The zoom level for the editor when highlighting code",
+      "default": 0
+    }
+  }
 }
