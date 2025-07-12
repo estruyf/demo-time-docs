@@ -54,6 +54,7 @@
               "type": "object",
               "properties": {
                 "action": {
+                  "title": "Action to perform",
                   "type": "string",
                   "enum": [
                     "applyPatch",
@@ -105,8 +106,7 @@
                     "pasteFromClipboard",
                     "typeText",
                     "pressEnter"
-                  ],
-                  "title": "Action to perform"
+                  ]
                 }
               },
               "required": ["action"],
@@ -673,7 +673,7 @@
                   }
                 }
               ],
-              "additionalProperties": false
+              "additionalProperties": true
             }
           },
           "notes": {

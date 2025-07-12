@@ -1,5 +1,5 @@
 {
-  "$schema": "https://demotime.show/demo-time.schema.json",
+  "$schema": "https://beta.demotime.show/demo-time.schema.json",
   "title": "File Actions",
   "description": "Here are the actions you can perform on files.",
   "demos": [
