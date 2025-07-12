@@ -143,6 +143,24 @@
                   },
                   "then": {
                     "required": ["path"],
+                    "oneOf": [
+                      {
+                        "required": ["content"],
+                        "not": { "required": ["contentPath"] }
+                      },
+                      {
+                        "required": ["contentPath"],
+                        "not": { "required": ["content"] }
+                      },
+                      {
+                        "not": {
+                          "anyOf": [
+                            { "required": ["content"] },
+                            { "required": ["contentPath"] }
+                          ]
+                        }
+                      }
+                    ],
                     "properties": {
                       "path": {
                         "$ref": "#/definitions/path"
