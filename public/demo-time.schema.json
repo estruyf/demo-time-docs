@@ -258,18 +258,85 @@
                     "properties": {
                       "action": {
                         "enum": [
-                          "create",
                           "open",
                           "deleteFile",
                           "markdownPreview",
-                          "imagePreview",
                           "openSlide"
                         ]
                       }
                     }
                   },
                   "then": {
-                    "required": ["path"]
+                    "required": ["path"],
+                    "properties": {
+                      "path": { "type": "string", "title": "Path to file" }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "enum": ["create"]
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": ["path"],
+                    "properties": {
+                      "content": {
+                        "type": "string",
+                        "title": "Content to write to the file"
+                      },
+                      "contentPath": {
+                        "type": "string",
+                        "title": "Path to the content file to use"
+                      },
+                      "overwrite": {
+                        "type": "boolean",
+                        "title": "Overwrite the destination file if it exists. Default is false."
+                      }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "enum": ["imagePreview"]
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": ["path"],
+                    "properties": {
+                      "theme": {
+                        "type": "string",
+                        "title": "Relative path to a CSS file for custom styling of the image preview"
+                      },
+                      "zoom": {
+                        "type": "number",
+                        "title": "The zoom level for the image preview"
+                      }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "enum": ["open", "openSlide", "markdownPreview"]
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "openInVSCode": {
+                        "type": "boolean",
+                        "title": "Open the file in VSCode. Default is false.",
+                        "default": false
+                      }
+                    }
                   }
                 },
                 {
@@ -284,7 +351,19 @@
                     }
                   },
                   "then": {
-                    "required": ["command"]
+                    "required": ["command"],
+                    "properties": {
+                      "args": {
+                        "type": [
+                          "object",
+                          "array",
+                          "string",
+                          "number",
+                          "boolean"
+                        ],
+                        "title": "Arguments to pass to the command for VSCode or placeholder names for your snippet"
+                      }
+                    }
                   }
                 },
                 {
@@ -296,7 +375,13 @@
                     }
                   },
                   "then": {
-                    "required": ["path", "contentPath", "patch"]
+                    "required": ["path", "contentPath", "patch"],
+                    "properties": {
+                      "overwrite": {
+                        "type": "boolean",
+                        "title": "Overwrite the destination file if it exists. Default is false."
+                      }
+                    }
                   }
                 },
                 {
@@ -308,7 +393,14 @@
                     }
                   },
                   "then": {
-                    "required": ["url"]
+                    "required": ["url"],
+                    "properties": {
+                      "openInVSCode": {
+                        "type": "boolean",
+                        "title": "Open the URL in VSCode. Default is false.",
+                        "default": false
+                      }
+                    }
                   }
                 },
                 {
@@ -323,7 +415,13 @@
                     "oneOf": [
                       { "required": ["content"] },
                       { "required": ["contentPath"] }
-                    ]
+                    ],
+                    "properties": {
+                      "message": {
+                        "type": "string",
+                        "title": "Optional message to show after copying to clipboard"
+                      }
+                    }
                   }
                 },
                 {
@@ -343,7 +441,13 @@
                       {
                         "required": ["contentPath"]
                       }
-                    ]
+                    ],
+                    "properties": {
+                      "overwrite": {
+                        "type": "boolean",
+                        "title": "Overwrite the destination file if it exists. Default is false."
+                      }
+                    }
                   }
                 },
                 {
@@ -355,7 +459,19 @@
                     }
                   },
                   "then": {
-                    "required": ["contentPath"]
+                    "required": ["contentPath"],
+                    "properties": {
+                      "args": {
+                        "type": [
+                          "object",
+                          "array",
+                          "string",
+                          "number",
+                          "boolean"
+                        ],
+                        "title": "Arguments to pass to the snippet"
+                      }
+                    }
                   }
                 },
                 {
@@ -367,7 +483,19 @@
                     }
                   },
                   "then": {
-                    "required": ["id", "command", "path"]
+                    "required": ["id", "command", "path"],
+                    "properties": {
+                      "args": {
+                        "type": [
+                          "object",
+                          "array",
+                          "string",
+                          "number",
+                          "boolean"
+                        ],
+                        "title": "Arguments to pass to the script"
+                      }
+                    }
                   }
                 },
                 {
@@ -379,7 +507,13 @@
                     }
                   },
                   "then": {
-                    "required": ["path", "dest"]
+                    "required": ["path", "dest"],
+                    "properties": {
+                      "overwrite": {
+                        "type": "boolean",
+                        "title": "Overwrite the destination file if it exists. Default is false."
+                      }
+                    }
                   }
                 },
                 {
@@ -391,7 +525,13 @@
                     }
                   },
                   "then": {
-                    "required": ["setting"]
+                    "required": ["setting"],
+                    "properties": {
+                      "scope": {
+                        "type": "string",
+                        "title": "Scope for the setting (user, workspace, folder)"
+                      }
+                    }
                   }
                 },
                 {
@@ -403,7 +543,13 @@
                     }
                   },
                   "then": {
-                    "required": ["path"]
+                    "required": ["path"],
+                    "properties": {
+                      "zoom": {
+                        "type": "number",
+                        "title": "The zoom level for the editor when highlighting code"
+                      }
+                    }
                   }
                 },
                 {
@@ -415,7 +561,13 @@
                     }
                   },
                   "then": {
-                    "required": ["path"]
+                    "required": ["path"],
+                    "properties": {
+                      "clearHighlight": {
+                        "type": "boolean",
+                        "title": "Clear highlight when unselecting"
+                      }
+                    }
                   }
                 },
                 {
@@ -427,23 +579,61 @@
                     }
                   },
                   "then": {
-                    "required": ["path"]
+                    "required": ["path"],
+                    "properties": {
+                      "permanent": {
+                        "type": "boolean",
+                        "title": "Permanently delete the file"
+                      }
+                    }
                   }
                 },
                 {
                   "if": {
                     "properties": {
-                      "action": {
-                        "enum": [
-                          "askCopilotChat",
-                          "editCopilotChat",
-                          "agentCopilotChat"
-                        ]
-                      }
+                      "action": { "const": "askCopilotChat" }
                     }
                   },
                   "then": {
-                    "required": ["message"]
+                    "properties": {
+                      "message": {
+                        "type": "string",
+                        "title": "The message for the Copilot Chat interaction",
+                        "description": "Optional message to pass to the Copilot Chat when asking a question"
+                      }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": { "const": "editCopilotChat" }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "message": {
+                        "type": "string",
+                        "title": "The message for editing the Copilot Chat",
+                        "description": "Optional message to modify in the Copilot Chat session"
+                      }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": { "const": "agentCopilotChat" }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "message": {
+                        "type": "string",
+                        "title": "The message for the Copilot Chat agent",
+                        "description": "Optional agent instruction to pass to the Copilot Chat"
+                      }
+                    }
                   }
                 },
                 {
