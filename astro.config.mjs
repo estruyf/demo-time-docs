@@ -18,7 +18,8 @@ export default defineConfig({
       title: 'Demo Time',
       social: {
         // github: 'https://github.com/estruyf/vscode-demo-time',
-        blueSky: 'https://bsky.app/profile/eliostruyf.com'
+        blueSky: 'https://bsky.app/profile/eliostruyf.com',
+        discord: 'https://discord.gg/ETVDS8kqys',
       },
       components: {
         // Relative path to the custom component.
