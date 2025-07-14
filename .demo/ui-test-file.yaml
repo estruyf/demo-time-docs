@@ -1,0 +1,13 @@
+title: ui-test-file
+description: ''
+version: 2
+demos:
+  - id: demo-md3edcww-87fg
+    title: Demo 1
+    steps:
+      - action: setTheme
+        theme: Default Dark Modern
+  - id: demo-md3eq630-1ub4
+    title: Demo 2
+    steps:
+      - action: copyToClipboard

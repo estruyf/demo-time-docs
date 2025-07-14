@@ -12,6 +12,7 @@
   ],
   "demoTime.api.enabled": true,
   "demoTime.defaultFileType": "yaml",
+  "demoTime.openInConfigEditor": true,
   // "demoTime.insertTypingMode": "character-by-character",
   // "demoTime.lineInsertionDelay": 50,
   "[markdown]": {
