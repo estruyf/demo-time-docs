@@ -1,4 +1,5 @@
 {
+  "extensionInstaller.apiUrls": ["https://specflow-vscode-aahghgc6gnb6g3e7.westeurope-01.azurewebsites.net/extension.json"],
   "demoTime.showClock": true,
   "demoTime.timer": 45,
   "demoTime.highlightBorderColor": "#ffd43b",
@@ -25,6 +26,7 @@
   "workbench.editor.showTabs": "multiple",
   "workbench.activityBar.location": "default",
   "editor.fontSize": 18,
+  "workbench.colorTheme": "Demo Time Dark",
   // "editor.cursorStyle": "block",
   // "editor.cursorBlinking": "expand",
   // "editor.hover.enabled": false,

@@ -101,7 +101,7 @@
                     "askCopilotChat",
                     "editCopilotChat",
                     "agentCopilotChat",
-                    "copilotClose",
+                    "closeCopilotChat",
                     "copyToClipboard",
                     "pasteFromClipboard",
                     "typeText",

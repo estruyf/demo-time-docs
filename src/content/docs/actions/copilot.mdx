@@ -1,7 +1,7 @@
 ---
 title: GitHub Copilot actions
 description: Actions for integrating GitHub Copilot in Demo Time
-lastmod: 2025-07-04T15:00:22.158Z
+lastmod: 2025-07-17T16:17:13.761Z
 ---
 
 import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
@@ -136,14 +136,14 @@ message: "Write a function that returns 'Hello from Demo Time'."
 
 ## Close Copilot chat
 
-To close the Copilot chat panel, use the `copilotClose` action.
+To close the Copilot chat panel, use the `closeCopilotChat` action.
 
 <Tabs syncKey="copilot-close-chat">
 <TabItem label="JSON">
 
 ```json
 {
-  "action": "copilotClose"
+  "action": "closeCopilotChat"
 }
 ```
 
@@ -151,7 +151,7 @@ To close the Copilot chat panel, use the `copilotClose` action.
 <TabItem label="YAML">
 
 ```yaml
-action: copilotClose
+action: closeCopilotChat
 ```
 
 </TabItem>
