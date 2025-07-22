@@ -1,6 +1,7 @@
 ---
-title: Presentation Mode
-description: Learn how to enter presentation mode to make it easier to present your demos.
+title: Start Presenting with Demo Time
+description: Learn how to use Demo Time to present your demos like a pro.
+lastmod: 2025-07-22T18:31:06.683Z
 ---
 
 import { Image } from 'astro:assets';
@@ -8,11 +9,26 @@ import { Code, Aside } from '@astrojs/starlight/components';
 
 import presentationModeImage from "../../assets/docs/presentation-mode.webp";
 
+## Think like a presenter, not just a developer
+
+Demo Time works best when you think of your presentation as a **journey**:
+
+- What do you want the audience to feel or understand?
+- Where should you pause, explain, highlight, or run code?
+- What steps are *essential* vs *supporting*?
+
+## Typical flow of a Demo Time session
+
+1. **Script your demo steps**
+2. Use `presentation mode` to automatically advance (vs clicking manually) with the keyboard shortcuts (`→`) or right arrow on your clicker
+3. Mix code walkthroughs with slides — all in VS Code
+4. Stay focused while Demo Time handles the flow
+
+## How to start presenting
+
 Once you have created your demos, you can manually trigger the steps from the Demo Time panel view, trigger them from the command palette with the `Demo Time: Start` command, or enter presentation mode to use a presenter/clicker to navigate through your demos.
 
-## Toggle Presentation Mode
-
-To enter presentation mode, you can click on the "projector" icon in the Demo Time panel view or use the `Demo Time: Start Presentation Mode` command from the command palette.
+To enter presentation mode, click the "projector" icon in the Demo Time panel view or use the `Demo Time: Start Presentation Mode` command from the command palette.
 
 <Image class="mx-auto" src={presentationModeImage} alt="Enter presentation mode" width="400" />
 
@@ -23,6 +39,13 @@ Once you are in presentation mode, you can use your right arrow key or right pre
 <Aside type="tip">
 If you want, you can override the default keybindings for the presenter/clicker buttons by updating the `demoTime.start` and `demo-time.previous` commands in the keybindings settings (use the `Preferences: Open Keyboard Shortcuts` command).
 </Aside>
+
+## Tips for presenting
+
+- **Test with timing**: Practice your script while talking through each step
+- **Use `presentation mode`**: Avoid clicking through steps mid-talk
+- **Keep the demo focused**: Add extra info in comments, not in live code
+- **Backup plan**: Keep your demos self-contained so you can restart easily for when you would add manual changes
 
 ## Enable to go back action
 
