@@ -72,7 +72,7 @@ export default defineConfig({
           items: [
             { label: 'Getting started', slug: 'getting-started' },
             { label: 'Adding demos', slug: 'adding-demos' },
-            { label: 'Presentation mode', slug: 'presentation-mode' },
+            { label: 'Start presenting', slug: 'presentation-mode' },
           ],
         },
         {
