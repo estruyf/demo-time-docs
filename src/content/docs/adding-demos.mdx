@@ -1,7 +1,7 @@
 ---
 title: Adding demos
 description: Add your demos to your demo time configuration.
-lastmod: 2025-07-04T14:58:59.355Z
+lastmod: 2025-07-23T10:38:33.877Z
 ---
 
 import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
@@ -12,6 +12,15 @@ import implementationImage from "../../assets/docs/first-demo-implementation.web
 import demoStepImage from "../../assets/docs/adding-demo-step.webp";
 
 In the [getting started](/getting-started/) guide, you learned how to initialize the extension with a sample demo. In this guide, you will learn how to add your demos to the demo time configuration.
+
+<Aside type="note" title="How demo steps work">
+  Each <b>demo</b> can contain multiple <b>steps</b>. When you trigger a demo, <b>all its steps will run automatically in sequence</b>—you do not need to trigger each step one by one. This is useful for automating multi-step tasks, such as:
+  <ul>
+    <li>Creating a new file, adding content, and highlighting code—all in a single demo.</li>
+    <li>Opening GitHub Copilot chat, sending a message, and pressing Enter, as one seamless flow.</li>
+  </ul>
+  Instead of creating separate demos for each action, group related steps together for a smoother, more automated presentation.
+</Aside>
 
 ## Adding your first demo
 
@@ -80,6 +89,10 @@ steps: []
 </TabItem>
 </Tabs>
 
+<Aside type="note">
+A single demo can contain multiple steps, which will be executed one after another when you trigger the demo. This allows you to automate a sequence of actions as part of a single demo, making your presentations smoother and more efficient.
+</Aside>
+
 You can also add icons to the demo to make them more recognizable.
 
 <Tabs syncKey="demo-icons">
@@ -117,6 +130,8 @@ steps: []
 <Aside type="note">
 Use the icon names you can find in the [icon listing](https://code.visualstudio.com/api/references/icons-in-labels#icon-listing) from the Visual Studio Code documentation.
 </Aside>
+
+### Sample demo file configuration
 
 Here is an example of a demo where you create a file and open it:
 
@@ -177,16 +192,22 @@ demos:
 </TabItem>
 </Tabs>
 
-To use this command, you can follow these steps:
+<Aside type="note">
+Notice the `steps` array in the demo. Each step will be executed in sequence when you trigger the demo. In this example, when the `Create and open sample.json` demo is triggered, it creates a `sample.json` file with the specified content and then opens it in the editor all in one go.
+</Aside>
 
-1. Select the text you want to add as a demo step.
-2. Open the command palette by pressing <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> or <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>.
-3. Search for the **Demo Time: Add demo step** command.
-4. Click on the command to add the selected text as a demo step.
-5. Select the demo file in which you want to add the step.
-6. Select the type of action you want to add (insert, highlight, unselect, or delete).
+## Adding demo steps
+
+When you have a file open in the editor, you can add a demo step to your demo file by using the command **Demo Time: Add demo step**.
+
+For example, if you want to highlight a piece of code, you can select the code and do the following:
+
+1. Open the command palette by pressing <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> or <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd>.
+2. Search for the **Demo Time: Add demo step** command.
+3. Click on the `highlight` action in the command palette.
   <Image class="mx-auto" src={demoStepImage} alt="Add a demo step from the &quot;Demo Time: Add demo step&quot; command" />
-7. Select if you want to add it to an existing demo or create a new one.
+4. Select the demo file in which you want to add the step (only if you have multiple demo files).
+5. Select if you want to add it to an existing demo or create a new one.
 
 ## Executing the demo
 
@@ -235,3 +256,7 @@ notes:
 ## Implementing other demos and steps
 
 You can add more demos and steps to the `demos` array. In the [actions section](/actions/) of the documenation, you can find all the available actions you can use to create your demos.
+
+<Aside type="note">
+If you want to split your demos in multiple sections, you can do this by creating multiple demo files in the `.demo` folder. The extension will automatically recognize them and display them in the **Demo Time** view.
+</Aside>

@@ -1,0 +1,27 @@
+title: ui-test-file
+description: ''
+version: 2
+timer: 30
+demos:
+  - id: demo-md3edcww-87fg
+    title: Demo 1
+    steps:
+      - action: setTheme
+        theme: Demo Time Light
+      - action: waitForTimeout
+        timeout: 2000
+      - action: setTheme
+        theme: Red
+      - action: waitForTimeout
+        timeout: 2000
+      - action: setTheme
+        theme: Shades of Purple (Super Dark)
+      - action: waitForTimeout
+        timeout: 2000
+      - action: setTheme
+        theme: Demo Time Dark
+  - id: demo-md3eq630-1ub4
+    title: Demo 2
+    steps:
+      - action: copyToClipboard
+        content: This is the value to copy

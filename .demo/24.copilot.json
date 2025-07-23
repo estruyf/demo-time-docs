@@ -65,7 +65,7 @@
       "title": "Close GitHub Copilot",
       "steps": [
         {
-          "action": "copilotClose"
+          "action": "closeCopilotChat"
         }
       ]
     }
