@@ -28,4 +28,20 @@ export const collections = {
       ),
     }),
   }),
+  articles: defineCollection({
+    loader: glob({
+      pattern: "**/index.md",
+      base: "./src/content/articles",
+    }),
+    schema: z.object({
+      title: z.string(),
+      description: z.string(),
+      date: z.preprocess(
+        (val) => (typeof val === "string" ? new Date(val) : val),
+        z.date()
+      ),
+      author: z.string(),
+      github: z.string(),
+    }),
+  }),
 };
