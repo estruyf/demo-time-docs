@@ -40,6 +40,7 @@ export const collections = {
         (val) => (typeof val === "string" ? new Date(val) : val),
         z.date()
       ),
+      slug: z.string().optional(),
       author: z.string(),
       github: z.string(),
     }),

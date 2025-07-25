@@ -2,7 +2,6 @@
 import { getCollection, render } from "astro:content";
 import StarlightPage from "@astrojs/starlight/components/StarlightPage.astro";
 import Pagination from "@astrojs/starlight/components/Pagination.astro";
-import { undefined } from "astro:schema";
 
 const { slug } = Astro.params;
 const articles = await getCollection("articles");
