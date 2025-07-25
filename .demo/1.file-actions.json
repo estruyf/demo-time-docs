@@ -1,7 +1,8 @@
 {
-  "$schema": "https://demotime.show/demo-time.schema.json",
   "title": "File Actions",
   "description": "Here are the actions you can perform on files.",
+  "version": 2,
+  "timer": 30,
   "demos": [
     {
       "title": "Open file",
@@ -152,5 +153,6 @@
         }
       ]
     }
-  ]
+  ],
+  "$schema": "https://beta.demotime.show/demo-time.schema.json"
 }

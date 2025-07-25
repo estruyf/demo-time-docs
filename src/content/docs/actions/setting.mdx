@@ -1,7 +1,7 @@
 ---
 title: Setting actions
 description: Perform setting actions in your demos like update settings, change themes, and more.
-lastmod: 2025-07-04T15:08:52.029Z
+lastmod: 2025-07-12T14:04:26.246Z
 ---
 
 import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
@@ -55,15 +55,15 @@ Here is an example of how you can hide the activity and status bar in Visual Stu
 [
   {
     "action": "setSetting",
-    "args": {
-      "setting": "workbench.statusBar.visible",
+    "setting": {
+      "key": "workbench.statusBar.visible",
       "value": false
     }
   },
   {
     "action": "setSetting",
-    "args": {
-      "setting": "workbench.activityBar.location",
+    "setting": {
+      "key": "workbench.activityBar.location",
       "value": "hidden"
     }
   }
@@ -75,12 +75,12 @@ Here is an example of how you can hide the activity and status bar in Visual Stu
 
 ```yaml
 - action: setSetting
-  args:
-    setting: workbench.statusBar.visible
+  setting:
+    key: workbench.statusBar.visible
     value: false
 - action: setSetting
-  args:
-    setting: workbench.activityBar.location
+  setting:
+    key: workbench.activityBar.location
     value: hidden
 ```
 

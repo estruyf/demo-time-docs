@@ -18,7 +18,8 @@ export default defineConfig({
       title: 'Demo Time',
       social: {
         // github: 'https://github.com/estruyf/vscode-demo-time',
-        blueSky: 'https://bsky.app/profile/eliostruyf.com'
+        blueSky: 'https://bsky.app/profile/eliostruyf.com',
+        discord: 'https://discord.gg/ETVDS8kqys',
       },
       components: {
         // Relative path to the custom component.
@@ -67,15 +68,16 @@ export default defineConfig({
       ],
       sidebar: [
         {
-          label: 'Documentation',
+          label: 'It starts here',
           items: [
             { label: 'Getting started', slug: 'getting-started' },
             { label: 'Adding demos', slug: 'adding-demos' },
-            { label: 'Presentation mode', slug: 'presentation-mode' },
+            { label: 'Start presenting', slug: 'presentation-mode' },
           ],
         },
         {
           label: 'Actions',
+          collapsed: true,
           items: [
             { label: 'File actions', slug: 'actions/file' },
             { label: 'Text actions', slug: 'actions/text' },
@@ -93,6 +95,7 @@ export default defineConfig({
         },
         {
           label: 'Slides',
+          collapsed: true,
           items: [
             { label: 'Present your slides', slug: 'slides' },
             {
@@ -140,6 +143,7 @@ export default defineConfig({
         },
         {
           label: 'Other features',
+          collapsed: true,
           items: [
             { label: 'Presenter view', slug: 'features/presenter-view' },
             { label: 'Using notes', slug: 'features/using-notes' },
@@ -150,6 +154,7 @@ export default defineConfig({
         },
         {
           label: 'References',
+          collapsed: true,
           items: [
             { label: 'Commands', slug: 'references/commands' },
             { label: 'Settings', slug: 'references/settings' },
@@ -159,6 +164,7 @@ export default defineConfig({
         },
         {
           label: 'Tips & Tricks',
+          collapsed: true,
           items: [
             { label: 'Adding content', slug: 'tips/adding-content' },
             { label: 'Adding steps to your demo', slug: 'tips/adding-steps' },
@@ -171,6 +177,7 @@ export default defineConfig({
         },
         {
           label: 'Integrations',
+          collapsed: true,
           items: [
             { label: 'Slidev', slug: 'integrations/slidev' },
             { label: 'PowerPoint', slug: 'integrations/powerpoint' },
@@ -179,16 +186,22 @@ export default defineConfig({
         },
         {
           label: 'Snippets',
+          collapsed: true,
           items: [
             { label: 'Snippets', slug: 'snippets' },
           ],
         },
         {
           label: 'Examples',
+          collapsed: true,
           items: [
             { label: 'Projects', slug: 'examples' },
             { label: 'Showcases', slug: 'examples/showcases' },
           ],
+        },
+        {
+          label: 'Community Articles',
+          link: 'articles'
         },
         {
           label: 'Beta version',

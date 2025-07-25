@@ -4,6 +4,14 @@
   "description": "",
   "demos": [
     {
+      "title": "Open the terminal",
+      "steps": [
+        {
+          "action": "openTerminal"
+        }
+      ]
+    },
+    {
       "title": "Execute terminal command",
       "description": "",
       "steps": [

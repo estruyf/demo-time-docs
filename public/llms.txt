@@ -55,7 +55,7 @@
 
 ## Presentation-mode
 
-- [Presentation Mode | Demo Time](https://demotime.show/presentation-mode/): Learn how to enter presentation mode to make it easier to present your demos.
+- [Start Presenting with Demo Time | Demo Time](https://demotime.show/presentation-mode/): Learn how to use Demo Time to present your demos like a pro.
 
 ## References
 
