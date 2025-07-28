@@ -43,6 +43,7 @@ export const collections = {
       slug: z.string().optional(),
       author: z.string(),
       github: z.string(),
+      pinned: z.boolean().optional(),
     }),
   }),
 };
