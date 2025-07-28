@@ -5,6 +5,7 @@ slug: "contribute-your-demo-time-articles"
 date: 2025-07-25
 author: "Elio Struyf"
 github: "estruyf"
+pinned: true
 ---
 
 We invite you to share your knowledge and experiences with the community! To contribute your own article, simply add a Markdown file to the `src/content/articles` directory in this repository. Use this article as a template—just update the frontmatter with your name and GitHub username, and your avatar will appear automatically.
