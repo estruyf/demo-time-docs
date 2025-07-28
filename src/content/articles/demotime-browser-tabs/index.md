@@ -7,8 +7,6 @@ author: "Arjan Rijsdijk"
 github: "arijsdijk"
 ---
 
-# Switching browser tabs using AppleScript and the Demo Time API
-
 As a Power Platform consultant, I love keeping my presentations and demos as interactive as possible. That means not just slides, talks, and code examples, but also live demos—often directly in Power Platform.
 
 In the past, this was always a bit of a hassle: switching from your PowerPoint or Keynote presentation to the browser, opening the right tab, running your demo, and then switching back to your presentation. Not only inconvenient for you, but also distracting for your audience!
