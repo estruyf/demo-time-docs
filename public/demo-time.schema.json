@@ -756,7 +756,12 @@
     },
     "insertTypingMode": {
       "type": "string",
-      "enum": ["instant", "line-by-line", "character-by-character"],
+      "enum": [
+        "instant",
+        "line-by-line",
+        "character-by-character",
+        "hacker-typer"
+      ],
       "default": "instant",
       "title": "Typing mode defines how you enter the text. Default is 'instant'."
     },
