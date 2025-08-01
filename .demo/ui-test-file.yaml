@@ -1,5 +1,8 @@
 title: ui-test-file
-description: ''
+description: |-
+  This is
+  a description
+  with linebreaks
 version: 2
 timer: 30
 demos:
@@ -20,8 +23,31 @@ demos:
         timeout: 2000
       - action: setTheme
         theme: Demo Time Dark
+    description: |-
+      This
+      is
+      a
+      description
+      test
+    disabled: false
+  - id: demo-mdsiag0k-6i7p
+    title: Demo 3
+    steps:
+      - action: save
+        path: .demo/26.positioning.yaml
+      - action: save
+        disabled: true
+        path: .demo/26.positioning.yaml
+      - action: save
+      - action: save
+        disabled: false
+        path: .demo/26.positioning.yaml
+    disabled: true
   - id: demo-md3eq630-1ub4
     title: Demo 2
     steps:
       - action: copyToClipboard
         content: This is the value to copy
+  - id: demo-mdsla1sh-m0cl
+    title: Demo 4
+    steps: []

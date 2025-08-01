@@ -534,6 +534,22 @@
                   "if": {
                     "properties": {
                       "action": {
+                        "const": "waitForInput"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "message": {
+                        "$ref": "#/definitions/inputTitleMessage"
+                      }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
                         "const": "executeVSCodeCommand"
                       }
                     }
@@ -756,7 +772,12 @@
     },
     "insertTypingMode": {
       "type": "string",
-      "enum": ["instant", "line-by-line", "character-by-character"],
+      "enum": [
+        "instant",
+        "line-by-line",
+        "character-by-character",
+        "hacker-typer"
+      ],
       "default": "instant",
       "title": "Typing mode defines how you enter the text. Default is 'instant'."
     },
@@ -767,6 +788,10 @@
     "notificationMessage": {
       "type": "string",
       "title": "The message for the notification"
+    },
+    "inputTitleMessage": {
+      "type": "string",
+      "title": "The message for the input title"
     },
     "openInVSCode": {
       "type": "boolean",

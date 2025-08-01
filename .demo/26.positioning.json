@@ -7,11 +7,6 @@
     {
       "title": "Insert at line and character",
       "steps": [
-        // {
-        //   "action": "create",
-        //   "path": "sample.txt",
-        //   "content": "Line 1\\nLine 2\\nLine 3\\nLine 4\\nLine 5\\nLine 6\\nLine 7\\nLine 8\\nLine 9\\nLine 10\\nLine 11\\nLine 12"
-        // },
         {
           "action": "insert",
           "path": "sample.txt",
