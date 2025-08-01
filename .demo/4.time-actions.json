@@ -22,7 +22,8 @@
       "description": "",
       "steps": [
         {
-          "action": "waitForInput"
+          "action": "waitForInput",
+          "message": "Do you want to continue?"
         },
         {
           "action": "markdownPreview",
