@@ -1,7 +1,7 @@
 ---
 title: Patch actions
 description: File patch actions can be used to insert code based on a snapshot of the file and a patch file.
-lastmod: 2025-07-04T15:04:23.034Z
+lastmod: 2025-07-29T08:44:13.907Z
 ---
 
 import { Aside, Tabs, TabItem } from '@astrojs/starlight/components';
@@ -55,7 +55,7 @@ To apply the changes, you can use the `applyPatch` action. This action takes the
   "path": "<relative path to the file>", // This will be the source file to update
   "contentPath": "<relative path to the snapshot file>",
   "patch": "<relative path to the patch file>",
-  "insertTypingMode": "<typing mode: 'instant', 'line-by-line' or 'character-by-character'> (optional, default is 'instant')",
+  "insertTypingMode": "<typing mode: 'instant', 'line-by-line', 'character-by-character', or 'hacker-typer'> (optional, default is 'instant')",
   "insertTypingSpeed": "<delay in milliseconds (optional)>"
 }
 ```
@@ -68,10 +68,14 @@ action: applyPatch
 path: <relative path to the file> # This will be the source file to update
 contentPath: <relative path to the snapshot file>
 patch: <relative path to the patch file>
-insertTypingMode: <typing mode: 'instant', 'line-by-line' or 'character-by-character'> # optional, default is 'instant'
+insertTypingMode: <typing mode: 'instant', 'line-by-line', 'character-by-character', or 'hacker-typer'> # optional, default is 'instant'
 insertTypingSpeed: <delay in milliseconds> # optional
 ```
 
 </TabItem>
 </Tabs>
+
+<Aside>
+For more information about the typing modes, see the [typing modes](/actions/text#typing-modes) section.
+</Aside>
 
