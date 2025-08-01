@@ -534,6 +534,22 @@
                   "if": {
                     "properties": {
                       "action": {
+                        "const": "waitForInput"
+                      }
+                    }
+                  },
+                  "then": {
+                    "properties": {
+                      "message": {
+                        "$ref": "#/definitions/inputTitleMessage"
+                      }
+                    }
+                  }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
                         "const": "executeVSCodeCommand"
                       }
                     }
@@ -767,6 +783,10 @@
     "notificationMessage": {
       "type": "string",
       "title": "The message for the notification"
+    },
+    "inputTitleMessage": {
+      "type": "string",
+      "title": "The message for the input title"
     },
     "openInVSCode": {
       "type": "boolean",
