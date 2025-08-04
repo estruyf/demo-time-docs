@@ -1,7 +1,7 @@
 ---
 title: API
 description: Demo Time provides an API to control the extension programmatically.
-lastmod: 2025-07-04T14:53:50.807Z
+lastmod: 2025-08-02T15:56:10.675Z
 tableOfContents: false
 ---
 
@@ -20,6 +20,10 @@ API URL: `http://localhost:3710/api/next`
 Once enabled, it shows the API and its port number in the status bar of Visual Studio Code.
 
 <Image class="mx-auto" src={apiPortImg} alt="API enabled with port 3710" width="400" />
+
+<Aside type="tip">
+  When enabled, you can click on the status bar API or open the site in your browser to see the API documentation. Example: `http://localhost:3710`
+</Aside>
 
 ## API endpoints
 
@@ -53,7 +57,7 @@ You can call this endpoint via a `GET` or `POST` request.
 - Method: `POST`
 - Body:
 
-  ```json
+  ```json title="API Body"
   {
     "id": "<step id>",
     "bringToFront": "<bring the Visual Studio Code window to the front (optional) - default is false>"
@@ -62,3 +66,38 @@ You can call this endpoint via a `GET` or `POST` request.
 
 - Headers:
   - `Content-Type: application/json`
+
+### `/api/demos`
+
+Returns all demo files, the next demo, and the currently executing demo file.
+
+- Method: `GET`
+
+#### Response
+
+```json title="Demos API Response"
+{
+  "demoFiles": [
+    {
+      "filePath": "/absolute/path/to/demo.json",
+      "demos": [
+        { "id": "demo1", "title": "Demo 1" },
+        { "id": "demo2", "title": "Demo 2" }
+      ]
+    }
+  ],
+  "nextDemo": { "id": "demo2", "title": "Demo 2" },
+  "currentDemoFile": {
+    "filePath": "/absolute/path/to/demo.json",
+    "demo": [
+      { "id": "demo1", "title": "Demo 1" }
+    ]
+  }
+}
+```
+
+#### Description
+
+- `demoFiles`: Array of demo files, each with its file path and contained demos (id and title).
+- `nextDemo`: The next demo to be executed (id and title), if available.
+- `currentDemoFile`: The currently executing demo file, with its file path and demos.

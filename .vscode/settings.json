@@ -35,4 +35,6 @@
   // "yaml.schemas": {
   //   "https://demotime.show/demo-time.schema.json": ".demo/*"
   // }
+  "chat.tools.autoApprove": true,
+"chat.agent.maxRequests": 100
 }
