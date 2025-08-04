@@ -144,6 +144,35 @@
         "start": "vm",
         "end": "pass-filled"
       }
+    },
+    {
+      "title": "Next slide auto",
+      "description": "",
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": ".demo/slides/auto-next-slide.md"
+        }
+      ],
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      }
+    },
+    {
+      "title": "Next slide",
+      "description": "",
+      "steps": [
+        {
+          "action": "openSlide",
+          "path": "/.demo/slides/next-slide.md"
+        }
+      ],
+      "icons": {
+        "start": "vm",
+        "end": "pass-filled"
+      },
+      "id": "demo-mdwz555l-cf6l"
     }
   ]
 }

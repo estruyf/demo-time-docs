@@ -35,6 +35,11 @@
           "description": {
             "type": "string"
           },
+          "disabled": {
+            "type": "boolean",
+            "default": false,
+            "description": "If true, the demo will not be shown in the UI."
+          },
           "icons": {
             "type": "object",
             "properties": {
@@ -105,8 +110,14 @@
                     "copyToClipboard",
                     "pasteFromClipboard",
                     "typeText",
-                    "pressEnter"
+                    "pressEnter",
+                    "runDemoById"
                   ]
+                },
+                "disabled": {
+                  "type": "boolean",
+                  "default": false,
+                  "description": "If true, the step will not be executed."
                 }
               },
               "required": ["action"],
@@ -705,6 +716,23 @@
                       }
                     }
                   }
+                },
+                {
+                  "if": {
+                    "properties": {
+                      "action": {
+                        "const": "runDemoById"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": ["id"],
+                    "properties": {
+                      "id": {
+                        "$ref": "#/definitions/runDemoById"
+                      }
+                    }
+                  }
                 }
               ],
               "additionalProperties": true
@@ -814,6 +842,10 @@
     "position": {
       "type": ["string", "number"],
       "title": "Position in the file. Can be line number or \"<start line>,<start character>\" or \"<start line>:<end line>\" or \"<start line>,<start character>:<end line>,<end character>\"."
+    },
+    "runDemoById": {
+      "type": "string",
+      "title": "The ID of the demo to run"
     },
     "scriptId": {
       "type": "string",
