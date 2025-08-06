@@ -23,7 +23,7 @@ demos:
         timeout: 2000
       - action: setTheme
         theme: Demo Time Dark
-    disabled: false
+    disabled: true
     icons:
       start: account
       end: account
@@ -48,13 +48,15 @@ demos:
     icons:
       start: alert
       end: ''
-  - id: demo-mdsla1sh-m0cl
+  - id: demo-mdsla1sh-m0cl12
     title: Demo 4
     steps:
       - action: openSlide
-        path: ./demo/slides/end-slides.md
+        path: .demo/slides/end-slides.md
   - id: demo-mdsla1sh-m0cl
     title: Demo 5
     steps:
+      - action: close
+        disabled: true
       - action: runDemoById
-        id: demo-mdsla1sh-m0cl
+        id: demo-mdsla1sh-m0cl12
