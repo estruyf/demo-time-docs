@@ -23,13 +23,10 @@ demos:
         timeout: 2000
       - action: setTheme
         theme: Demo Time Dark
-    description: |-
-      This
-      is
-      a
-      description
-      test
-    disabled: false
+    disabled: true
+    icons:
+      start: account
+      end: account
   - id: demo-mdsiag0k-6i7p
     title: Demo 3
     steps:
@@ -48,6 +45,18 @@ demos:
     steps:
       - action: copyToClipboard
         content: This is the value to copy
-  - id: demo-mdsla1sh-m0cl
+    icons:
+      start: alert
+      end: ''
+  - id: demo-mdsla1sh-m0cl12
     title: Demo 4
-    steps: []
+    steps:
+      - action: openSlide
+        path: .demo/slides/end-slides.md
+  - id: demo-mdsla1sh-m0cl
+    title: Demo 5
+    steps:
+      - action: close
+        disabled: true
+      - action: runDemoById
+        id: demo-mdsla1sh-m0cl12
