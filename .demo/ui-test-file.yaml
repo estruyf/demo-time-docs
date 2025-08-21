@@ -60,3 +60,22 @@ demos:
         disabled: true
       - action: runDemoById
         id: demo-mdsla1sh-m0cl12
+  - id: demo-me8pnoi1-wc3b
+    title: GitHub Copilot
+    steps:
+      - action: openCopilotChat
+    icons:
+      start: bell
+      end: stop
+    description: In this demo I'm going to show how to open it...
+  - id: demo-me8pwyrp-zel2
+    title: GitHub Copilot (Copy)
+    steps:
+      - action: agentCopilotChat
+      - action: typeText
+        content: Can you write me a TypeScript application that open a document
+      - action: pressEnter
+    icons:
+      start: bell
+      end: stop
+    description: In this demo I'm going to show how to open it...
