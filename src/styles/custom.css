@@ -98,30 +98,6 @@ h1 {
       @apply decoration-solid;
     }
   }
-
-  p {
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-    color: var(--sl-color-gray-2);
-  }
-
-  p:last-child {
-    margin-bottom: 0;
-  }
-
-  /* Better spacing for paragraphs in sections */
-  section p {
-    max-width: 65ch;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  /* Improved typography for lead paragraphs */
-  section > p:first-of-type {
-    font-size: 1.125rem;
-    font-weight: 500;
-    color: var(--sl-color-gray-1);
-  }
 }
 
 @keyframes fade {
