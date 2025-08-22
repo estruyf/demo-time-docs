@@ -1,0 +1,26 @@
+{
+  "$schema": "https://demotime.show/demo-time.schema.json",
+  "title": "Demo",
+  "description": "Demo description",
+  "version": 2,
+  "demos": [
+    {
+      "id": "demo-memjs2xj-i03m",
+      "title": "Demo 1",
+      "steps": [
+        {
+          "action": "create",
+          "path": "sample.json",
+          "content": "{\n  \"firstName\": \"Elio\",\n  \"lastName\": \"Struyf\"\n}"
+        },
+        {
+          "action": "open",
+          "path": "sample.json"
+        }
+      ],
+      "notes": {
+        "path": ".demo/notes/demo-memjs2xj-i03m_notes.md"
+      }
+    }
+  ]
+}

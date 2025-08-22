@@ -25,6 +25,15 @@ const oneTimeSponsors = [
     avatarUrl: "https://avatars.githubusercontent.com/u/4191277?v=4",
   },
 ];
+
+let allSponsors = [...oneTimeSponsors, ...sponsors];
+allSponsors = Array.from(
+  new Map(
+    allSponsors
+      .sort((a, b) => (a.name || a.login).localeCompare(b.name || b.login))
+      .map((sponsor) => [sponsor.login, sponsor])
+  ).values()
+);
 ---
 
 <div class="container px-4 mx-auto">
@@ -80,7 +89,7 @@ const oneTimeSponsors = [
               Current Sponsors
             </h3>
             <div class="flex flex-wrap justify-center gap-4">
-              {[...oneTimeSponsors, ...sponsors].map((sponsor) => (
+              {allSponsors.map((sponsor) => (
                 <a
                   href={sponsor.url}
                   target="_blank"
