@@ -68,6 +68,12 @@ h1 {
   color: var(--sl-color-white);
 }
 
+.hero {
+  img {
+    @apply h-[150px] w-full md:h-[400px];
+  }
+}
+
 .social-icons {
   svg {
     @apply h-5 w-5;

@@ -1,5 +1,7 @@
 ---
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid } from "@astrojs/starlight/components";
+import Check from "./Check.astro";
+import XMark from "./XMark.astro";
 ---
 
 <section>
@@ -7,47 +9,48 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
     <div class="comparison-header">
       <h2>Demo Time vs. Traditional Presentation Tools</h2>
       <p>
-        While other tools focus on slides and design, Demo Time is the only presentation tool specifically designed for live coding.
+        While other tools focus on slides and design, Demo Time is the only
+        presentation tool specifically designed for live coding.
       </p>
     </div>
 
-    <div class="comparison-grid">
+    <div class="comparison-grid space-y-0">
       <div class="comparison-column demo-time">
         <div class="column-header">
           <h3>Demo Time</h3>
           <span class="tag live-coding">Built for Live Coding</span>
         </div>
         <ul class="feature-list">
-          <li class="feature-item">
-            <span class="check-icon">✅</span>
+          <li class="feature-item flex text-center">
+            <span class="text-green-400"><Check /></span>
             <span>Script every coding step in advance</span>
           </li>
-          <li class="feature-item">
-            <span class="check-icon">✅</span>
+          <li class="feature-item flex text-center">
+            <span class="text-green-400"><Check /></span>
             <span>Seamless editor integration</span>
           </li>
-          <li class="feature-item">
-            <span class="check-icon">✅</span>
+          <li class="feature-item flex text-center">
+            <span class="text-green-400"><Check /></span>
             <span>Typo-proof live demos</span>
           </li>
-          <li class="feature-item">
-            <span class="check-icon">✅</span>
+          <li class="feature-item flex text-center">
+            <span class="text-green-400"><Check /></span>
             <span>Terminal automation</span>
           </li>
-          <li class="feature-item">
-            <span class="check-icon">✅</span>
+          <li class="feature-item flex text-center">
+            <span class="text-green-400"><Check /></span>
             <span>Code highlighting & navigation</span>
           </li>
-          <li class="feature-item">
-            <span class="check-icon">✅</span>
+          <li class="feature-item flex text-center">
+            <span class="text-green-400"><Check /></span>
             <span>Slides + code in one place</span>
           </li>
-          <li class="feature-item">
-            <span class="check-icon">✅</span>
+          <li class="feature-item flex text-center">
+            <span class="text-green-400"><Check /></span>
             <span>GitHub Copilot integration</span>
           </li>
-          <li class="feature-item">
-            <span class="check-icon">✅</span>
+          <li class="feature-item flex text-center">
+            <span class="text-green-400"><Check /></span>
             <span>Works in VS Code, Cursor, Windsurf</span>
           </li>
         </ul>
@@ -59,36 +62,36 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
           <span class="tag traditional-tag">PowerPoint, Keynote, etc.</span>
         </div>
         <ul class="feature-list">
-          <li class="feature-item unavailable">
-            <span class="x-icon">❌</span>
+          <li class="feature-item flex text-center">
+            <span class="text-red-400"><XMark /></span>
             <span>No live coding automation</span>
           </li>
-          <li class="feature-item unavailable">
-            <span class="x-icon">❌</span>
+          <li class="feature-item flex text-center">
+            <span class="text-red-400"><XMark /></span>
             <span>Context switching required</span>
           </li>
-          <li class="feature-item unavailable">
-            <span class="x-icon">❌</span>
+          <li class="feature-item flex text-center">
+            <span class="text-red-400"><XMark /></span>
             <span>Error-prone manual typing</span>
           </li>
-          <li class="feature-item unavailable">
-            <span class="x-icon">❌</span>
+          <li class="feature-item flex text-center">
+            <span class="text-red-400"><XMark /></span>
             <span>Separate terminal windows</span>
           </li>
-          <li class="feature-item unavailable">
-            <span class="x-icon">❌</span>
+          <li class="feature-item flex text-center">
+            <span class="text-red-400"><XMark /></span>
             <span>No code-specific features</span>
           </li>
           <li class="feature-item">
-            <span class="check-icon">✅</span>
+            <span class="text-green-400"><Check /></span>
             <span>Static slides only</span>
           </li>
-          <li class="feature-item unavailable">
-            <span class="x-icon">❌</span>
+          <li class="feature-item flex text-center">
+            <span class="text-red-400"><XMark /></span>
             <span>No dev tool integration</span>
           </li>
-          <li class="feature-item unavailable">
-            <span class="x-icon">❌</span>
+          <li class="feature-item flex text-center">
+            <span class="text-red-400"><XMark /></span>
             <span>Limited to specific platforms</span>
           </li>
         </ul>
@@ -99,9 +102,12 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
       <div class="highlight-box">
         <h4>The bottom line</h4>
         <p>
-          <strong>Demo Time is the only tool that understands live coding presentations.</strong> 
-          While traditional tools treat code as static content, Demo Time treats it as the dynamic, 
-          interactive experience it should be.
+          <strong
+            >Demo Time is the only tool that understands live coding
+            presentations.</strong
+          >
+          While traditional tools treat code as static content, Demo Time treats
+          it as the dynamic, interactive experience it should be.
         </p>
       </div>
     </div>
@@ -152,7 +158,11 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 
   .comparison-column.demo-time {
     border-color: var(--sl-color-accent);
-    background: linear-gradient(135deg, var(--sl-color-gray-6) 0%, rgba(255, 212, 59, 0.05) 100%);
+    background: linear-gradient(
+      135deg,
+      var(--sl-color-gray-6) 0%,
+      rgba(255, 212, 59, 0.05) 100%
+    );
   }
 
   .column-header {
@@ -209,7 +219,8 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
     opacity: 0.6;
   }
 
-  .check-icon, .x-icon {
+  .text-green-400,
+  .x-icon {
     font-size: 1rem;
     flex-shrink: 0;
     margin-top: 0.125rem;
@@ -225,7 +236,11 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
   }
 
   .highlight-box {
-    background: linear-gradient(135deg, var(--sl-color-accent-low) 0%, rgba(255, 212, 59, 0.1) 100%);
+    background: linear-gradient(
+      135deg,
+      var(--sl-color-accent-low) 0%,
+      rgba(255, 212, 59, 0.1) 100%
+    );
     border: 2px solid var(--sl-color-accent);
     border-radius: 16px;
     padding: 2rem;

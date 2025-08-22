@@ -1,76 +1,56 @@
 ---
-import { Image } from 'astro:assets';
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Image } from "astro:assets";
+import { Card, CardGrid } from "@astrojs/starlight/components";
+import { toCodes } from "astro:i18n";
+
+const response = await fetch(
+  "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/eliostruyf/extensions/vscode-demo-time/reviews?count=4&filterOptions=3"
+);
+const data = await response.json();
+const reviews = data.reviews.filter(
+  (r: { userId: string }) => r.userId !== "911b69c7-f386-63b2-aa0a-8583da5ee40b"
+);
 ---
 
 <section>
   <h2>Real developers, real results</h2>
-  <p class="text-center mb-8 text-lg opacity-90">
-    See how Demo Time is transforming presentations at conferences, workshops, and training sessions worldwide.
+  <p class="mb-8 text-lg opacity-90">
+    See how Demo Time is transforming presentations at conferences, workshops,
+    and training sessions worldwide.
   </p>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 space-y-0"
+  >
     <!-- Quote Cards -->
-    <div class="social-proof-card">
-      <blockquote class="mb-4">
-        "Demo Time has completely transformed my technical presentations. No more stress about typos or forgetting commands during live coding sessions."
-      </blockquote>
-      <div class="flex items-center gap-3">
-        <img
-          src="https://github.com/marcduiker.png"
-          alt="Marc Duiker"
-          class="w-10 h-10 rounded-full"
-        />
-        <div>
-          <p class="font-semibold text-white m-0">Marc Duiker</p>
-          <p class="text-sm text-gray-300 m-0">Developer Advocate at Diagrid</p>
+    {
+      reviews.map((review: any) => (
+        <div class="social-proof-card flex flex-col justify-between h-full">
+          <blockquote class="mb-4">"{review.text}"</blockquote>
+          <div class="flex items-center gap-3 mt-auto">
+            <img
+              src={`https://marketplace.visualstudio.com/avatar?userid=${review.userId}`}
+              alt={review.userDisplayName}
+              class="rounded-full border-2 border-[var(--sl-color-gray-5)]"
+              style="height: 40px; width: 40px;"
+            />
+            <p class="font-semibold text-white !m-0">
+              {review.userDisplayName}
+            </p>
+          </div>
         </div>
-      </div>
-    </div>
-
-    <div class="social-proof-card">
-      <blockquote class="mb-4">
-        "Demo Time lets me focus on my audience instead of worrying about technical mishaps. It's become essential for my conference talks."
-      </blockquote>
-      <div class="flex items-center gap-3">
-        <img
-          src="https://github.com/svrooij.png"
-          alt="Stephan van Rooij"
-          class="w-10 h-10 rounded-full"
-        />
-        <div>
-          <p class="font-semibold text-white m-0">Stephan van Rooij</p>
-          <p class="text-sm text-gray-300 m-0">Microsoft MVP & Speaker</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="social-proof-card">
-      <blockquote class="mb-4">
-        "The seamless integration between slides and live demos in VS Code is game-changing. My presentations flow so much better now."
-      </blockquote>
-      <div class="flex items-center gap-3">
-        <img
-          src="https://github.com/PieEatingNinjas.png"
-          alt="Pieter Nijs"
-          class="w-10 h-10 rounded-full"
-        />
-        <div>
-          <p class="font-semibold text-white m-0">Pieter Nijs</p>
-          <p class="text-sm text-gray-300 m-0">Microsoft MVP & Technical Trainer</p>
-        </div>
-      </div>
-    </div>
+      ))
+    }
   </div>
 
   <!-- Stats Section -->
-  <div class="stats-grid grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+  <div class="stats-grid grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 space-y-0">
     <div class="stat-card">
-      <div class="stat-number">25k+</div>
+      <div class="stat-number">12k+</div>
       <div class="stat-label">Downloads</div>
     </div>
     <div class="stat-card">
-      <div class="stat-number">150+</div>
+      <div class="stat-number">130+</div>
       <div class="stat-label">GitHub Stars</div>
     </div>
     <div class="stat-card">
@@ -85,8 +65,12 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
 
   <!-- Featured In -->
   <div class="featured-section">
-    <h3 class="text-center mb-6 text-xl font-semibold">Featured in presentations at</h3>
-    <div class="flex flex-wrap justify-center items-center gap-8 opacity-70">
+    <h3 class="text-center mb-6 text-xl font-semibold">
+      Featured in presentations at
+    </h3>
+    <div
+      class="flex flex-wrap justify-center items-center gap-8 opacity-70 space-y-0"
+    >
       <div class="featured-item">
         <span class="text-lg font-semibold">Microsoft Ignite</span>
       </div>
@@ -100,7 +84,13 @@ import { Card, CardGrid } from '@astrojs/starlight/components';
         <span class="text-lg font-semibold">Wasm IO</span>
       </div>
       <div class="featured-item">
-        <span class="text-lg font-semibold">M365 Community</span>
+        <span class="text-lg font-semibold">ESPC</span>
+      </div>
+      <div class="featured-item">
+        <span class="text-lg font-semibold">React Summit</span>
+      </div>
+      <div class="featured-item">
+        <span class="text-lg font-semibold">and many more...</span>
       </div>
     </div>
   </div>

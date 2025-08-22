@@ -6,7 +6,7 @@ interface Props {
 const { title } = Astro.props;
 ---
 
-<article class="card sl-flex">
+<article class="card sl-flex rounded-xl">
   <p class="title sl-flex">
     <span class="icon">{(<slot name="icon" />)}</span>
     <span set:html={title} />
