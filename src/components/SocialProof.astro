@@ -1,0 +1,157 @@
+---
+import { Image } from 'astro:assets';
+import { Card, CardGrid } from '@astrojs/starlight/components';
+---
+
+<section>
+  <h2>Real developers, real results</h2>
+  <p class="text-center mb-8 text-lg opacity-90">
+    See how Demo Time is transforming presentations at conferences, workshops, and training sessions worldwide.
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+    <!-- Quote Cards -->
+    <div class="social-proof-card">
+      <blockquote class="mb-4">
+        "Demo Time has completely transformed my technical presentations. No more stress about typos or forgetting commands during live coding sessions."
+      </blockquote>
+      <div class="flex items-center gap-3">
+        <img
+          src="https://github.com/marcduiker.png"
+          alt="Marc Duiker"
+          class="w-10 h-10 rounded-full"
+        />
+        <div>
+          <p class="font-semibold text-white m-0">Marc Duiker</p>
+          <p class="text-sm text-gray-300 m-0">Developer Advocate at Diagrid</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="social-proof-card">
+      <blockquote class="mb-4">
+        "Demo Time lets me focus on my audience instead of worrying about technical mishaps. It's become essential for my conference talks."
+      </blockquote>
+      <div class="flex items-center gap-3">
+        <img
+          src="https://github.com/svrooij.png"
+          alt="Stephan van Rooij"
+          class="w-10 h-10 rounded-full"
+        />
+        <div>
+          <p class="font-semibold text-white m-0">Stephan van Rooij</p>
+          <p class="text-sm text-gray-300 m-0">Microsoft MVP & Speaker</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="social-proof-card">
+      <blockquote class="mb-4">
+        "The seamless integration between slides and live demos in VS Code is game-changing. My presentations flow so much better now."
+      </blockquote>
+      <div class="flex items-center gap-3">
+        <img
+          src="https://github.com/PieEatingNinjas.png"
+          alt="Pieter Nijs"
+          class="w-10 h-10 rounded-full"
+        />
+        <div>
+          <p class="font-semibold text-white m-0">Pieter Nijs</p>
+          <p class="text-sm text-gray-300 m-0">Microsoft MVP & Technical Trainer</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats Section -->
+  <div class="stats-grid grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+    <div class="stat-card">
+      <div class="stat-number">25k+</div>
+      <div class="stat-label">Downloads</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">150+</div>
+      <div class="stat-label">GitHub Stars</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">50+</div>
+      <div class="stat-label">Conference Talks</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">5★</div>
+      <div class="stat-label">VS Code Rating</div>
+    </div>
+  </div>
+
+  <!-- Featured In -->
+  <div class="featured-section">
+    <h3 class="text-center mb-6 text-xl font-semibold">Featured in presentations at</h3>
+    <div class="flex flex-wrap justify-center items-center gap-8 opacity-70">
+      <div class="featured-item">
+        <span class="text-lg font-semibold">Microsoft Ignite</span>
+      </div>
+      <div class="featured-item">
+        <span class="text-lg font-semibold">OpenAI DevDay</span>
+      </div>
+      <div class="featured-item">
+        <span class="text-lg font-semibold">CloudBrew</span>
+      </div>
+      <div class="featured-item">
+        <span class="text-lg font-semibold">Wasm IO</span>
+      </div>
+      <div class="featured-item">
+        <span class="text-lg font-semibold">M365 Community</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .social-proof-card {
+    background: var(--sl-color-gray-6);
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+
+  .social-proof-card blockquote {
+    font-style: italic;
+    color: var(--sl-color-gray-2);
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .stat-card {
+    text-align: center;
+    background: var(--sl-color-gray-6);
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 8px;
+    padding: 1.5rem 1rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--sl-color-accent-high);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.875rem;
+    color: var(--sl-color-gray-3);
+    font-weight: 500;
+  }
+
+  .featured-section {
+    padding: 2rem 1rem;
+    background: var(--sl-color-gray-6);
+    border-radius: 12px;
+    border: 1px solid var(--sl-color-gray-5);
+  }
+
+  .featured-item {
+    color: var(--sl-color-gray-2);
+  }
+</style>
