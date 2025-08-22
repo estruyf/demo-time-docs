@@ -70,7 +70,7 @@ h1 {
 
 .hero {
   img {
-    @apply h-[150px] w-full md:h-[400px];
+    @apply h-[150px] w-full md:h-[350px];
   }
 }
 
